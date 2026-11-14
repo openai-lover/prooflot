@@ -1,0 +1,27 @@
+{
+  "project": "Prooflot",
+  "observed_at_utc": "2026-11-14T17:30:23.986Z",
+  "request_page": "https://nearhackathon.com/request-changes",
+  "status": "request_received_manual_review_pending",
+  "changed_fields": [
+    "Demo post link",
+    "What did you build?"
+  ],
+  "live_service": "https://prooflot.vercel.app",
+  "demo_post": "https://x.com/AlphaGgang/status/2121654704522576348",
+  "narrated_video": "https://youtu.be/DTrax7o1IMA",
+  "source_commit": "6c52be2",
+  "visible_confirmation": [
+    "REQUEST RECEIVED",
+    "We’ll check it by hand.",
+    "An organizer compares every request with the submission before changing anything. We may message you on Discord to confirm."
+  ],
+  "verification": "Official in-app browser confirmation after one request. No organizer change-request ID or HTTP status was exposed in the UI. This confirms receipt only; organizer application is pending.",
+  "unchanged": [
+    "project name",
+    "team",
+    "tracks",
+    "repository",
+    "prize wallet"
+  ]
+}

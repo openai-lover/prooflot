@@ -135,7 +135,7 @@ cargo build --locked --target wasm32-unknown-unknown --release
 npm test
 ~~~
 
-Set RUN_DOCKER_TESTS=1 to include the real container isolation test. Verified locally: **89 JavaScript/SQLite/HTTP/Docker tests**, **10 previously verified Rust tests**, **14 separate-account live workflow checks**, and **14 public wallet proof checks**. The deployed Vercel service also passed a new 14-check testnet workflow. Counts distinguish local logic, NEAR VM unit tests and real chain checks; they are not a security certification. See docs/verification.md.
+Set RUN_DOCKER_TESTS=1 to include the real container isolation test. Verified locally: **91 JavaScript/SQLite/HTTP/Docker tests**, **10 previously verified Rust tests**, **14 separate-account live workflow checks**, and **14 public wallet proof checks**. The deployed Vercel service also passed a new 14-check testnet workflow. Counts distinguish local logic, NEAR VM unit tests and real chain checks; they are not a security certification. See docs/verification.md and docs/security-review.md.
 
 The budget fixture remains available: Atlas, 84 candles, $0.24 virtual budget stops at 17/73 decisions, reserves before each call and retains unresolved liabilities. LLM transport/usage is tested with a mocked response. **No paid/live LLM inference has been performed in this session.**
 
@@ -154,7 +154,7 @@ Provider hard billing bounds are unverified. Strict live mode stays disabled; es
 - Fixed-decision replay is deterministic. A fresh Python process/LLM call is a new test and may differ for a stateful or nondeterministic bot. Pretrained/hardcoded future information cannot be ruled out.
 - Source is withheld from public catalog/run/report responses and delivered after session entitlement. Once downloaded, software cannot be made uncopyable by a chain license.
 - Anonymous sessions support local exploration. Wallet-authenticated sessions own private creator records and paid licenses. Independent sandbox hardening, creator-wallet UI and Nightly approval QA, production recovery at scale and billing remain work. The Meteor buyer approval was tested separately.
-- Hackathon submission copy and current rules/competition comparison are in docs/submission-pack.ko.md. The application runs locally. The public repository contains reproducible instructions and independent chain verifiers. The captioned video shows the real local flow and live verification of previously recorded testnet evidence.
+- Hackathon submission copy and current rules/competition comparison are in docs/submission-pack.ko.md. The application runs at https://prooflot.vercel.app and can also run locally. The narrated, captioned demo distinguishes its simulated walkthrough from real testnet evidence and the deployed service. A correction request for the updated description and X demo was received by the organizers; manual application is pending.
 
 Code license: MIT. User bot license terms apply to separately registered creator artifacts; they do not remove MIT rights from bundled examples.
 

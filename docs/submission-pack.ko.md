@@ -2,9 +2,11 @@
 
 2026-11-15 KST 공개 릴리스 반영. Open Innovation 및 Agent Economy. 내부 스키마·계약명 AgentProof는 기존 불변 기록과 호환되도록 유지한다.
 
-[공개 GitHub](https://github.com/openai-lover/prooflot) · [공개 89초 시연 영상](https://youtu.be/OEni-eWBdwk) · [공개 X 영상 게시물](https://x.com/AlphaGgang/status/2121637337587458332) · [최신 객관적 평가](release-review.ko.md)
+[실행 서비스](https://prooflot.vercel.app) · [공개 GitHub](https://github.com/openai-lover/prooflot) · [영어 더빙·큰 자막 시연](https://youtu.be/DTrax7o1IMA) · [새 X 영상 게시물](https://x.com/AlphaGgang/status/2121654704522576348) · [보안 검토](security-review.md)
 
 **접수 완료:** 전체 JSON과 연락 동의를 명시적으로 승인받은 후 공식 API에 제출했다. 2026-11-15 01:17:50 KST에 HTTP 201을 받았다. [공개 가능한 접수 기록](publication-evidence.json). 아래 설명은 발표 자료이며 실제 승인한 신청 JSON은 개인 정보 보호를 위해 Git에서 제외했다.
+
+**수정 요청 접수:** 공식 request-changes 양식에서 제품 설명과 X 데모 링크의 수정을 요청했고, `REQUEST RECEIVED / We’ll check it by hand.` 화면을 확인했다. 배포 주소, 새 시연, 공개 서버 검증 및 보안 보완을 포함한다. 기존 팀·트랙·저장소·상금 지갑은 변경하지 않았다. 운영진 수동 검토 후 적용되는 절차이므로 실제 신청 내용에 반영 완료됐다고 표현하지 않는다. [수정 접수 기록](submission-update-evidence.json).
 
 ## 한 문장
 
@@ -17,16 +19,17 @@
 - 개인 지갑 연결 요청: NEAR Connect, Meteor·Nightly 고정 어댑터.
 - NEP-413 소유 확인, FINAL FullAccess 키 검사, 지갑별 제작자·사용권과 세션 복구.
 - 제작자 서명 등록/판매 → 구매자 서명 결제 → 실제 ZIP 다운로드/재시험 → 제작자 출금.
-- 실제 별도 테스트 계정 14개 흐름 검증, 전체 로컬 테스트 84개, 공개 지갑 증거 14개 대조.
+- 실제 별도 테스트 계정 14개 흐름 검증, 전체 로컬 테스트 91개, 공개 지갑 증거 14개 대조.
+- Vercel 공개 서버에서 별도 14개 실제 테스트넷 흐름, ZIP 저장·재읽기, 서버 중지·재개 후 데이터 및 파일 무결성 검증.
 - 실제 Meteor 개인 지갑으로 로그인 서명·구매·ZIP 다운로드·새 재시험 완료: 16개 대조, 독립 공개 체인 검사 10개 통과.
 - 동일 비용·시장 데이터에서 4개 공통 시험을 사전 기록하고 전체 결과 공개. 새 지갑 소유 Python 봇: 628회 판단, 42회 체결.
 - 캐시되는 첫 방문 소개, 기하학 로고, 간결한 모바일 화면.
 
 **Meteor 개인 구매자 경로는 실제 지갑 UI로 검증했다.** nearblog6709.testnet으로 NEP-413 로그인과 0.03 test NEAR 결제를 서명하고, 최종 사용권·원본 ZIP·61회 새 Python 실행을 확인했다. [실제 구매](https://testnet.nearblocks.io/txns/5okSTWEwmR7BR8Yzao1uV5R1sT4LHrbBvtoKoK6Nt92L)와 [검증 근거](meteor-wallet-evidence.json)를 사용한다. 제작자 등록·판매·출금 및 공격 사례는 별도 SDK 테스트 계정으로 검증했다. Nightly 확장과 제작자 지갑 UI까지 직접 승인한 것으로 표현하지 않는다.
 
-## 공개한 89초 시연
+## 공개한 111초 시연
 
-앱 내 브라우저에서 실제 Python 파일을 올리고 검사·게시한 뒤, 로컬 모의 구매·파일 다운로드·새 재시험까지 진행했다. 이후 실제 테스트넷 상품의 FINAL 상태와 네 과거 시험 결과, 공개 소스를 보여준다. 로컬 모의 결제와 실제 체인 조회를 영어 자막으로 구분했다. 기존 Meteor 구매를 방금 승인한 것처럼 편집하지 않았다. 실제 저장 파일은 prooflot-browser-evidence.json으로 확인한다.
+앱 내 브라우저에서 실제 Python 파일을 올리고 검사·게시한 뒤, 로컬 모의 구매·파일 다운로드·새 재시험까지 진행했다. 이후 실제 테스트넷 상품의 FINAL 상태와 네 과거 시험 결과, 공개 소스와 Vercel 실행 서비스를 보여준다. 큰 영어 자막과 로컬 Kokoro 음성으로 생성한 영어 내레이션, 별도 영어 SRT를 추가했다. 실제 화면을 사용하되 설명 시간을 위해 일부 프레임을 유지했다. 로컬 모의 결제와 실제 체인 조회를 명시적으로 구분하며, 기존 Meteor 구매를 방금 승인한 것처럼 편집하지 않았다.
 
 ## 상세 3분 발표용 구성
 
@@ -51,16 +54,17 @@ NEAR enforces version/terms-bound purchases, creator ownership, credits and with
 
 We verified the complete creator/buyer workflow using two separate SDK signing accounts on real testnet, including rejected terms, duplicate payment, fresh Python retesting and creator withdrawal. We additionally completed the personal buyer flow in the real Meteor Web wallet: NEP-413 login, a signed purchase, FINAL license confirmation, source ZIP download and a new 61-decision isolated Python run. The downloaded source matches the inspected version and the deterministic results reproduce. Public proof commands verify chain bindings without keys or a running app. Creator wallet UI approvals and the Nightly extension remain unverified. Execution and market data remain operator-attested; this is not independent performance certification.
 
-## 게시된 X 영상
+## 업데이트된 X 영상
 
-Buying a bot should start with evidence.
+Prooflot is live.
+Test bots. Buy with evidence.
 
-Built Prooflot at NEAR HACKATHON: inspect, buy the exact version, download and retest. Version-bound licenses on NEAR testnet.
+Built at NEAR HACKATHON: inspect, buy the exact version, download and retest. Version-bound licenses on NEAR testnet.
 
-https://github.com/openai-lover/prooflot
+https://prooflot.vercel.app
 @NEARProtocol #NEARHackathon
 
-사용자의 명시적 승인을 받은 뒤 실제 시연 영상과 함께 게시했다. [공개 게시물](https://x.com/AlphaGgang/status/2121637337587458332). 최종 신청 내용·연락 동의도 별도로 확인한 뒤 제출했다. [공식 제출 안내](https://nearhackathon.com/HACKATHON.md)의 재확인 기준 마감: 2026-11-15 08:59 KST. 접수 완료는 공개 영상이 아닌 실제 HTTP 201 응답을 기준으로 기록했다.
+더빙·큰 자막·영어 CC가 있는 새 영상과 함께 게시했다. [새 공개 게시물](https://x.com/AlphaGgang/status/2121654704522576348). 최초 제출의 HTTP 201과 이후 수정 요청의 공식 접수 화면을 각각 기록했다. [공식 제출 안내](https://nearhackathon.com/HACKATHON.md)의 재확인 기준 마감: 2026-11-15 08:59 KST. 접수는 수상이나 수정 내용 적용 완료를 뜻하지 않는다.
 
 ## 심사위원 확인 명령
 
