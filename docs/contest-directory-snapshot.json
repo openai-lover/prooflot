@@ -1,0 +1,229 @@
+{
+  "checked_at": "2026-11-13T11:11:07.307Z",
+  "directory": {
+    "projects": [
+      {
+        "id": "21996773-48fa-43e9-aedc-684fdd2e4425",
+        "project_name": "Veto: on-chain spending firewall for AI agents on NEAR",
+        "tracks": [
+          "security",
+          "agents"
+        ],
+        "demo_url": "https://x.com/tarantinbv/status/2116528585829720403"
+      },
+      {
+        "id": "1715bb6b-148f-46f3-980b-459b06f6ca2e",
+        "project_name": "Semilla1 Guard",
+        "tracks": [
+          "security",
+          "agents"
+        ],
+        "demo_url": "https://x.com/Rextropovich/status/2115458380491882998"
+      },
+      {
+        "id": "abe27d2f-1615-4025-9e0c-e78e28519207",
+        "project_name": "Allowance",
+        "tracks": [
+          "business",
+          "security",
+          "agents"
+        ],
+        "demo_url": "https://x.com/soldanoandrea/status/2116497975195378080"
+      },
+      {
+        "id": "2e608b86-3e2c-4dbe-a438-8f30f4129e41",
+        "project_name": "near-thesis: NEAR on the evidence",
+        "tracks": [
+          "thesis"
+        ],
+        "demo_url": "https://x.com/soldanoandrea/status/2116498437860647095"
+      },
+      {
+        "id": "4589fe87-dac6-4b42-9218-13a7d2c8b5e6",
+        "project_name": "LeashPay",
+        "tracks": [
+          "security",
+          "agents"
+        ],
+        "demo_url": "https://x.com/rajahassants/status/2116686379828892126"
+      },
+      {
+        "id": "a0cc08b2-010c-4638-a2ff-7048be063228",
+        "project_name": "NEAR Private OTC",
+        "tracks": [
+          "defi"
+        ],
+        "demo_url": "https://x.com/priva_cie/status/2116719374585434499"
+      },
+      {
+        "id": "cbe3ec14-568f-4944-b4d9-b9efede91dfb",
+        "project_name": "Tidepool",
+        "tracks": [
+          "open"
+        ],
+        "demo_url": "https://x.com/priva_cie/status/2116726168930168843"
+      },
+      {
+        "id": "fd751e55-7d14-44d1-8eb9-7a354ee46007",
+        "project_name": "NEAR Agent Spend Guard",
+        "tracks": [
+          "business",
+          "security",
+          "agents"
+        ],
+        "demo_url": "https://x.com/mubu_dot/status/2116372906745991631"
+      }
+    ],
+    "total": 899,
+    "page": 1,
+    "pageSize": 8,
+    "preview": false
+  },
+  "queries": [
+    {
+      "q": "backtest",
+      "projects": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 8,
+      "preview": false
+    },
+    {
+      "q": "bot",
+      "projects": [
+        {
+          "id": "247640ff-7661-42ec-8275-b2fc8ada1a9a",
+          "project_name": "NDBOT",
+          "tracks": [
+            "defi",
+            "memecoins",
+            "social",
+            "open"
+          ],
+          "demo_url": "https://x.com/cryptoworld_by/status/2117309648709538189"
+        },
+        {
+          "id": "07f41f33-2401-402b-9cd7-7acd09cde5da",
+          "project_name": "Bountybot",
+          "tracks": [
+            "security",
+            "agents"
+          ],
+          "demo_url": "https://x.com/KuluSaiful/status/2119721551612502355"
+        },
+        {
+          "id": "af36ad33-d6eb-4ca3-b3e3-67ea07abfb4a",
+          "project_name": "NEAR Saboteur",
+          "tracks": [
+            "agents",
+            "games",
+            "memecoins"
+          ],
+          "demo_url": "https://x.com/NearSaboteur/status/2120862694026940559"
+        }
+      ],
+      "total": 3,
+      "page": 1,
+      "pageSize": 8,
+      "preview": false
+    },
+    {
+      "q": "market",
+      "projects": [
+        {
+          "id": "2f6dea96-c753-40a2-ac98-e4e7639255b8",
+          "project_name": "StarFloor: Orbital Market Center & Zero-Gravity Colocation",
+          "tracks": [
+            "defi",
+            "open"
+          ],
+          "demo_url": "https://x.com/yeabdotsuperint/status/2117013005602795618?a=rBwxTImUnZoW6QCSPq0&s=20"
+        },
+        {
+          "id": "385ea3c8-bda5-4257-87b4-550bdfc33be6",
+          "project_name": "DiveMarket",
+          "tracks": [
+            "agents",
+            "games"
+          ],
+          "demo_url": "https://x.com/agungkzn/status/2118582497793691861"
+        },
+        {
+          "id": "4a9a7ae0-6943-4a34-b4e3-99198eeee530",
+          "project_name": "Dragons Market",
+          "tracks": [
+            "defi",
+            "swarms",
+            "agents",
+            "nfts",
+            "social"
+          ],
+          "demo_url": "https://x.com/DragonsOnNear/status/2118729901847007494?a=8ZW6jrqwJ4GMEIsZyyM&s=20"
+        },
+        {
+          "id": "465b2038-aea8-46e9-a01e-2fc5a11fb6d5",
+          "project_name": "Priced In: prediction markets for facts",
+          "tracks": [
+            "defi",
+            "privacy",
+            "swarms",
+            "agents",
+            "open"
+          ],
+          "demo_url": "https://x.com/isitpriced/status/2119458485553246596"
+        },
+        {
+          "id": "a0a3436e-c803-4b86-920f-0ce74cf270bf",
+          "project_name": "StreetMarket AI by GhostTech",
+          "tracks": [
+            "business",
+            "swarms",
+            "agents",
+            "realworld"
+          ],
+          "demo_url": "https://x.com/sielaff9219/status/2119801240028610875"
+        },
+        {
+          "id": "adaab461-2220-4afb-b535-a3304b887709",
+          "project_name": "Hearthmarket",
+          "tracks": [
+            "business",
+            "swarms",
+            "security",
+            "agents",
+            "games"
+          ],
+          "demo_url": "https://x.com/tomdrawneth/status/2120420754978484542?a=AA1WRXedeMtm3d1BVW8&s=20"
+        },
+        {
+          "id": "c8696c03-b917-46ae-b98a-541f3dd7fb20",
+          "project_name": "Squeek Market — Squeek Bird + NEAR Economy",
+          "tracks": [
+            "games"
+          ],
+          "demo_url": "https://x.com/armandomarais/status/2120810319408967938"
+        },
+        {
+          "id": "ddc189c4-1753-4d1b-ae4c-faf03b6c4739",
+          "project_name": "Near Legion - NFT Staking & Market in Telegram",
+          "tracks": [
+            "nfts"
+          ],
+          "demo_url": "https://x.com/dimadze2116/status/2120899636135100519"
+        }
+      ],
+      "total": 11,
+      "page": 1,
+      "pageSize": 8,
+      "preview": false
+    },
+    {
+      "q": "agentproof",
+      "projects": [],
+      "total": 0,
+      "page": 1,
+      "pageSize": 8,
+      "preview": false
+    }
+  ]
+}

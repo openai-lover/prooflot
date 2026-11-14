@@ -1,0 +1,35 @@
+{
+  "schema": "prooflot-in-app-release-v1",
+  "checked_at": "2026-11-14T14:52:09.985Z",
+  "browser": "ChatGPT in-app browser",
+  "mode": "Local demo, no blockchain payment",
+  "bot": "Momentum One v1.0",
+  "source": "examples/momentum.py",
+  "listing_id": "118aa82d-86f1-4098-b148-f740c693f5b7",
+  "license_id": "51299dff-7a6c-40a2-92c5-113470092159",
+  "version_hash": "f3fec0264ccf7786e9c64d934fde1fa16753c660416d871a126b0c48cdc6d108",
+  "report_hash": "cd87fe7094244624d929b752c6523cac2571d87ce819ea9f5e2e62a3c82cbf82",
+  "download": {
+    "file": "prooflot-f3fec0264ccf.zip",
+    "destination": "Windows Downloads folder",
+    "bytes": 73387,
+    "sha256": "e89fc057e3ddaa5bb4e1278fc9314722f9785fece92d7f34da70bc851637f5cd",
+    "browser_download_event": true,
+    "actual_disk_readback": true,
+    "offline_verifier_matches": true,
+    "files_checked": 6
+  },
+  "checks": [
+    "actual .py file upload",
+    "private creator registration",
+    "73-decision Python backtest",
+    "inspection warnings visible",
+    "price and publication",
+    "exact-version local checkout",
+    "license in library",
+    "real downloaded file read from disk",
+    "source/report/license bindings verified offline",
+    "new 73-decision Python retest"
+  ],
+  "boundary": "Separate creator/buyer testnet signatures and the personal Meteor purchase are recorded in final-wallet-evidence.json and meteor-wallet-evidence.json. This local flow makes no blockchain payment."
+}

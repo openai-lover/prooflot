@@ -1,0 +1,25 @@
+{
+  "schema": "botpassport-saved-package-v1",
+  "checked_at": "2026-11-14T07:18:04.832Z",
+  "buyer": "buyer-159f282f.agentproof-060206eead.testnet",
+  "listing_id": "d3e2eac2-16b1-4e36-af3f-c0e4c939815b",
+  "filename": "purchased-signal-check.zip",
+  "bytes": 65925,
+  "sha256": "8dee2e969916481e5171a055bbdd2efb10edb275e2a28853c03a0afc68538705",
+  "verification": {
+    "matches": true,
+    "version_hash": "9b6eb2054fa2e1847dda8ebda82e0f48a784ed201af22de5d59b9291fd35eeec",
+    "report_hash": "a4beae1ba3f8c47c99e8ce8b5e7e504e211113598f2b8e2814b55cfd3c179f13",
+    "files": 6,
+    "network": "testnet",
+    "scope": "Content identity only. Verify the expected version against the marketplace or NEAR record. No independent execution, license-chain validation, safety or profit certification."
+  },
+  "checks": [
+    "wallet-authenticated download",
+    "actual disk write and readback",
+    "HTTP SHA-256 and version match",
+    "offline source/report/license verification",
+    "anonymous access denied",
+    "logout access denied"
+  ]
+}

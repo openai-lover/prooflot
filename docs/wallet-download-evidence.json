@@ -1,0 +1,19 @@
+{
+  "verified_at": "2026-11-13T13:16:24.5245841Z",
+  "entries": [
+    "bot.json",
+    "license.json",
+    "report.json",
+    "README.txt",
+    "bot.py"
+  ],
+  "checks": {
+    "source_matches": true,
+    "logged_out_denied": true,
+    "unauthenticated_denied": true,
+    "report_matches": true,
+    "buyer_matches": true,
+    "version_matches": true
+  },
+  "decoder": "System.IO.Compression.ZipArchive"
+}

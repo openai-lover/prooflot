@@ -1,0 +1,25 @@
+{
+  "name": "agentproof",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Creator bot backtests, inspection reports and exact-version licenses on NEAR testnet",
+  "engines": {
+    "node": ">=24.0.0 <25"
+  },
+  "scripts": {
+    "start": "node scripts/start.mjs",
+    "test": "node --test tests/*.test.mjs",
+    "demo": "node scripts/demo.mjs",
+    "testnet:setup": "node scripts/setup-testnet.mjs",
+    "testnet:verify": "node scripts/verify-testnet.mjs",
+    "build": "node scripts/build-browser.mjs",
+    "testnet:wallet": "node scripts/verify-wallet-testnet.mjs",
+    "testnet:wallet-proof": "node scripts/check-wallet-proof.mjs"
+  },
+  "dependencies": {
+    "@hot-labs/near-connect": "0.12.0",
+    "esbuild": "0.28.2",
+    "near-api-js": "7.4.0"
+  }
+}

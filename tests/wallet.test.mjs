@@ -1,0 +1,97 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { KeyPair, KeyPairSigner } from 'near-api-js';
+import { WalletAuth, walletOwner } from '../src/wallet-auth.mjs';
+import { WalletMarket } from '../src/wallet-market.mjs';
+import { Store } from '../src/store.mjs';
+import { createApp } from '../src/server.mjs';
+import { hash, canonical } from '../src/common.mjs';
+import { zipFiles } from '../src/artifact-download.mjs';
+
+const origin='http://127.0.0.1:4317';
+test('bot ZIP blocks supplied paths and uses interoperable CRC-32 and directory offsets',()=>{
+  assert.throws(()=>zipFiles({'../escape.py':'bad'}),/INVALID_ZIP_NAME/);
+  const archive=zipFiles({'bot.py':'123456789'});assert.equal(archive.readUInt32LE(14),0xcbf43926);
+  const end=archive.subarray(-22),central=archive.readUInt32LE(archive.length-6);assert.equal(end.readUInt32LE(0),0x06054b50);assert.equal(end.readUInt16LE(10),1);assert.equal(archive.readUInt32LE(central),0x02014b50);
+});
+function setup(t){const store=new Store(),key=KeyPair.fromRandom('ed25519');let permission='FullAccess',network='testnet',time=Date.now();
+  const provider={viewNodeStatus:async()=>({chain_id:network}),viewAccessKey:async({accountId,publicKey,blockQuery})=>{assert.equal(accountId,'creator.testnet');assert.equal(String(publicKey),key.getPublicKey().toString());assert.equal(blockQuery.finality,'final');return {permission};}};
+  const auth=new WalletAuth(store,provider,()=>time);t.after(()=>store.close());
+  const sign=async(c,patch={})=>{const s=await KeyPairSigner.fromSecretKey(key.toString()).signNep413Message('creator.testnet',{message:c.message,recipient:c.recipient,nonce:Buffer.from(c.nonce,'base64'),...patch});return {challenge_id:c.id,account_id:'creator.testnet',public_key:s.publicKey.toString(),signature:Buffer.from(s.signature).toString('base64')};};
+  return {store,auth,provider,sign,permission:v=>permission=v,network:v=>network=v,advance:ms=>time+=ms};
+}
+test('wallet NEP-413 login binds a real signature to FINAL FullAccess key and stable identity',async t=>{const s=setup(t),c=s.auth.challenge('session-a','creator.testnet',origin),signed=await s.sign(c);
+  const a=await s.auth.verify('session-a',signed,origin);assert.equal(a.owner,walletOwner('creator.testnet'));
+  const d=s.auth.challenge('session-b','creator.testnet',origin),b=await s.auth.verify('session-b',await s.sign(d),origin);assert.equal(a.owner,b.owner);
+  await assert.rejects(()=>s.auth.verify('session-a',signed,origin),/CHALLENGE_INVALID/);
+});
+test('wallet rejects substituted account, browser session and origin',async t=>{const s=setup(t),c=s.auth.challenge('one','creator.testnet',origin),signed=await s.sign(c);
+  await assert.rejects(()=>s.auth.verify('two',signed,origin),/CHALLENGE_INVALID/);
+  await assert.rejects(()=>s.auth.verify('one',{...signed,account_id:'attacker.testnet'},origin),/CHALLENGE_BINDING_MISMATCH/);
+  await assert.rejects(()=>s.auth.verify('one',signed,'http://localhost:4317'),/CHALLENGE_BINDING_MISMATCH/);
+  assert.equal(s.auth.session('one'),null);
+});
+test('wallet rejects a modified message and consumes the attempted nonce',async t=>{const s=setup(t),c=s.auth.challenge('one','creator.testnet',origin),signed=await s.sign(c,{message:c.message+' changed'});
+  await assert.rejects(()=>s.auth.verify('one',signed,origin),/wallet signature/);
+  await assert.rejects(async()=>s.auth.verify('one',await s.sign(c),origin),/CHALLENGE_INVALID/);
+});
+test('wallet rejects expired challenges and non-testnet accounts',async t=>{const s=setup(t);assert.throws(()=>s.auth.challenge('one','alice.near',origin),/TESTNET_ACCOUNT_REQUIRED/);const c=s.auth.challenge('one','creator.testnet',origin);s.advance(300001);
+  await assert.rejects(async()=>s.auth.verify('one',await s.sign(c),origin),/CHALLENGE_EXPIRED/);
+});
+test('wallet rejects FunctionCall keys and mainnet RPC responses',async t=>{const s=setup(t);s.permission({FunctionCall:{receiver_id:'market.testnet'}});let c=s.auth.challenge('one','creator.testnet',origin);
+  await assert.rejects(async()=>s.auth.verify('one',await s.sign(c),origin),/wallet signature/);s.permission('FullAccess');s.network('mainnet');c=s.auth.challenge('one','creator.testnet',origin);
+  await assert.rejects(async()=>s.auth.verify('one',await s.sign(c),origin),/wallet signature/);assert.equal(s.auth.session('one'),null);
+});
+test('wallet challenge cannot authenticate twice concurrently',async t=>{const s=setup(t),c=s.auth.challenge('one','creator.testnet',origin),signed=await s.sign(c);
+  const result=await Promise.allSettled([s.auth.verify('one',signed,origin),s.auth.verify('one',signed,origin)]);assert.equal(result.filter(r=>r.status==='fulfilled').length,1);
+});
+test('revoked wallet key invalidates download and payment authorization',async t=>{const s=setup(t),c=s.auth.challenge('one','creator.testnet',origin);await s.auth.verify('one',await s.sign(c),origin);s.permission({FunctionCall:{}});
+  await assert.rejects(()=>s.auth.require('one',true),/Reconnect your wallet/);assert.equal(s.auth.session('one'),null);
+});
+test('wallet logout and session expiry remove authenticated ownership',async t=>{const s=setup(t);let c=s.auth.challenge('one','creator.testnet',origin);await s.auth.verify('one',await s.sign(c),origin);s.auth.logout('one');assert.equal(s.auth.session('one'),null);
+  c=s.auth.challenge('one','creator.testnet',origin);await s.auth.verify('one',await s.sign(c),origin);s.advance(12*60*60*1000+1);assert.equal(s.auth.session('one'),null);
+});
+
+test('wallet receipt verification rejects wrong signer, contract, method, deposit, arguments and failure',async t=>{const store=new Store();t.after(()=>store.close());const market=new WalletMarket(store,{}),txHash='1'.repeat(44);
+  const expected={signerId:'buyer.testnet',receiverId:'registry.testnet',actions:[{type:'FunctionCall',params:{methodName:'purchase_license',args:{listing_id:'one',expected_version_hash:'a'.repeat(64)},deposit:'700',gas:'100000000000000'}}]};
+  const valid={status:{SuccessValue:''},transaction:{hash:txHash,signer_id:expected.signerId,receiver_id:expected.receiverId,actions:[{FunctionCall:{method_name:'purchase_license',args:Buffer.from(JSON.stringify(expected.actions[0].params.args)).toString('base64'),deposit:'700',gas:'100000000000000'}}]}};
+  const verify=r=>market.verifyTransaction({provider:{viewTransactionStatus:async()=>r}},txHash,expected);
+  assert.equal((await verify(valid)).status,'FINAL_SUCCESS');
+  for(const mutate of [r=>r.transaction.signer_id='thief.testnet',r=>r.transaction.receiver_id='other.testnet',r=>r.transaction.actions[0].FunctionCall.method_name='fake',r=>r.transaction.actions[0].FunctionCall.deposit='1',r=>r.transaction.actions[0].FunctionCall.args=Buffer.from('{}').toString('base64'),r=>r.status={Failure:{}},r=>r.transaction.actions.push(r.transaction.actions[0])]){const r=structuredClone(valid);mutate(r);await assert.rejects(()=>verify(r));}
+});
+
+test('HTTP wallet identity survives a new browser session without sharing an anonymous session',async t=>{const s=setup(t),app=createApp({store:s.store,delay:0,walletProvider:s.provider,benchmarkAnchor:null});await new Promise(r=>app.server.listen(0,'127.0.0.1',r));t.after(()=>new Promise(r=>app.server.close(r)));
+  const url='http://127.0.0.1:'+app.server.address().port;
+  const browser=async()=>{const r=await fetch(url+'/api/wallet/session'),cookie=r.headers.get('set-cookie').split(';')[0];return async(route,body)=>fetch(url+route,{method:body?'POST':'GET',headers:{Cookie:cookie,Origin:url,'Content-Type':'application/json','X-AgentProof':'1'},body:body?JSON.stringify(body):undefined});};
+  const a=await browser(),b=await browser();
+  const login=async client=>{const c=await(await client('/api/wallet/challenge',{account_id:'creator.testnet'})).json();const r=await client('/api/wallet/verify',await s.sign(c));assert.equal(r.status,200);};
+  await login(a);const bot=await(await a('/api/bots',{kind:'rules',name:'Wallet author',owns_rights:true})).json();assert.equal(bot.owner,walletOwner('creator.testnet'));
+  assert.equal((await(await b('/api/catalog')).json()).versions.some(v=>v.id===bot.id),false);await login(b);assert.equal((await(await b('/api/catalog')).json()).versions.some(v=>v.id===bot.id),true);
+  await a('/api/wallet/logout',{});assert.equal((await(await a('/api/catalog')).json()).versions.some(v=>v.id===bot.id),false);
+  assert.equal((await b('/api/licenses/testnet-purchase',{})).status,401);
+  assert.equal((await a('/api/wallet/purchase/prepare',{})).status,401);
+});
+
+test('wallet publication stays private until FINAL listing and can resume after partial approval',async t=>{const store=new Store();t.after(()=>store.close());const identity={owner:walletOwner('creator.testnet'),account_id:'creator.testnet'},chainState={version:null,job:null,item:null};
+  const {service,chain}=createApp({store,delay:0,benchmarkAnchor:null});const bot=service.bots.register({name:'Seller own bot',kind:'rules',owns_rights:true},identity.owner);const run=service.start({version_id:bot.id,length:24,budget_micros:0},identity.owner,'wallet-publish-unit');await service.run(run.id);
+  const reader={contract:'registry.testnet',checkNetwork:async()=>{},view:async method=>({get_version:chainState.version,get_job:chainState.job,get_listing:chainState.item})[method]};
+  let operatorCalls=0;const operator={contract:reader.contract,call:async(role,method,args)=>{assert.equal(role,'contract');operatorCalls++;if(method==='commit_result')Object.assign(chainState.job,{state:1,report_hash:args.report_hash,completed_steps:args.completed_steps});if(method==='settle_job')chainState.job.state=2;return {hash:String(operatorCalls).repeat(44),method,status:'FINAL_SUCCESS'};}};
+  const market=new WalletMarket(store,chain,{reader:()=>reader,operator:()=>operator}),input={run_id:run.id,version_hash:bot.hash,price_yocto:'50000000000000000000000'};
+  const first=await market.preparePublication(identity,input);assert.equal(first.stage,'wallet');assert.equal(first.transaction.signerId,identity.account_id);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM listings').get().n,0);assert.equal(operatorCalls,0);
+  const report=store.report(run.id);chainState.version={owner:identity.account_id,terms_hash:bot.terms_hash};chainState.job={buyer:identity.account_id,version_hash:bot.hash,manifest_hash:report.manifest_hash,requested_steps:report.requested_steps,state:0};
+  const second=await market.preparePublication(identity,input);assert.equal(second.id,first.id);assert.equal(second.transaction.actions[0].params.methodName,'create_listing');assert.equal(operatorCalls,2);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM listings').get().n,0);
+  const l=second.listing;chainState.item={seller:identity.account_id,version_hash:bot.hash,report_hash:report.hash,terms_hash:bot.terms_hash,price:l.price_yocto};
+  const final=await market.advancePublication(identity,first.id);assert.equal(final.stage,'complete');assert.equal(final.listing.chain.custody,'personal_wallet');assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM listings').get().n,1);
+  await assert.rejects(()=>market.preparePublication({...identity,owner:walletOwner('thief.testnet')},input));
+  await assert.rejects(()=>market.preparePublication(identity,{...input,price_yocto:'1'}),/cannot be changed/);
+  assert.equal((await market.preparePublication(identity,input)).stage,'complete');assert.equal(operatorCalls,2);
+});
+
+test('wallet purchase requires the authenticated buyer license; client flags cannot unlock source',async t=>{const store=new Store();t.after(()=>store.close());const app=createApp({store,delay:0,benchmarkAnchor:null});const run=app.service.start({length:24,budget_micros:1000000},'demo','wallet-license-unit');await app.service.run(run.id);const l=JSON.parse(store.db.prepare('SELECT body FROM listings').get().body);
+  let chainLicense=null;const reader={contract:'registry.testnet',view:async()=>chainLicense};app.chain.verifyListing=async()=>({matches:true});
+  const market=new WalletMarket(store,app.chain,{reader:()=>reader}),identity={account_id:'buyer.testnet',owner:walletOwner('buyer.testnet')},input={listing_id:l.id,expected_version_hash:l.version_hash,expected_terms_hash:l.terms_hash,success:true};
+  await assert.rejects(()=>market.confirmPurchase(identity,input),/Purchase not confirmed/);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM licenses').get().n,0);
+  chainLicense={buyer:'other.testnet',listing_id:l.id,version_hash:l.version_hash,terms_hash:l.terms_hash};await assert.rejects(()=>market.confirmPurchase(identity,input),/Purchase not confirmed/);
+  chainLicense.buyer='buyer.testnet';const first=await market.confirmPurchase(identity,input),again=await market.confirmPurchase(identity,input);assert.equal(first.id,again.id);assert.equal(first.owner,identity.owner);assert.equal(store.db.prepare('SELECT COUNT(*) AS n FROM licenses').get().n,1);
+  await assert.rejects(()=>market.confirmPurchase(identity,{...input,expected_version_hash:'f'.repeat(64)}),/VERSION_OR_TERMS_MISMATCH/);
+});

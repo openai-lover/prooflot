@@ -1,0 +1,27 @@
+{
+  "source": "https://raw.githubusercontent.com/hot-dao/near-selector/refs/heads/main/repository/manifest.json",
+  "snapshotted_at": "2026-11-13T12:50:52.684Z",
+  "connector": "@hot-labs/near-connect@0.12.0",
+  "sources": [
+    {
+      "id": "meteor-wallet",
+      "url": "https://raw.githubusercontent.com/Meteor-Wallet/meteor_wallet_sdk/data-storage/storage/meteor-near-connect-latest.js",
+      "bytes": 2006448,
+      "sha256": "2a19fe2aff40039a582878c8fbd46d84fa4e6b1f1e877ee4790c99f10904fc7c",
+      "upstream_sha256": "e1795611500188077a6eadd5597b03b840f6d530f5e2904b621b378f8e007c73",
+      "patches": [
+        {
+          "id": "meteor-sandbox-page-uri",
+          "reason": "Use the host app URL supplied by NEAR Connect instead of about:srcdoc in Meteor Web login/signature popups.",
+          "replacements": 1
+        }
+      ]
+    },
+    {
+      "id": "nightly-wallet",
+      "url": "https://raw.githubusercontent.com/hot-dao/near-selector/refs/heads/main/repository/nightly.js",
+      "bytes": 1205035,
+      "sha256": "6e769f105fb30d37501439287ec901b4d858a503ab195e2e99c06c172c5b5d48"
+    }
+  ]
+}

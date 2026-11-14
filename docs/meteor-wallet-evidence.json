@@ -1,0 +1,123 @@
+{
+  "schema": "botpassport-meteor-web-proof-v1",
+  "verified_at": "2026-11-13T14:11:10.817Z",
+  "network": "testnet",
+  "contract": "agentproof-060206eead.testnet",
+  "buyer": "nearblog6709.testnet",
+  "listing_id": "bb80edef-1132-4685-a021-2678ab4b8d95",
+  "version_hash": "be13281d3559dafc5fc2d25dbf513272602d0a6282f6461e4a9199010b3c9271",
+  "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+  "report_hash": "8e55f66da776d827d6b88eab8d756d5f934b3844092eb28162f9e1718f1c2847",
+  "signing": "Real Meteor Web wallet UI, user-prepared and unlocked personal testnet wallet. NEP-413 login and purchase_license signature verified. No private key or recovery phrase was read by the agent or application server.",
+  "purchase": {
+    "tx_hash": "5okSTWEwmR7BR8Yzao1uV5R1sT4LHrbBvtoKoK6Nt92L",
+    "signer": "nearblog6709.testnet",
+    "receiver": "agentproof-060206eead.testnet",
+    "method": "purchase_license",
+    "deposit_yocto": "30000000000000000000000",
+    "gas": 100000000000000,
+    "actual_burned_yocto": "272857720189000000000",
+    "finality": "FINAL",
+    "status": "SuccessValue",
+    "explorer": "https://testnet.nearblocks.io/txns/5okSTWEwmR7BR8Yzao1uV5R1sT4LHrbBvtoKoK6Nt92L",
+    "license_id": "2e8e802e-89f9-496c-932f-7797a5fd6974"
+  },
+  "authentication": {
+    "method": "NEP-413",
+    "account": "nearblog6709.testnet",
+    "verified_session": true,
+    "network": "testnet"
+  },
+  "download": {
+    "file": "botpassport-be13281d3559.zip",
+    "bytes": 60678,
+    "sha256": "4e1eeede646d2d3d5009c968fe50f8935850bc3c5e0db509935fe7f4670da228",
+    "decoder": "System.IO.Compression.ZipArchive",
+    "entries": [
+      "bot.py",
+      "report.json",
+      "license.json",
+      "README.txt",
+      "bot.json"
+    ],
+    "source_hash": "f6d80978ac1b54d5dcc24194089d01d37e1e3dc3580c73ef8c15bdbbe0dc7f5a",
+    "version_hash": "be13281d3559dafc5fc2d25dbf513272602d0a6282f6461e4a9199010b3c9271",
+    "report_hash": "8e55f66da776d827d6b88eab8d756d5f934b3844092eb28162f9e1718f1c2847"
+  },
+  "retest": {
+    "run_id": "752f6e00-b122-4af8-98f9-477dd5a0a222",
+    "report_hash": "15841a7ba4bc67c1f50758352f3232ef67dde43ca56abcd6c7d80cfd46c46a3c",
+    "manifest_hash": "75fc01092d711e9dd9c675cbb88239375f234b05926ddfa40ae6df3770499c1c",
+    "version_hash": "be13281d3559dafc5fc2d25dbf513272602d0a6282f6461e4a9199010b3c9271",
+    "completed_steps": 61,
+    "metrics": {
+      "ending_equity_micros": "990199013",
+      "exposure_bps": 5409,
+      "fee_micros": "4964141",
+      "max_drawdown_bps": 154,
+      "pnl_micros": "-9800987",
+      "return_bps": -98,
+      "slippage_micros": "2481821",
+      "trades": 5,
+      "turnover_bps": 49641
+    },
+    "execution": "Fresh isolated Python processes in Docker, operator-attested"
+  },
+  "corrections": [
+    "Meteor popup page URI uses the host URL instead of about:srcdoc; patched executor cache version is distinct.",
+    "Signature and payment popups start from an explicit app button. Existing wallet connections are reused for login.",
+    "Initial 0.1 test NEAR was insufficient for the wallet balance check; topped up to 0.5 and confirmed no prior license before retry."
+  ],
+  "funding": [
+    {
+      "checked_at": "2026-11-13T13:44:44.492Z",
+      "purpose": "Test-only funding for user-authorized Meteor purchase verification; this is not the user wallet purchase signature",
+      "network": "testnet",
+      "account": "nearblog6709.testnet",
+      "amount_test_near": "0.1",
+      "tx_hash": "HEdDzAJAF7tu48jLfA92iY1ieRV7f1LWrzanE1RRkSu9",
+      "signer": "agentproof-060206eead.testnet",
+      "status": "FINAL_SUCCESS"
+    },
+    {
+      "checked_at": "2026-11-13T14:03:13.248Z",
+      "network": "testnet",
+      "account": "nearblog6709.testnet",
+      "balance_before_yocto": "100000000000000000000000",
+      "funding_yocto": "400000000000000000000000",
+      "target_balance_test_near": "0.5",
+      "tx_hash": "6Dr3zEtQ3tkR9u6x29YMwG6rgDUmQLTHpdsvq5zwvLkN",
+      "status": "FINAL_SUCCESS",
+      "license_before_retry": null
+    }
+  ],
+  "balance_after_yocto": "469727142279811000000000",
+  "checks": {
+    "nep413_authenticated_session": true,
+    "personal_wallet_signed": true,
+    "final_success": true,
+    "exact_payment": true,
+    "exact_purchase_args": true,
+    "final_license": true,
+    "seller_ownership": true,
+    "pinned_inspection": true,
+    "application_entitlement": true,
+    "downloaded_exact_version": true,
+    "downloaded_exact_source": true,
+    "downloaded_exact_report": true,
+    "downloaded_buyer_license": true,
+    "fresh_retest": true,
+    "no_reused_calls": true,
+    "reproduced_results": true
+  },
+  "passed": 16,
+  "screenshots": [
+    "screenshots/meteor-wallet-connected.jpg",
+    "screenshots/meteor-purchase-details.jpg",
+    "screenshots/meteor-purchase-complete.jpg"
+  ],
+  "limits": [
+    "Creator publication was previously verified using separate SDK accounts; this Meteor UI test covers the personal buyer flow.",
+    "Chain receipts prove ownership and payment. They do not independently prove Python execution or future returns."
+  ]
+}

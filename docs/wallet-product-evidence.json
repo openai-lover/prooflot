@@ -1,0 +1,2072 @@
+{
+  "schema": "agentproof-evidence-v1",
+  "listing": {
+    "created": "2026-11-13T13:01:35.333Z",
+    "id": "bb80edef-1132-4685-a021-2678ab4b8d95",
+    "inspection": {
+      "checks": [
+        {
+          "detail": "0 rejected / 61 decisions",
+          "id": "output",
+          "label": "주문 형식",
+          "status": "pass"
+        },
+        {
+          "detail": "61 / 61 decisions. Partial results must not be presented as a full test.",
+          "id": "completion",
+          "label": "시험 완료 범위",
+          "status": "pass"
+        },
+        {
+          "detail": "0 unresolved calls; reservation ledger retained.",
+          "id": "cost",
+          "label": "비용 확정",
+          "status": "pass"
+        },
+        {
+          "detail": "The runner supplies only closed candles through t; execution uses t+1 open. This does not prove absence of hardcoded or pretrained future knowledge.",
+          "id": "causality",
+          "label": "플랫폼 미래 데이터 차단",
+          "status": "pass"
+        },
+        {
+          "detail": "User-supplied historical data: source and redistribution rights require independent verification.",
+          "id": "dataset",
+          "label": "데이터 출처",
+          "status": "warn"
+        },
+        {
+          "detail": "1.54% on this tested interval. This threshold is a review heuristic.",
+          "id": "drawdown",
+          "label": "최대 낙폭",
+          "status": "pass"
+        },
+        {
+          "detail": "Single asset, long/flat, candle execution. No order-book fill simulation, live trading, independent audit or future-return guarantee.",
+          "id": "coverage",
+          "label": "검증 범위",
+          "status": "warn"
+        },
+        {
+          "detail": "Python container: network disabled, read-only filesystem, non-root, capability drop, CPU/memory/PID/time limits. Container isolation is not a complete security audit.",
+          "id": "isolation",
+          "label": "코드 실행 환경",
+          "status": "pass"
+        }
+      ],
+      "meaning": "Measured checks with explicit limits; not a safety certification or profitability rating.",
+      "publishable": true,
+      "schema": "agentproof-inspection-v1",
+      "source_hash": "f6d80978ac1b54d5dcc24194089d01d37e1e3dc3580c73ef8c15bdbbe0dc7f5a",
+      "verdict": "review_required"
+    },
+    "kind": "python",
+    "name": "Signal Check",
+    "network": "testnet_wallet",
+    "price_yocto": "10000000000000000000000",
+    "report_hash": "8e55f66da776d827d6b88eab8d756d5f934b3844092eb28162f9e1718f1c2847",
+    "run_id": "f1d6bb1f-862a-4f43-b655-4bc3559b0802",
+    "seller": "wallet:testnet:creator-159f282f.agentproof-060206eead.testnet",
+    "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+    "version_hash": "be13281d3559dafc5fc2d25dbf513272602d0a6282f6461e4a9199010b3c9271"
+  },
+  "terms": {
+    "network": "near-testnet",
+    "scope": "Non-exclusive personal research license to this exact source/config version. No redistribution, resale or live-money management rights. Seller must own the uploaded code. No promised returns.",
+    "version": "research-license-1"
+  },
+  "report": {
+    "hash": "8e55f66da776d827d6b88eab8d756d5f934b3844092eb28162f9e1718f1c2847",
+    "canonical_format": "agentproof-json-v1",
+    "completed_steps": 61,
+    "data_kind": "user_upload",
+    "decisions": [
+      {
+        "call_id": "38424f5d-fa9b-48c7-a1e0-015a0e337bc4",
+        "decision": {
+          "action": "BUY",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 11,
+        "mode": "python",
+        "observation_hash": "af9395a4c276e428e2f27a41a919982aa1bb7bf24539d4c9e0a75b4d6c201a9e",
+        "observed_until": "2026-11-01T11:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "f909a207-5576-4f29-80dc-45f03299620a",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 12,
+        "mode": "python",
+        "observation_hash": "5e361fce496db2f1008b9f143e751cd4d045faa5752c16c803a5c875c34abc8e",
+        "observed_until": "2026-11-01T12:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "845ebb79-1644-4eda-891e-50d52036c17d",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 13,
+        "mode": "python",
+        "observation_hash": "81e75e3d5c3bf1285c3fa648011bcd7ff5303d30af1bfbb427aacfb2b4ece4d7",
+        "observed_until": "2026-11-01T13:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "9872d03e-ca99-4357-94e1-b26916ed0b8b",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 14,
+        "mode": "python",
+        "observation_hash": "12f24055bd6d83092ae7d0db3b0a9e66ca166babfeb5ed1ecc260784240de706",
+        "observed_until": "2026-11-01T14:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "48dddc2c-1dbe-4ab3-9b32-1b12252460b9",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 15,
+        "mode": "python",
+        "observation_hash": "d3094b4b300c80b8893434c29c05a3da47ed9b8daca10fdd25de297f71b1ed66",
+        "observed_until": "2026-11-01T15:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "1080f34d-4e8d-448d-b59f-aa83cedf92bb",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 16,
+        "mode": "python",
+        "observation_hash": "982448b48a7a79b73f26c1f9316fb87ae5b4eae312163ede583f6661714f09b3",
+        "observed_until": "2026-11-01T16:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "4c400c7e-f705-41f6-9c2e-33384f6292d5",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 17,
+        "mode": "python",
+        "observation_hash": "d0993a5762b03b33160d4ef01b82b216a4ccc283cfb8993519df3aec911ef18e",
+        "observed_until": "2026-11-01T17:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "b79ef8f5-b9bd-404f-b66c-977e7a641985",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 18,
+        "mode": "python",
+        "observation_hash": "3cdf5f932f05e547afeafe03e0568529b358f1c9dbff75123d6a06bb9eb86a42",
+        "observed_until": "2026-11-01T18:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "7c66d180-8c5e-4091-8067-65121d479cfc",
+        "decision": {
+          "action": "SELL",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 19,
+        "mode": "python",
+        "observation_hash": "a5bd3fed10282446b5d3db7e6ecf5c4013e38c133f8b866aa24ae72d1f212c41",
+        "observed_until": "2026-11-01T19:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "2c8c7446-bf60-4de7-aa0a-70b24c15cfad",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 20,
+        "mode": "python",
+        "observation_hash": "4c1e3edce3f37c3212a51ac7fde2aa5d6068d358f6e122f42826b9298a98adc9",
+        "observed_until": "2026-11-01T20:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "368a2a86-a0c4-4db3-9e8c-b3c68211b490",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 21,
+        "mode": "python",
+        "observation_hash": "6f76d66e5e53af3207b064f8aafb0b9df44c9ee55d9b7b1a0966345c1c193266",
+        "observed_until": "2026-11-01T21:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "cb60f506-e4d9-4a5b-8bd4-c2fd10cf646a",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 22,
+        "mode": "python",
+        "observation_hash": "abfd74ddc3c15af65d6740832468d4c07c9a9e345f75d03d2311c8633609b9c7",
+        "observed_until": "2026-11-01T22:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "421012a9-c85a-4ba6-88f7-709d76e3016a",
+        "decision": {
+          "action": "BUY",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 23,
+        "mode": "python",
+        "observation_hash": "bbec35715c6b39bd216872fcc4d83fcc307da532d1d6f0d6f769c39870c9fe3a",
+        "observed_until": "2026-11-01T23:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "d9911120-f2ae-42eb-8a4f-2a66a47a625e",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 24,
+        "mode": "python",
+        "observation_hash": "5705fe1c079a7e519c40b08e5013488f1aaad2ed73dacc057af2253cd0ec7b6e",
+        "observed_until": "2026-11-02T00:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "b2dae1fe-a2fb-4863-a76b-80875b83f0d2",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 25,
+        "mode": "python",
+        "observation_hash": "192f0a3867441967ee0a36011bd41dc031551a6211fce0844809dc3a1e92d24f",
+        "observed_until": "2026-11-02T01:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "30879107-8e3f-40de-ad9e-482f0fd3bb00",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 26,
+        "mode": "python",
+        "observation_hash": "830b153527dde799ca9aefe3c050a1c5d150e0b5611cd35abe905adfdfcd1284",
+        "observed_until": "2026-11-02T02:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "86668bb0-005d-4fda-b162-393256775845",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 27,
+        "mode": "python",
+        "observation_hash": "d8f5130ddddabba15c43f81e0d94a54b459db485656c70eb01ebf9471e2d9929",
+        "observed_until": "2026-11-02T03:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "76fbfba9-ab91-42ed-b4f3-2c3693065eef",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 28,
+        "mode": "python",
+        "observation_hash": "ef9e40cf855b8f62a7d7b58f197489baf0da1d94bee02aad119a40d1b0f0dd75",
+        "observed_until": "2026-11-02T04:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "2ff01555-8412-4ec0-ba58-d75d800d010d",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 29,
+        "mode": "python",
+        "observation_hash": "c8f9114f94645ef74ad29a2568b9084994609b2c49bb0e3ecc9c712866160122",
+        "observed_until": "2026-11-02T05:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "9de82bec-185d-4158-8468-0816b9fcb337",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 30,
+        "mode": "python",
+        "observation_hash": "e6da715390eec40190f0f0ba3d11689a4f3cf9340eb2ca43a18ba19a29136779",
+        "observed_until": "2026-11-02T06:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "83708d35-6b41-49a0-aeb8-fd7fb87ed591",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 31,
+        "mode": "python",
+        "observation_hash": "194cfc966ec413422f9e22cbaf03e3eb6fc7dac41d4b7a22dcb60412ce20bf94",
+        "observed_until": "2026-11-02T07:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "e33f8a4d-355d-4add-b972-d1c2bcda820d",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 32,
+        "mode": "python",
+        "observation_hash": "94a60b414579e3f6759254a6372305f5092007a85ce9884f753050024c1a4eee",
+        "observed_until": "2026-11-02T08:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "bac5eca8-21d6-4ee2-96f4-0d72b9be6075",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 33,
+        "mode": "python",
+        "observation_hash": "85e5a60e2c025fa42a6f1c2f9473578e716569920e8736aa57d431ff86d0410a",
+        "observed_until": "2026-11-02T09:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "f492878e-1af9-48a9-99d1-08b176864866",
+        "decision": {
+          "action": "SELL",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 34,
+        "mode": "python",
+        "observation_hash": "74279af8990710bab68906084d12839852459ae7547be202d7c735cf63788eff",
+        "observed_until": "2026-11-02T10:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "77c36637-f1b1-43af-9c13-f9119eea1aee",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 35,
+        "mode": "python",
+        "observation_hash": "210f7a2595e2d52e36d9e71995208d3e8a373a26a87c9eeeff07792ffbac0405",
+        "observed_until": "2026-11-02T11:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "60e314ea-0b6f-4f29-9aec-fa563dd58069",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 36,
+        "mode": "python",
+        "observation_hash": "31aa966d237bf8f1d2975680fcb7d4515df17aae4a9e0b4ca43b5ad596b474f3",
+        "observed_until": "2026-11-02T12:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "cfc63289-7d33-4657-a4b2-31f99ca1b69c",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 37,
+        "mode": "python",
+        "observation_hash": "775d50a1781a7d344ec5d7e7e665ab38f0851b5288956ea82eada38f6feeb9ac",
+        "observed_until": "2026-11-02T13:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "865a8870-6cf3-461b-b40f-77032ef978e6",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 38,
+        "mode": "python",
+        "observation_hash": "d38c787169bb3a1c54304469769bbd92c42aa06d6130bba03076975553269ae3",
+        "observed_until": "2026-11-02T14:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "4047ce8c-fad5-4dbd-a8aa-06517a4d419a",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 39,
+        "mode": "python",
+        "observation_hash": "458ab7ee41f99444aa77c6063c6b45d366a6c5bce9f28aff208de9599b4e53b4",
+        "observed_until": "2026-11-02T15:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "3bf294ce-2d5d-488c-afe6-823089d9b3e4",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 40,
+        "mode": "python",
+        "observation_hash": "3084d9b13a2792164d7e01886c42513544e354dfe3feebe8cc4a81f8ffcc4597",
+        "observed_until": "2026-11-02T16:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "9f97eb30-e40a-47d7-bfc7-5de6b33be277",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 41,
+        "mode": "python",
+        "observation_hash": "501a2d6d97022053e0ea9886f7d441db8c5d18edf4fdeb9cb6404a7223fec653",
+        "observed_until": "2026-11-02T17:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "fa76e46e-3a7b-4de3-875c-cf43fbf52c3f",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 42,
+        "mode": "python",
+        "observation_hash": "4f3062497bd624aef9524ffa3b3dbf17d76433431b527c21517a02d25ffcad42",
+        "observed_until": "2026-11-02T18:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "7bd37343-4980-4a93-9424-ebbce298352e",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 43,
+        "mode": "python",
+        "observation_hash": "6e9cdcb723b51cb3ea13cccc1840b43d6a8a50da33f28af34f934fad29e78a6c",
+        "observed_until": "2026-11-02T19:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "3bf94c3e-c26c-4359-a2e9-ec4903aba6d7",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 44,
+        "mode": "python",
+        "observation_hash": "313fe27aa4b4098d9eeafe27bb1c0fd0ac5d4b6a6371f8e084fd0b7a1bc97d60",
+        "observed_until": "2026-11-02T20:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "e87e2452-6078-4b37-9e44-58b84ffaec48",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 45,
+        "mode": "python",
+        "observation_hash": "60788f747d3eb80022fa62a2c79a6235e69d833628303383780b9c06e876fcdf",
+        "observed_until": "2026-11-02T21:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "974680be-7a69-4390-a8d9-02b4ccef3099",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 46,
+        "mode": "python",
+        "observation_hash": "f53d5c630652c0e1e64157d7988ea14c4fdebef45bbc9d1786a673409557e5c6",
+        "observed_until": "2026-11-02T22:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "54385cf5-0562-430a-bb12-74b1dd3e5357",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 47,
+        "mode": "python",
+        "observation_hash": "4f4cfdd01dc374f5b4bea6d002aa4930014fc767cb20c08b35b8dd33cd3edc40",
+        "observed_until": "2026-11-02T23:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "9a53d8c6-7a0a-4f61-a833-699fe7160647",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 48,
+        "mode": "python",
+        "observation_hash": "803130a5d887453a6ca474d6c173c76f23cca5665d081508e6487c0c3b471c07",
+        "observed_until": "2026-11-03T00:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "7aaf2690-6b79-4de9-b3bc-5ddeeafe6555",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 49,
+        "mode": "python",
+        "observation_hash": "80cc13b52f97f63c10fe28bbe2dbe36c2e1415801c12a1a0e9e06f8066bc5e1e",
+        "observed_until": "2026-11-03T01:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "ef336b69-eac5-4a12-ae78-3d62f4615562",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 50,
+        "mode": "python",
+        "observation_hash": "c1454a43793b14e5d0a1b697359f9ea44714114244bf9f5606a128652540e32b",
+        "observed_until": "2026-11-03T02:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "5d8eaa27-d7ac-4dae-ae42-52cc1b9bc081",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 51,
+        "mode": "python",
+        "observation_hash": "59f18934de8e80b946c47ccaeb49d2b540813285881c3f0a3b34e34a46c17a21",
+        "observed_until": "2026-11-03T03:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "59c88762-7415-4e9b-8ad6-241d5762d9ef",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 52,
+        "mode": "python",
+        "observation_hash": "62ba1662c855f9f15c4544e316aeb424d7183c3ab700c03313b7d2361d913b08",
+        "observed_until": "2026-11-03T04:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "681cc759-4650-4e32-ba09-38c0e8269494",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 53,
+        "mode": "python",
+        "observation_hash": "6f5e7dc2b10d8aae357b903803af0e71813a844cb3eb63bc0122773c6f1fe9cb",
+        "observed_until": "2026-11-03T05:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "5223bbaf-3196-48d9-bf5d-3ec4c1ae7f13",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 54,
+        "mode": "python",
+        "observation_hash": "a6caae1ab6dfb6e9b71b1df7c8194b396d614752ee193aea388d613b425ff6f9",
+        "observed_until": "2026-11-03T06:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "3c573856-88ec-4574-82fa-78ac36678c25",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 55,
+        "mode": "python",
+        "observation_hash": "4995d639bd3091566236fe9bd426a98b8de362f8f150358f26a8026a3cf5c13f",
+        "observed_until": "2026-11-03T07:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "a6e92bf0-ba99-4a59-ac14-613ea3ce6a82",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 56,
+        "mode": "python",
+        "observation_hash": "ad467360d43e736391e2540b8c96d0c6c1f7845fbb77ecdec9ffb0c6975b7c44",
+        "observed_until": "2026-11-03T08:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "05369436-03d5-4d64-82e0-a640709cc95c",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 0
+        },
+        "index": 57,
+        "mode": "python",
+        "observation_hash": "48377f8d852cf7296ec9bdc4f45a8ed9d2a4be6591618c474a9be8e81900e14c",
+        "observed_until": "2026-11-03T09:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "fd371637-1826-4307-b02d-ec337725ec27",
+        "decision": {
+          "action": "BUY",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 58,
+        "mode": "python",
+        "observation_hash": "765704e47460f681e5d73f8404317677f36b0c1d92ab7d550f0d5bac75bba551",
+        "observed_until": "2026-11-03T10:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "edd219f8-11bc-451d-a7cc-d35409ac39df",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 59,
+        "mode": "python",
+        "observation_hash": "257235a6bfda73a96abac2ac80342e09704a588dad37bee0b8860356fdd8b2cc",
+        "observed_until": "2026-11-03T11:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "f272d683-89c3-467a-a72f-02859262b40d",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 60,
+        "mode": "python",
+        "observation_hash": "18935f3f2f8edc19ebb427a4368eb9281fe76720185d6ea0b8a8851b096d322f",
+        "observed_until": "2026-11-03T12:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "d84e7866-8927-45e6-9177-a3ac51c6dfa8",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 61,
+        "mode": "python",
+        "observation_hash": "7cd25bdf5ea2bf3f046479be19cc9ffc45c3b0adb2a01a3b98d9518fcadc656c",
+        "observed_until": "2026-11-03T13:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "a9d1ea57-686e-4987-be39-b123f932f5d0",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 62,
+        "mode": "python",
+        "observation_hash": "8cae1a708909ffc0750ebe33c4322c845324020dfc67d6b3ad7226aed8245c8c",
+        "observed_until": "2026-11-03T14:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "e85ff2cf-86ed-4289-8ea0-a58eaa506e0e",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 63,
+        "mode": "python",
+        "observation_hash": "5315e20a02c8543a51a50e81b04e5a9926bb245b6d65f6d048be1d18b7f65662",
+        "observed_until": "2026-11-03T15:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "2bb23864-78e6-4583-9947-72fdfc36e0cb",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 64,
+        "mode": "python",
+        "observation_hash": "c1cef322c656b1cf36de27c4072a49025adda3c0d7584dcc9fbbc0d354ea5d39",
+        "observed_until": "2026-11-03T16:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "8442005b-9b83-4674-9c2d-3ef0c4d4eb18",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 65,
+        "mode": "python",
+        "observation_hash": "8f221d20573b8f497973b42fbb47181aef6c4dcf0f4514c9bff58ec4fcfeb5f5",
+        "observed_until": "2026-11-03T17:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "d84c9603-f0cf-4e0c-846c-ebb17af69e6c",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 66,
+        "mode": "python",
+        "observation_hash": "189cb66dc52a6ef76408957be5cf59a75e5a1ba335991c0036644cb459da2cb8",
+        "observed_until": "2026-11-03T18:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "6f0529b4-9981-492e-a951-9b61b008013c",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 67,
+        "mode": "python",
+        "observation_hash": "974ff20e4c54194a28bfeb26555a5900b4bd6bb77714f0c05691b1c999f1536d",
+        "observed_until": "2026-11-03T19:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "fd0dea14-9036-4dbe-80dc-dc213dcc8fae",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 68,
+        "mode": "python",
+        "observation_hash": "e0905bcade02bb19c01151c6f5dec3c20cfd73dd15fa289c4a11ee817416ca8b",
+        "observed_until": "2026-11-03T20:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "de16a4c0-364c-4765-9b70-7b350235d9ed",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 69,
+        "mode": "python",
+        "observation_hash": "ca3536cd951e4a92c125176f66cdd463f91350019a745e4527c8746442f2410e",
+        "observed_until": "2026-11-03T21:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "79355590-fe60-4048-b9a9-2062f9fa7090",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 70,
+        "mode": "python",
+        "observation_hash": "12b2fb147e76de1b4dd90b03a41399d000cfaff5d213570439385e69a0091090",
+        "observed_until": "2026-11-03T22:00:00.000Z",
+        "validation": "valid"
+      },
+      {
+        "call_id": "8aa3036e-afe3-4985-803a-9be14c225e5a",
+        "decision": {
+          "action": "HOLD",
+          "reason": "Decision accepted; model rationale withheld.",
+          "target_bps": 10000
+        },
+        "index": 71,
+        "mode": "python",
+        "observation_hash": "0f1956a0e390af4daacd899bd7c31bf4dc0d32b471893bac2818431297934e1c",
+        "observed_until": "2026-11-03T23:00:00.000Z",
+        "validation": "valid"
+      }
+    ],
+    "evidence": "operator_recorded_not_independently_verified",
+    "inspection": {
+      "checks": [
+        {
+          "detail": "0 rejected / 61 decisions",
+          "id": "output",
+          "label": "주문 형식",
+          "status": "pass"
+        },
+        {
+          "detail": "61 / 61 decisions. Partial results must not be presented as a full test.",
+          "id": "completion",
+          "label": "시험 완료 범위",
+          "status": "pass"
+        },
+        {
+          "detail": "0 unresolved calls; reservation ledger retained.",
+          "id": "cost",
+          "label": "비용 확정",
+          "status": "pass"
+        },
+        {
+          "detail": "The runner supplies only closed candles through t; execution uses t+1 open. This does not prove absence of hardcoded or pretrained future knowledge.",
+          "id": "causality",
+          "label": "플랫폼 미래 데이터 차단",
+          "status": "pass"
+        },
+        {
+          "detail": "User-supplied historical data: source and redistribution rights require independent verification.",
+          "id": "dataset",
+          "label": "데이터 출처",
+          "status": "warn"
+        },
+        {
+          "detail": "1.54% on this tested interval. This threshold is a review heuristic.",
+          "id": "drawdown",
+          "label": "최대 낙폭",
+          "status": "pass"
+        },
+        {
+          "detail": "Single asset, long/flat, candle execution. No order-book fill simulation, live trading, independent audit or future-return guarantee.",
+          "id": "coverage",
+          "label": "검증 범위",
+          "status": "warn"
+        },
+        {
+          "detail": "Python container: network disabled, read-only filesystem, non-root, capability drop, CPU/memory/PID/time limits. Container isolation is not a complete security audit.",
+          "id": "isolation",
+          "label": "코드 실행 환경",
+          "status": "pass"
+        }
+      ],
+      "meaning": "Measured checks with explicit limits; not a safety certification or profitability rating.",
+      "publishable": true,
+      "schema": "agentproof-inspection-v1",
+      "source_hash": "f6d80978ac1b54d5dcc24194089d01d37e1e3dc3580c73ef8c15bdbbe0dc7f5a",
+      "verdict": "review_required"
+    },
+    "ledger": {
+      "remaining_micros": 0,
+      "reserved_micros": 0,
+      "settled_micros": 0,
+      "unresolved_calls": 0
+    },
+    "limitations": [
+      "Historical data: source rights and completeness are not independently audited; past returns do not predict future returns.",
+      "Candle fills omit order-book liquidity and market impact.",
+      "Hash matching checks content identity, not performance truth.",
+      "Fixed-log replay is deterministic; a fresh bot execution may differ.",
+      "Source code may contain prior knowledge that the observation boundary cannot detect.",
+      "License network and finality are established by the separate purchase receipt, not this report."
+    ],
+    "manifest": {
+      "budget_micros": 0,
+      "canonical_format": "agentproof-json-v1: sorted keys, integer numbers, UTF-8, no whitespace",
+      "dataset": {
+        "content_hash": "7365c72b42953d11bfd06ef9bb5a21d8bf19c23ca876785272a0b42f8779d199",
+        "end_at": "2026-11-03T23:00:00.000Z",
+        "id": "4386b75f-c567-4257-89a9-a2030ded2cbf",
+        "kind": "user_upload",
+        "license": "Fetched from Coinbase Exchange public API for local research. Not redistributed in the source bundle. Subject to source terms; no independent market-data audit.",
+        "rows": 72,
+        "source": "Coinbase · BTC/USD · 1h · 2026-11-01–03",
+        "start_at": "2026-11-01T00:00:00.000Z",
+        "synthetic": false
+      },
+      "engine": "0cf70d80f92b0345340efcf669dbeb832d636be5a53e4dffd0e3552bc7f39974",
+      "fee_bps": 10,
+      "initial_equity_micros": "1000000000",
+      "length": 72,
+      "manifest_hash": "75fc01092d711e9dd9c675cbb88239375f234b05926ddfa40ae6df3770499c1c",
+      "mode": "python",
+      "model_revision": null,
+      "price_kind": "no_provider_charge",
+      "prices": {
+        "currency": "USD micros",
+        "id": "local-bot-no-provider-charge",
+        "input_per_million": 0,
+        "max_input_tokens": 0,
+        "max_output_tokens": 0,
+        "output_per_million": 0,
+        "synthetic": false
+      },
+      "provider_model": "python-3.12",
+      "requested_steps": 61,
+      "scenario": "normal",
+      "seed": null,
+      "slippage_bps": 5,
+      "start_index": 11,
+      "strict_cap": true,
+      "terms": {
+        "network": "near-testnet",
+        "scope": "Non-exclusive personal research license to this exact source/config version. No redistribution, resale or live-money management rights. Seller must own the uploaded code. No promised returns.",
+        "version": "research-license-1"
+      },
+      "version": {
+        "created": "2026-11-13T13:01:30.834Z",
+        "description": "추세가 바뀌면 현금으로 돌아와요. 같은 코드로 다시 시험할 수 있어요.",
+        "hash": "be13281d3559dafc5fc2d25dbf513272602d0a6282f6461e4a9199010b3c9271",
+        "id": "6ce0bc9a-499a-4eb4-be30-94acdfae1987",
+        "kind": "python",
+        "name": "Signal Check",
+        "owner": "wallet:testnet:creator-159f282f.agentproof-060206eead.testnet",
+        "runtime": "python-3.12-isolated-jsonl-v1",
+        "source_hash": "f6d80978ac1b54d5dcc24194089d01d37e1e3dc3580c73ef8c15bdbbe0dc7f5a",
+        "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+        "version": "1.0"
+      }
+    },
+    "manifest_hash": "75fc01092d711e9dd9c675cbb88239375f234b05926ddfa40ae6df3770499c1c",
+    "mode": "python",
+    "model_usage": {
+      "actual_provider_cost_micros": 0,
+      "calls": 61,
+      "input_tokens": 0,
+      "invalid_decisions": 0,
+      "output_tokens": 0,
+      "usage_complete": true
+    },
+    "requested_steps": 61,
+    "research_adjusted_reference_pnl_micros": "-9800987",
+    "results": {
+      "agent": {
+        "curve": [
+          {
+            "at": "2026-11-01T11:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T12:00:00.000Z",
+            "equity_micros": "997454495"
+          },
+          {
+            "at": "2026-11-01T13:00:00.000Z",
+            "equity_micros": "999310246"
+          },
+          {
+            "at": "2026-11-01T14:00:00.000Z",
+            "equity_micros": "999715266"
+          },
+          {
+            "at": "2026-11-01T15:00:00.000Z",
+            "equity_micros": "998820169"
+          },
+          {
+            "at": "2026-11-01T16:00:00.000Z",
+            "equity_micros": "1000938535"
+          },
+          {
+            "at": "2026-11-01T17:00:00.000Z",
+            "equity_micros": "998808494"
+          },
+          {
+            "at": "2026-11-01T18:00:00.000Z",
+            "equity_micros": "997648474"
+          },
+          {
+            "at": "2026-11-01T19:00:00.000Z",
+            "equity_micros": "996645098"
+          },
+          {
+            "at": "2026-11-01T20:00:00.000Z",
+            "equity_micros": "995150500"
+          },
+          {
+            "at": "2026-11-01T21:00:00.000Z",
+            "equity_micros": "995150500"
+          },
+          {
+            "at": "2026-11-01T22:00:00.000Z",
+            "equity_micros": "995150500"
+          },
+          {
+            "at": "2026-11-01T23:00:00.000Z",
+            "equity_micros": "995150500"
+          },
+          {
+            "at": "2026-11-02T00:00:00.000Z",
+            "equity_micros": "990985877"
+          },
+          {
+            "at": "2026-11-02T01:00:00.000Z",
+            "equity_micros": "994382729"
+          },
+          {
+            "at": "2026-11-02T02:00:00.000Z",
+            "equity_micros": "994951623"
+          },
+          {
+            "at": "2026-11-02T03:00:00.000Z",
+            "equity_micros": "997007846"
+          },
+          {
+            "at": "2026-11-02T04:00:00.000Z",
+            "equity_micros": "994362026"
+          },
+          {
+            "at": "2026-11-02T05:00:00.000Z",
+            "equity_micros": "993868959"
+          },
+          {
+            "at": "2026-11-02T06:00:00.000Z",
+            "equity_micros": "991185289"
+          },
+          {
+            "at": "2026-11-02T07:00:00.000Z",
+            "equity_micros": "990555301"
+          },
+          {
+            "at": "2026-11-02T08:00:00.000Z",
+            "equity_micros": "992287386"
+          },
+          {
+            "at": "2026-11-02T09:00:00.000Z",
+            "equity_micros": "990124471"
+          },
+          {
+            "at": "2026-11-02T10:00:00.000Z",
+            "equity_micros": "988900060"
+          },
+          {
+            "at": "2026-11-02T11:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T12:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T13:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T14:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T15:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T16:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T17:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T18:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T19:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T20:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T21:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T22:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-02T23:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T00:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T01:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T02:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T03:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T04:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T05:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T06:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T07:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T08:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T09:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T10:00:00.000Z",
+            "equity_micros": "987417204"
+          },
+          {
+            "at": "2026-11-03T11:00:00.000Z",
+            "equity_micros": "985496587"
+          },
+          {
+            "at": "2026-11-03T12:00:00.000Z",
+            "equity_micros": "989716312"
+          },
+          {
+            "at": "2026-11-03T13:00:00.000Z",
+            "equity_micros": "989117610"
+          },
+          {
+            "at": "2026-11-03T14:00:00.000Z",
+            "equity_micros": "989054359"
+          },
+          {
+            "at": "2026-11-03T15:00:00.000Z",
+            "equity_micros": "993279974"
+          },
+          {
+            "at": "2026-11-03T16:00:00.000Z",
+            "equity_micros": "993866001"
+          },
+          {
+            "at": "2026-11-03T17:00:00.000Z",
+            "equity_micros": "992936322"
+          },
+          {
+            "at": "2026-11-03T18:00:00.000Z",
+            "equity_micros": "992264254"
+          },
+          {
+            "at": "2026-11-03T19:00:00.000Z",
+            "equity_micros": "992530956"
+          },
+          {
+            "at": "2026-11-03T20:00:00.000Z",
+            "equity_micros": "995928682"
+          },
+          {
+            "at": "2026-11-03T21:00:00.000Z",
+            "equity_micros": "996168880"
+          },
+          {
+            "at": "2026-11-03T22:00:00.000Z",
+            "equity_micros": "995865687"
+          },
+          {
+            "at": "2026-11-03T23:00:00.000Z",
+            "equity_micros": "990199013"
+          },
+          {
+            "at": "2026-11-03T23:00:00.000Z",
+            "equity_micros": "990199013"
+          }
+        ],
+        "fills": [
+          {
+            "action": "BUY",
+            "at": "2026-11-01T12:00:00.000Z",
+            "decision_index": 11,
+            "fee_micros": "999001",
+            "notional_micros": "999000677",
+            "price_micros": "77868985035",
+            "quantity_atoms": "1282925",
+            "slippage_micros": "499251",
+            "status": "filled"
+          },
+          {
+            "action": "SELL",
+            "at": "2026-11-01T20:00:00.000Z",
+            "decision_index": 19,
+            "fee_micros": "996147",
+            "notional_micros": "996146325",
+            "price_micros": "77646497330",
+            "quantity_atoms": "1282925",
+            "slippage_micros": "498322",
+            "status": "filled"
+          },
+          {
+            "action": "BUY",
+            "at": "2026-11-02T00:00:00.000Z",
+            "decision_index": 23,
+            "fee_micros": "994156",
+            "notional_micros": "994155849",
+            "price_micros": "78271606245",
+            "quantity_atoms": "1270136",
+            "slippage_micros": "496830",
+            "status": "filled"
+          },
+          {
+            "action": "SELL",
+            "at": "2026-11-02T11:00:00.000Z",
+            "decision_index": 34,
+            "fee_micros": "988406",
+            "notional_micros": "988405115",
+            "price_micros": "77818841115",
+            "quantity_atoms": "1270136",
+            "slippage_micros": "494449",
+            "status": "filled"
+          },
+          {
+            "action": "BUY",
+            "at": "2026-11-03T11:00:00.000Z",
+            "decision_index": 58,
+            "fee_micros": "986431",
+            "notional_micros": "986430626",
+            "price_micros": "77042441970",
+            "quantity_atoms": "1280373",
+            "slippage_micros": "492969",
+            "status": "filled"
+          },
+          {
+            "action": "HOLD",
+            "decision_index": 71,
+            "status": "unfilled_no_next_candle"
+          }
+        ],
+        "metrics": {
+          "ending_equity_micros": "990199013",
+          "exposure_bps": 5409,
+          "fee_micros": "4964141",
+          "max_drawdown_bps": 154,
+          "pnl_micros": "-9800987",
+          "return_bps": -98,
+          "slippage_micros": "2481821",
+          "trades": 5,
+          "turnover_bps": 49641
+        },
+        "position": {
+          "cash": "147",
+          "quantity": "1280373"
+        }
+      },
+      "before_trading_costs": {
+        "ending_equity_micros": "997652801",
+        "exposure_bps": 5409,
+        "fee_micros": "0",
+        "max_drawdown_bps": 95,
+        "pnl_micros": "-2347199",
+        "return_bps": -23,
+        "slippage_micros": "0",
+        "trades": 5,
+        "turnover_bps": 49829
+      },
+      "buy_hold": {
+        "curve": [
+          {
+            "at": "2026-11-01T11:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T12:00:00.000Z",
+            "equity_micros": "997454495"
+          },
+          {
+            "at": "2026-11-01T13:00:00.000Z",
+            "equity_micros": "999310246"
+          },
+          {
+            "at": "2026-11-01T14:00:00.000Z",
+            "equity_micros": "999715266"
+          },
+          {
+            "at": "2026-11-01T15:00:00.000Z",
+            "equity_micros": "998820169"
+          },
+          {
+            "at": "2026-11-01T16:00:00.000Z",
+            "equity_micros": "1000938535"
+          },
+          {
+            "at": "2026-11-01T17:00:00.000Z",
+            "equity_micros": "998808494"
+          },
+          {
+            "at": "2026-11-01T18:00:00.000Z",
+            "equity_micros": "997648474"
+          },
+          {
+            "at": "2026-11-01T19:00:00.000Z",
+            "equity_micros": "996645098"
+          },
+          {
+            "at": "2026-11-01T20:00:00.000Z",
+            "equity_micros": "997977672"
+          },
+          {
+            "at": "2026-11-01T21:00:00.000Z",
+            "equity_micros": "997750210"
+          },
+          {
+            "at": "2026-11-01T22:00:00.000Z",
+            "equity_micros": "996885518"
+          },
+          {
+            "at": "2026-11-01T23:00:00.000Z",
+            "equity_micros": "1003639605"
+          },
+          {
+            "at": "2026-11-02T00:00:00.000Z",
+            "equity_micros": "1000963937"
+          },
+          {
+            "at": "2026-11-02T01:00:00.000Z",
+            "equity_micros": "1004394991"
+          },
+          {
+            "at": "2026-11-02T02:00:00.000Z",
+            "equity_micros": "1004969613"
+          },
+          {
+            "at": "2026-11-02T03:00:00.000Z",
+            "equity_micros": "1007046541"
+          },
+          {
+            "at": "2026-11-02T04:00:00.000Z",
+            "equity_micros": "1004374080"
+          },
+          {
+            "at": "2026-11-02T05:00:00.000Z",
+            "equity_micros": "1003876048"
+          },
+          {
+            "at": "2026-11-02T06:00:00.000Z",
+            "equity_micros": "1001165356"
+          },
+          {
+            "at": "2026-11-02T07:00:00.000Z",
+            "equity_micros": "1000529025"
+          },
+          {
+            "at": "2026-11-02T08:00:00.000Z",
+            "equity_micros": "1002278550"
+          },
+          {
+            "at": "2026-11-02T09:00:00.000Z",
+            "equity_micros": "1000093857"
+          },
+          {
+            "at": "2026-11-02T10:00:00.000Z",
+            "equity_micros": "998857117"
+          },
+          {
+            "at": "2026-11-02T11:00:00.000Z",
+            "equity_micros": "997906470"
+          },
+          {
+            "at": "2026-11-02T12:00:00.000Z",
+            "equity_micros": "996502565"
+          },
+          {
+            "at": "2026-11-02T13:00:00.000Z",
+            "equity_micros": "998083513"
+          },
+          {
+            "at": "2026-11-02T14:00:00.000Z",
+            "equity_micros": "997268343"
+          },
+          {
+            "at": "2026-11-02T15:00:00.000Z",
+            "equity_micros": "992983887"
+          },
+          {
+            "at": "2026-11-02T16:00:00.000Z",
+            "equity_micros": "992604141"
+          },
+          {
+            "at": "2026-11-02T17:00:00.000Z",
+            "equity_micros": "988216409"
+          },
+          {
+            "at": "2026-11-02T18:00:00.000Z",
+            "equity_micros": "986349240"
+          },
+          {
+            "at": "2026-11-02T19:00:00.000Z",
+            "equity_micros": "987308355"
+          },
+          {
+            "at": "2026-11-02T20:00:00.000Z",
+            "equity_micros": "983251489"
+          },
+          {
+            "at": "2026-11-02T21:00:00.000Z",
+            "equity_micros": "984039077"
+          },
+          {
+            "at": "2026-11-02T22:00:00.000Z",
+            "equity_micros": "985139185"
+          },
+          {
+            "at": "2026-11-02T23:00:00.000Z",
+            "equity_micros": "983671904"
+          },
+          {
+            "at": "2026-11-03T00:00:00.000Z",
+            "equity_micros": "987817163"
+          },
+          {
+            "at": "2026-11-03T01:00:00.000Z",
+            "equity_micros": "987646277"
+          },
+          {
+            "at": "2026-11-03T02:00:00.000Z",
+            "equity_micros": "982496103"
+          },
+          {
+            "at": "2026-11-03T03:00:00.000Z",
+            "equity_micros": "985280563"
+          },
+          {
+            "at": "2026-11-03T04:00:00.000Z",
+            "equity_micros": "985369727"
+          },
+          {
+            "at": "2026-11-03T05:00:00.000Z",
+            "equity_micros": "981642316"
+          },
+          {
+            "at": "2026-11-03T06:00:00.000Z",
+            "equity_micros": "980863838"
+          },
+          {
+            "at": "2026-11-03T07:00:00.000Z",
+            "equity_micros": "983712829"
+          },
+          {
+            "at": "2026-11-03T08:00:00.000Z",
+            "equity_micros": "981408439"
+          },
+          {
+            "at": "2026-11-03T09:00:00.000Z",
+            "equity_micros": "987167618"
+          },
+          {
+            "at": "2026-11-03T10:00:00.000Z",
+            "equity_micros": "987903119"
+          },
+          {
+            "at": "2026-11-03T11:00:00.000Z",
+            "equity_micros": "987461023"
+          },
+          {
+            "at": "2026-11-03T12:00:00.000Z",
+            "equity_micros": "991689159"
+          },
+          {
+            "at": "2026-11-03T13:00:00.000Z",
+            "equity_micros": "991089263"
+          },
+          {
+            "at": "2026-11-03T14:00:00.000Z",
+            "equity_micros": "991025886"
+          },
+          {
+            "at": "2026-11-03T15:00:00.000Z",
+            "equity_micros": "995259924"
+          },
+          {
+            "at": "2026-11-03T16:00:00.000Z",
+            "equity_micros": "995847119"
+          },
+          {
+            "at": "2026-11-03T17:00:00.000Z",
+            "equity_micros": "994915587"
+          },
+          {
+            "at": "2026-11-03T18:00:00.000Z",
+            "equity_micros": "994242179"
+          },
+          {
+            "at": "2026-11-03T19:00:00.000Z",
+            "equity_micros": "994509413"
+          },
+          {
+            "at": "2026-11-03T20:00:00.000Z",
+            "equity_micros": "997913911"
+          },
+          {
+            "at": "2026-11-03T21:00:00.000Z",
+            "equity_micros": "998154588"
+          },
+          {
+            "at": "2026-11-03T22:00:00.000Z",
+            "equity_micros": "997850791"
+          },
+          {
+            "at": "2026-11-03T23:00:00.000Z",
+            "equity_micros": "992172821"
+          },
+          {
+            "at": "2026-11-03T23:00:00.000Z",
+            "equity_micros": "992172821"
+          }
+        ],
+        "fills": [
+          {
+            "action": "BUY",
+            "at": "2026-11-01T12:00:00.000Z",
+            "decision_index": 11,
+            "fee_micros": "999001",
+            "notional_micros": "999000677",
+            "price_micros": "77868985035",
+            "quantity_atoms": "1282925",
+            "slippage_micros": "499251",
+            "status": "filled"
+          },
+          {
+            "action": "HOLD",
+            "decision_index": 71,
+            "status": "unfilled_no_next_candle"
+          }
+        ],
+        "metrics": {
+          "ending_equity_micros": "992172821",
+          "exposure_bps": 10000,
+          "fee_micros": "999001",
+          "max_drawdown_bps": 259,
+          "pnl_micros": "-7827179",
+          "return_bps": -78,
+          "slippage_micros": "499251",
+          "trades": 1,
+          "turnover_bps": 9990
+        },
+        "position": {
+          "cash": "322",
+          "quantity": "1282925"
+        }
+      },
+      "cash": {
+        "curve": [
+          {
+            "at": "2026-11-01T11:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T12:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T13:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T14:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T15:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T16:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T17:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T18:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T19:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T20:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T21:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T22:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-01T23:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T00:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T01:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T02:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T03:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T04:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T05:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T06:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T07:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T08:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T09:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T10:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T11:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T12:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T13:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T14:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T15:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T16:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T17:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T18:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T19:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T20:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T21:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T22:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-02T23:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T00:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T01:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T02:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T03:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T04:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T05:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T06:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T07:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T08:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T09:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T10:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T11:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T12:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T13:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T14:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T15:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T16:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T17:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T18:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T19:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T20:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T21:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T22:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T23:00:00.000Z",
+            "equity_micros": "1000000000"
+          },
+          {
+            "at": "2026-11-03T23:00:00.000Z",
+            "equity_micros": "1000000000"
+          }
+        ],
+        "fills": [
+          {
+            "action": "HOLD",
+            "decision_index": 71,
+            "status": "unfilled_no_next_candle"
+          }
+        ],
+        "metrics": {
+          "ending_equity_micros": "1000000000",
+          "exposure_bps": 0,
+          "fee_micros": "0",
+          "max_drawdown_bps": 0,
+          "pnl_micros": "0",
+          "return_bps": 0,
+          "slippage_micros": "0",
+          "trades": 0,
+          "turnover_bps": 0
+        },
+        "position": {
+          "cash": "1000000000",
+          "quantity": "0"
+        }
+      },
+      "common_window": {
+        "comparison_policy": "identical decision indices, next-open fills and valuation horizon",
+        "completed_decisions": 61,
+        "end": "2026-11-03T23:00:00.000Z",
+        "start": "2026-11-01T11:00:00.000Z"
+      }
+    },
+    "run_id": "f1d6bb1f-862a-4f43-b655-4bc3559b0802",
+    "schema": "agentproof-report-v1",
+    "status": "completed",
+    "stop_reason": null
+  },
+  "assessment": {
+    "schema": "agentproof-assessment-v1",
+    "report_hash": "8e55f66da776d827d6b88eab8d756d5f934b3844092eb28162f9e1718f1c2847",
+    "version_hash": "be13281d3559dafc5fc2d25dbf513272602d0a6282f6461e4a9199010b3c9271",
+    "analyzer_hash": "315a06a4fa2c955909fea40273d1606f27c2c2d4e7262c8cfb961d2b5c1cf5ba",
+    "evidence": {
+      "data_kind": "user_upload",
+      "source": "Coinbase · BTC/USD · 1h · 2026-11-01–03",
+      "dataset_hash": "7365c72b42953d11bfd06ef9bb5a21d8bf19c23ca876785272a0b42f8779d199",
+      "candles": 72,
+      "start": "2026-11-01T11:00:00.000Z",
+      "end": "2026-11-03T23:00:00.000Z",
+      "duration_seconds": 216000,
+      "fills": 5,
+      "completed": 61,
+      "requested": 61,
+      "irregular_intervals": 0
+    },
+    "net_return_bps": -98,
+    "excess_vs_hold_bps": -20,
+    "trading_cost_drag_bps": 75,
+    "flags": [
+      {
+        "id": "short_sample",
+        "label": "짧은 관찰 구간",
+        "detail": "72개 캔들만 관찰했어요. 더 긴 구간의 결과가 필요해요."
+      },
+      {
+        "id": "few_fills",
+        "label": "체결 표본 부족",
+        "detail": "체결 5회로 여러 시장 상황의 성과를 판단하기 어려워요."
+      }
+    ],
+    "periods": [
+      {
+        "label": "초반",
+        "start": "2026-11-01T11:00:00.000Z",
+        "end": "2026-11-02T07:00:00.000Z",
+        "return_bps": -94,
+        "max_drawdown_bps": 103
+      },
+      {
+        "label": "중반",
+        "start": "2026-11-02T07:00:00.000Z",
+        "end": "2026-11-03T03:00:00.000Z",
+        "return_bps": -31,
+        "max_drawdown_bps": 49
+      },
+      {
+        "label": "후반",
+        "start": "2026-11-03T03:00:00.000Z",
+        "end": "2026-11-03T23:00:00.000Z",
+        "return_bps": 28,
+        "max_drawdown_bps": 59
+      }
+    ],
+    "cost_scenarios": [
+      {
+        "multiplier": 1,
+        "available": true,
+        "fee_bps": 10,
+        "slippage_bps": 5,
+        "return_bps": -98,
+        "max_drawdown_bps": 154,
+        "fee_micros": "4964141",
+        "slippage_micros": "2481821"
+      },
+      {
+        "multiplier": 2,
+        "available": true,
+        "fee_bps": 20,
+        "slippage_bps": 10,
+        "return_bps": -171,
+        "max_drawdown_bps": 218,
+        "fee_micros": "9890757",
+        "slippage_micros": "4944393"
+      },
+      {
+        "multiplier": 3,
+        "available": true,
+        "fee_bps": 30,
+        "slippage_bps": 15,
+        "return_bps": -245,
+        "max_drawdown_bps": 291,
+        "fee_micros": "14780146",
+        "slippage_micros": "7387872"
+      }
+    ],
+    "method": "Saved-decision cost replay; the bot is not rerun under changed costs. Period returns retain the original position path. These are not holdout tests or forward performance.",
+    "sample_policy": "168 candles and 10 fills are disclosure heuristics, not statistical confidence thresholds or safety ratings.",
+    "hash": "c1a8d7be59d586ec922e4bd14262d6122f66f69cfe8ef77c0fd892611718ef12"
+  },
+  "chain": {
+    "confirmed_at": "2026-11-13T13:01:56.447Z",
+    "contract": "agentproof-060206eead.testnet",
+    "custody": "personal_wallet",
+    "finality": "FINAL",
+    "job_id": "f1d6bb1f-862a-4f43-b655-4bc3559b0802",
+    "listing_id": "bb80edef-1132-4685-a021-2678ab4b8d95",
+    "network": "testnet",
+    "seller": "creator-159f282f.agentproof-060206eead.testnet",
+    "transactions": [
+      {
+        "hash": "CSpVqFaykfzBdnw9YJahNB4TxvwyVTXxp43RzWm4igMF",
+        "methods": [
+          "register_version",
+          "fund_job"
+        ],
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "creator-159f282f.agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/CSpVqFaykfzBdnw9YJahNB4TxvwyVTXxp43RzWm4igMF"
+      },
+      {
+        "hash": "83PVHi6TtyEfAySScGBwkzx2ShGDPmh4XasF2NeApGjJ",
+        "method": "commit_result",
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/83PVHi6TtyEfAySScGBwkzx2ShGDPmh4XasF2NeApGjJ"
+      },
+      {
+        "hash": "gbcig8tPe3AVYFF66NkPFzweCBvfvkp8SEBXwFemRxA",
+        "method": "settle_job",
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/gbcig8tPe3AVYFF66NkPFzweCBvfvkp8SEBXwFemRxA"
+      },
+      {
+        "hash": "GPrHXqx9rKaSUtLP9BSYUxDfJcSbFDA7S1zQTLVoiDaD",
+        "methods": [
+          "create_listing"
+        ],
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "creator-159f282f.agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/GPrHXqx9rKaSUtLP9BSYUxDfJcSbFDA7S1zQTLVoiDaD"
+      }
+    ]
+  }
+}

@@ -1,0 +1,71 @@
+{
+  "schema": "botpassport-product-ui-evidence-v3",
+  "checked_date": "2026-11-14",
+  "application": "http://127.0.0.1:4317/",
+  "scope": "Unified introduction, market, creator studio, inspection reports, product, checkout and acquired-bot library",
+  "design": {
+    "shared_font": "Locally served, unmodified Pretendard Variable 1.3.9",
+    "shared_image": "public/assets/intro-passport-v2.png",
+    "new_raster_assets_generated": false,
+    "primary_color": "#2468f2",
+    "intro_handoff": "Native View Transition API with a shared glass object when visible; fade fallback; reduced-motion branch",
+    "first_visit_storage_key": "botpassport-first-visit-v1"
+  },
+  "browser_checks": [
+    "The introduction opened automatically on the fresh test browser origin.",
+    "The market CTA closed the intro, cleared transition styles, selected the market and focused its H1.",
+    "Footer replay followed by the creator CTA opened the studio and focused its H1 on a 320-pixel viewport.",
+    "Reload after the intro handoff left the introduction closed.",
+    "Name and version inputs updated the studio preview through textContent.",
+    "Switching Python to rules and back retained the drafted Python source.",
+    "A preview-only source file was loaded during the earlier desktop check; no creator version was submitted in this UI pass.",
+    "Searching Signal returned exactly one card; the rules filter returned Proof Trend.",
+    "BTC/USD and ETH/USD market labels remained distinct; synthetic product data displayed as a synthetic example.",
+    "The Signal Check report displayed -0.98% return, 1.54% drawdown, five fills and all eight inspection checks from its existing public evidence.",
+    "Proof Trend checkout displayed 0.01 test NEAR license price plus 0.02 storage allowance, total 0.03, with gas explicitly separate.",
+    "The mobile checkout dialog fitted within the viewport and retained license-scope and unused-deposit disclosures.",
+    "Mobile product sections appeared in this order: measured performance, additional warnings, purchase, version proof, common benchmark.",
+    "A local MIT Atlas example was acquired through the explicitly labeled virtual purchase flow, with no chain transaction.",
+    "The acquired example appeared in the library with report, download and retest controls.",
+    "The library retest completed all 73 decisions and opened a report with seven inspection checks and three baseline rows.",
+    "The acquired example's product screen showed My license instead of another buy action.",
+    "Final 320-pixel market had equal document client and scroll widths, both 305 pixels with a 15-pixel scrollbar.",
+    "390-pixel market, studio, report, product and library layouts were inspected without document horizontal overflow after corrections.",
+    "The temporary viewport override was reset to the normal 1920 x 945 desktop viewport.",
+    "The final page reported no console errors; extension-only warnings were not application errors.",
+    "The market was left open as the deliverable while the local server remained running."
+  ],
+  "automated_checks": {
+    "command": "node --test tests/presentation.test.mjs tests/http.test.mjs",
+    "passed": 11,
+    "failed": 0,
+    "skipped": 0,
+    "includes": [
+      "Exact 24-decimal purchase totals and storage allowance",
+      "Owned-product action and actual report risk labels",
+      "Source metadata escaping and correct market/synthetic labels",
+      "Run, report, hash verification, local entitlement and exact artifact delivery",
+      "Cross-origin, owner isolation, forged payment and testnet-payment bypass rejection"
+    ],
+    "syntax_checked": ["public/app.js", "public/upgrade.js", "public/onboarding.js"],
+    "environment_note": "The sandbox-only HTTP attempt was blocked by loopback EACCES. All 11 checks passed after local-network access was permitted."
+  },
+  "screenshots": [
+    "screenshots/market-v3.jpg",
+    "screenshots/studio-v3.jpg",
+    "screenshots/product-v3.jpg",
+    "screenshots/report-v3.jpg",
+    "screenshots/checkout-v3.jpg",
+    "screenshots/library-v3.jpg",
+    "screenshots/market-v3-mobile.jpg",
+    "screenshots/market-v3-small-mobile.jpg",
+    "screenshots/checkout-v3-mobile.jpg",
+    "screenshots/library-v3-mobile.jpg"
+  ],
+  "limits": [
+    "This UI pass did not repeat personal-wallet signatures, testnet payments, contract deployment or paid LLM calls. Earlier chain verification remains documented separately.",
+    "The current browser automation did not return a download-completion event for the local ZIP. Browser policy also blocked inspection of chrome://downloads. No new saved-file download is claimed; ZIP entitlement/delivery was checked by the HTTP suite, and earlier personal-wallet download evidence remains separate.",
+    "Native reduced-motion behavior and the non-View-Transition fallback were reviewed in code without changing OS preferences or forcing browser API removal.",
+    "First-visit caching is per browser storage, not cross-device person identification."
+  ]
+}

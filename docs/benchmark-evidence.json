@@ -1,0 +1,868 @@
+{
+  "checked_at": "2026-11-13T11:20:22.999Z",
+  "created": "2026-11-13T11:19:39.429Z",
+  "id": "6034eeee-e5ff-4385-9cff-6a366e48c160",
+  "network": "testnet",
+  "protocol": {
+    "cases": [
+      {
+        "end": "2026-10-26T00:00:00Z",
+        "granularity": 3600,
+        "id": "btc-usd-oct",
+        "market": "BTC-USD",
+        "rows": 168,
+        "start": "2026-10-19T00:00:00Z"
+      },
+      {
+        "end": "2026-11-09T00:00:00Z",
+        "granularity": 3600,
+        "id": "btc-usd-nov",
+        "market": "BTC-USD",
+        "rows": 168,
+        "start": "2026-11-02T00:00:00Z"
+      },
+      {
+        "end": "2026-10-26T00:00:00Z",
+        "granularity": 3600,
+        "id": "eth-usd-oct",
+        "market": "ETH-USD",
+        "rows": 168,
+        "start": "2026-10-19T00:00:00Z"
+      },
+      {
+        "end": "2026-11-09T00:00:00Z",
+        "granularity": 3600,
+        "id": "eth-usd-nov",
+        "market": "ETH-USD",
+        "rows": 168,
+        "start": "2026-11-02T00:00:00Z"
+      }
+    ],
+    "cost_stress": "2x fees and slippage, recorded-decision replay only",
+    "fee_bps": 10,
+    "id": "agentproof-public-4-v1",
+    "initial_equity_micros": "1000000000",
+    "semantics": "Four independent historical spot windows; each starts in cash. No annualization or pooled return. Public historical data, not an unseen holdout.",
+    "slippage_bps": 5,
+    "start_index": 11
+  },
+  "protocol_hash": "b09608148a036f59f3e25c3415480585aef139129de5791f5a860a79fbc4cc89",
+  "version": {
+    "hash": "61792045d922e998dc7779ffae905289ac9df98f3361508c168c10b9a0742185",
+    "id": "e60ee617-9d86-4805-9c30-83da984f2ecd",
+    "kind": "python",
+    "name": "Momentum Python",
+    "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+    "version": "1.0"
+  },
+  "status": "completed",
+  "finished": true,
+  "manifest": {
+    "attempt_id": "6034eeee-e5ff-4385-9cff-6a366e48c160",
+    "cases": [
+      {
+        "dataset_hash": "9471cf31f0d062b21ea8abeee808cd145fa68251b8344c4ef1344272b6a99b59",
+        "end": "2026-10-26T00:00:00Z",
+        "id": "btc-usd-oct",
+        "market": "BTC-USD",
+        "requested": 157,
+        "rows": 168,
+        "run_id": "8ea5e697-79bd-4feb-8be8-a6ca17a1f406",
+        "run_manifest_hash": "7c72055a88719980e5aeff981b46e3813f717726c9e6df708f9e563eda2fbe36",
+        "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=3600&start=2026-10-19T00%3A00%3A00Z&end=2026-10-26T00%3A00%3A00Z",
+        "start": "2026-10-19T00:00:00Z"
+      },
+      {
+        "dataset_hash": "58a9f9256c0c5bcb8af1df295bfc9601bf6d345def39c3ec8101aa9cafafd195",
+        "end": "2026-11-09T00:00:00Z",
+        "id": "btc-usd-nov",
+        "market": "BTC-USD",
+        "requested": 157,
+        "rows": 168,
+        "run_id": "031dabf4-2589-4e93-a99f-a6966b7e95c0",
+        "run_manifest_hash": "bfa783b5504295dc7acbc41ab31c25a5de934c607962b2158b939e4742522c8a",
+        "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=3600&start=2026-11-02T00%3A00%3A00Z&end=2026-11-09T00%3A00%3A00Z",
+        "start": "2026-11-02T00:00:00Z"
+      },
+      {
+        "dataset_hash": "ecd3c415cb6d7baa9414e003ff071226d21e93685e2b075cf519a4d29fe8fdaf",
+        "end": "2026-10-26T00:00:00Z",
+        "id": "eth-usd-oct",
+        "market": "ETH-USD",
+        "requested": 157,
+        "rows": 168,
+        "run_id": "82b4fc45-6820-4749-aefe-0961b0828db6",
+        "run_manifest_hash": "245363b216a245ba83b8837a2092c2689ce1410f1e0643bccdf351b2f91c1c8f",
+        "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600&start=2026-10-19T00%3A00%3A00Z&end=2026-10-26T00%3A00%3A00Z",
+        "start": "2026-10-19T00:00:00Z"
+      },
+      {
+        "dataset_hash": "d1491c78f0c3761a83688eb251b1bdfd6c5d959b83dad5c228562552746a33c0",
+        "end": "2026-11-09T00:00:00Z",
+        "id": "eth-usd-nov",
+        "market": "ETH-USD",
+        "requested": 157,
+        "rows": 168,
+        "run_id": "eb6b6f76-2f39-44ef-88eb-4d8e78d415c9",
+        "run_manifest_hash": "8148e14dc16210d36f81880a90c10bb9902fa048f4e2e88a7ddb9bb1f625229e",
+        "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600&start=2026-11-02T00%3A00%3A00Z&end=2026-11-09T00%3A00%3A00Z",
+        "start": "2026-11-02T00:00:00Z"
+      }
+    ],
+    "engine": "0cf70d80f92b0345340efcf669dbeb832d636be5a53e4dffd0e3552bc7f39974",
+    "fee_bps": 10,
+    "initial_equity_micros": "1000000000",
+    "protocol_hash": "b09608148a036f59f3e25c3415480585aef139129de5791f5a860a79fbc4cc89",
+    "requested_steps": 628,
+    "schema": "agentproof-benchmark-manifest-v1",
+    "slippage_bps": 5,
+    "start_index": 11,
+    "version": {
+      "hash": "61792045d922e998dc7779ffae905289ac9df98f3361508c168c10b9a0742185",
+      "id": "e60ee617-9d86-4805-9c30-83da984f2ecd",
+      "kind": "python",
+      "name": "Momentum Python",
+      "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+      "version": "1.0"
+    }
+  },
+  "manifest_hash": "e55675b9dcd1bbf366c86ac428f4bd2bdbdf6c1aa25f13c8cf114f3a0572ac07",
+  "result": {
+    "all_completed": true,
+    "attempt_id": "6034eeee-e5ff-4385-9cff-6a366e48c160",
+    "cases": [
+      {
+        "buy_hold": {
+          "ending_equity_micros": "971661287",
+          "exposure_bps": 10000,
+          "fee_micros": "999001",
+          "max_drawdown_bps": 600,
+          "pnl_micros": "-28338713",
+          "return_bps": -283,
+          "slippage_micros": "499251",
+          "trades": 1,
+          "turnover_bps": 9990
+        },
+        "complete": true,
+        "completed": 157,
+        "cost_2x": {
+          "available": true,
+          "fee_bps": 20,
+          "fee_micros": "5979191",
+          "max_drawdown_bps": 320,
+          "multiplier": 2,
+          "return_bps": -163,
+          "slippage_bps": 10,
+          "slippage_micros": "2988604"
+        },
+        "dataset_hash": "9471cf31f0d062b21ea8abeee808cd145fa68251b8344c4ef1344272b6a99b59",
+        "end": "2026-10-26T00:00:00Z",
+        "fills": 3,
+        "id": "btc-usd-oct",
+        "inspection_pass": true,
+        "market": "BTC-USD",
+        "metrics": {
+          "ending_equity_micros": "988036779",
+          "exposure_bps": 3630,
+          "fee_micros": "2996571",
+          "max_drawdown_bps": 291,
+          "pnl_micros": "-11963221",
+          "return_bps": -119,
+          "slippage_micros": "1498036",
+          "trades": 3,
+          "turnover_bps": 29965
+        },
+        "order_attempts": 4,
+        "report_hash": "9596e7c83d74276508bf941fb6246e17ba1fcb917a63961bab9e12bc92b69132",
+        "requested": 157,
+        "rows": 168,
+        "run_id": "8ea5e697-79bd-4feb-8be8-a6ca17a1f406",
+        "run_manifest_hash": "7c72055a88719980e5aeff981b46e3813f717726c9e6df708f9e563eda2fbe36",
+        "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=3600&start=2026-10-19T00%3A00%3A00Z&end=2026-10-26T00%3A00%3A00Z",
+        "start": "2026-10-19T00:00:00Z",
+        "status": "completed"
+      },
+      {
+        "buy_hold": {
+          "ending_equity_micros": "959611332",
+          "exposure_bps": 10000,
+          "fee_micros": "999001",
+          "max_drawdown_bps": 817,
+          "pnl_micros": "-40388668",
+          "return_bps": -403,
+          "slippage_micros": "499251",
+          "trades": 1,
+          "turnover_bps": 9990
+        },
+        "complete": true,
+        "completed": 157,
+        "cost_2x": {
+          "available": true,
+          "fee_bps": 20,
+          "fee_micros": "7861184",
+          "max_drawdown_bps": 323,
+          "multiplier": 2,
+          "return_bps": -179,
+          "slippage_bps": 10,
+          "slippage_micros": "3930586"
+        },
+        "dataset_hash": "58a9f9256c0c5bcb8af1df295bfc9601bf6d345def39c3ec8101aa9cafafd195",
+        "end": "2026-11-09T00:00:00Z",
+        "fills": 4,
+        "id": "btc-usd-nov",
+        "inspection_pass": true,
+        "market": "BTC-USD",
+        "metrics": {
+          "ending_equity_micros": "987918065",
+          "exposure_bps": 2356,
+          "fee_micros": "3942369",
+          "max_drawdown_bps": 293,
+          "pnl_micros": "-12081935",
+          "return_bps": -120,
+          "slippage_micros": "1971182",
+          "trades": 4,
+          "turnover_bps": 39423
+        },
+        "order_attempts": 5,
+        "report_hash": "1717143c7df73f239e4b2e5fb955bbb15306927eab86d69fe29b4ed3439c9cf4",
+        "requested": 157,
+        "rows": 168,
+        "run_id": "031dabf4-2589-4e93-a99f-a6966b7e95c0",
+        "run_manifest_hash": "bfa783b5504295dc7acbc41ab31c25a5de934c607962b2158b939e4742522c8a",
+        "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=3600&start=2026-11-02T00%3A00%3A00Z&end=2026-11-09T00%3A00%3A00Z",
+        "start": "2026-11-02T00:00:00Z",
+        "status": "completed"
+      },
+      {
+        "buy_hold": {
+          "ending_equity_micros": "961039087",
+          "exposure_bps": 10000,
+          "fee_micros": "999001",
+          "max_drawdown_bps": 835,
+          "pnl_micros": "-38960913",
+          "return_bps": -389,
+          "slippage_micros": "499251",
+          "trades": 1,
+          "turnover_bps": 9990
+        },
+        "complete": true,
+        "completed": 157,
+        "cost_2x": {
+          "available": true,
+          "fee_bps": 20,
+          "fee_micros": "11677835",
+          "max_drawdown_bps": 722,
+          "multiplier": 2,
+          "return_bps": -587,
+          "slippage_bps": 10,
+          "slippage_micros": "5838874"
+        },
+        "dataset_hash": "ecd3c415cb6d7baa9414e003ff071226d21e93685e2b075cf519a4d29fe8fdaf",
+        "end": "2026-10-26T00:00:00Z",
+        "fills": 6,
+        "id": "eth-usd-oct",
+        "inspection_pass": true,
+        "market": "ETH-USD",
+        "metrics": {
+          "ending_equity_micros": "949753251",
+          "exposure_bps": 3949,
+          "fee_micros": "5864992",
+          "max_drawdown_bps": 652,
+          "pnl_micros": "-50246749",
+          "return_bps": -502,
+          "slippage_micros": "2932483",
+          "trades": 6,
+          "turnover_bps": 58649
+        },
+        "order_attempts": 7,
+        "report_hash": "c47300cce4a638aa379440259d9c302c9bdae890317c028dc488d27521b8f459",
+        "requested": 157,
+        "rows": 168,
+        "run_id": "82b4fc45-6820-4749-aefe-0961b0828db6",
+        "run_manifest_hash": "245363b216a245ba83b8837a2092c2689ce1410f1e0643bccdf351b2f91c1c8f",
+        "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600&start=2026-10-19T00%3A00%3A00Z&end=2026-10-26T00%3A00%3A00Z",
+        "start": "2026-10-19T00:00:00Z",
+        "status": "completed"
+      },
+      {
+        "buy_hold": {
+          "ending_equity_micros": "929289912",
+          "exposure_bps": 10000,
+          "fee_micros": "999001",
+          "max_drawdown_bps": 1267,
+          "pnl_micros": "-70710088",
+          "return_bps": -707,
+          "slippage_micros": "499251",
+          "trades": 1,
+          "turnover_bps": 9990
+        },
+        "complete": true,
+        "completed": 157,
+        "cost_2x": {
+          "available": true,
+          "fee_bps": 20,
+          "fee_micros": "7912013",
+          "max_drawdown_bps": 334,
+          "multiplier": 2,
+          "return_bps": 14,
+          "slippage_bps": 10,
+          "slippage_micros": "3956019"
+        },
+        "dataset_hash": "d1491c78f0c3761a83688eb251b1bdfd6c5d959b83dad5c228562552746a33c0",
+        "end": "2026-11-09T00:00:00Z",
+        "fills": 4,
+        "id": "eth-usd-nov",
+        "inspection_pass": true,
+        "market": "ETH-USD",
+        "metrics": {
+          "ending_equity_micros": "1007444477",
+          "exposure_bps": 2675,
+          "fee_micros": "3967898",
+          "max_drawdown_bps": 305,
+          "pnl_micros": "7444477",
+          "return_bps": 74,
+          "slippage_micros": "1983952",
+          "trades": 4,
+          "turnover_bps": 39678
+        },
+        "order_attempts": 5,
+        "report_hash": "8d2136b247c7b1eed41a44413deccd1d3d7e09aae0ba39a1489d969b7c59a018",
+        "requested": 157,
+        "rows": 168,
+        "run_id": "eb6b6f76-2f39-44ef-88eb-4d8e78d415c9",
+        "run_manifest_hash": "8148e14dc16210d36f81880a90c10bb9902fa048f4e2e88a7ddb9bb1f625229e",
+        "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600&start=2026-11-02T00%3A00%3A00Z&end=2026-11-09T00%3A00%3A00Z",
+        "start": "2026-11-02T00:00:00Z",
+        "status": "completed"
+      }
+    ],
+    "completed_cases": 4,
+    "completed_steps": 628,
+    "finished_at": "2026-11-13T11:20:09.127Z",
+    "manifest_hash": "e55675b9dcd1bbf366c86ac428f4bd2bdbdf6c1aa25f13c8cf114f3a0572ac07",
+    "meaning": "Four fixed public historical cases, including failures. No unseen holdout, independent attestation, profit guarantee or aggregate portfolio return.",
+    "protocol_hash": "b09608148a036f59f3e25c3415480585aef139129de5791f5a860a79fbc4cc89",
+    "schema": "agentproof-benchmark-result-v2",
+    "version_hash": "61792045d922e998dc7779ffae905289ac9df98f3361508c168c10b9a0742185"
+  },
+  "result_hash": "96dd470510930e786cab5dabc34112f5352188c9482d1d7f4b888cb636d2c0ec",
+  "anchor": {
+    "confirmed_at": "2026-11-13T11:19:46.306Z",
+    "contract": "agentproof-060206eead.testnet",
+    "finality": "FINAL",
+    "job_id": "suite-6034eeee-e5ff-4385-9cff-6a366e48c160",
+    "manifest_hash": "e55675b9dcd1bbf366c86ac428f4bd2bdbdf6c1aa25f13c8cf114f3a0572ac07",
+    "network": "testnet"
+  },
+  "proof": {
+    "checked_at": "2026-11-13T11:20:19.309Z",
+    "checks": {
+      "completed": true,
+      "contract": true,
+      "manifest": true,
+      "report": true,
+      "requested": true,
+      "settled": true,
+      "version": true
+    },
+    "contract": "agentproof-060206eead.testnet",
+    "finality": "FINAL",
+    "job_id": "suite-6034eeee-e5ff-4385-9cff-6a366e48c160",
+    "matches": true,
+    "meaning": "Checks the precommitted identifiers and final aggregate result. The operator executes the bot; this is not a TEE, execution proof or performance guarantee.",
+    "network": "testnet"
+  },
+  "progress": [
+    {
+      "id": "btc-usd-oct",
+      "run_id": "8ea5e697-79bd-4feb-8be8-a6ca17a1f406",
+      "status": "completed",
+      "completed": 157,
+      "requested": 157
+    },
+    {
+      "id": "btc-usd-nov",
+      "run_id": "031dabf4-2589-4e93-a99f-a6966b7e95c0",
+      "status": "completed",
+      "completed": 157,
+      "requested": 157
+    },
+    {
+      "id": "eth-usd-oct",
+      "run_id": "82b4fc45-6820-4749-aefe-0961b0828db6",
+      "status": "completed",
+      "completed": 157,
+      "requested": 157
+    },
+    {
+      "id": "eth-usd-nov",
+      "run_id": "eb6b6f76-2f39-44ef-88eb-4d8e78d415c9",
+      "status": "completed",
+      "completed": 157,
+      "requested": 157
+    }
+  ],
+  "events": [
+    {
+      "sequence": 0,
+      "kind": "started",
+      "at": "2026-11-13T11:19:39.431Z"
+    },
+    {
+      "sequence": 1,
+      "kind": "run_queued",
+      "at": "2026-11-13T11:19:39.459Z",
+      "run_id": "8ea5e697-79bd-4feb-8be8-a6ca17a1f406"
+    },
+    {
+      "sequence": 2,
+      "kind": "run_queued",
+      "at": "2026-11-13T11:19:39.463Z",
+      "run_id": "031dabf4-2589-4e93-a99f-a6966b7e95c0"
+    },
+    {
+      "sequence": 3,
+      "kind": "run_queued",
+      "at": "2026-11-13T11:19:39.468Z",
+      "run_id": "82b4fc45-6820-4749-aefe-0961b0828db6"
+    },
+    {
+      "sequence": 4,
+      "kind": "run_queued",
+      "at": "2026-11-13T11:19:39.472Z",
+      "run_id": "eb6b6f76-2f39-44ef-88eb-4d8e78d415c9"
+    },
+    {
+      "sequence": 5,
+      "kind": "prepared",
+      "at": "2026-11-13T11:19:39.474Z",
+      "manifest": {
+        "attempt_id": "6034eeee-e5ff-4385-9cff-6a366e48c160",
+        "cases": [
+          {
+            "dataset_hash": "9471cf31f0d062b21ea8abeee808cd145fa68251b8344c4ef1344272b6a99b59",
+            "end": "2026-10-26T00:00:00Z",
+            "id": "btc-usd-oct",
+            "market": "BTC-USD",
+            "requested": 157,
+            "rows": 168,
+            "run_id": "8ea5e697-79bd-4feb-8be8-a6ca17a1f406",
+            "run_manifest_hash": "7c72055a88719980e5aeff981b46e3813f717726c9e6df708f9e563eda2fbe36",
+            "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=3600&start=2026-10-19T00%3A00%3A00Z&end=2026-10-26T00%3A00%3A00Z",
+            "start": "2026-10-19T00:00:00Z"
+          },
+          {
+            "dataset_hash": "58a9f9256c0c5bcb8af1df295bfc9601bf6d345def39c3ec8101aa9cafafd195",
+            "end": "2026-11-09T00:00:00Z",
+            "id": "btc-usd-nov",
+            "market": "BTC-USD",
+            "requested": 157,
+            "rows": 168,
+            "run_id": "031dabf4-2589-4e93-a99f-a6966b7e95c0",
+            "run_manifest_hash": "bfa783b5504295dc7acbc41ab31c25a5de934c607962b2158b939e4742522c8a",
+            "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=3600&start=2026-11-02T00%3A00%3A00Z&end=2026-11-09T00%3A00%3A00Z",
+            "start": "2026-11-02T00:00:00Z"
+          },
+          {
+            "dataset_hash": "ecd3c415cb6d7baa9414e003ff071226d21e93685e2b075cf519a4d29fe8fdaf",
+            "end": "2026-10-26T00:00:00Z",
+            "id": "eth-usd-oct",
+            "market": "ETH-USD",
+            "requested": 157,
+            "rows": 168,
+            "run_id": "82b4fc45-6820-4749-aefe-0961b0828db6",
+            "run_manifest_hash": "245363b216a245ba83b8837a2092c2689ce1410f1e0643bccdf351b2f91c1c8f",
+            "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600&start=2026-10-19T00%3A00%3A00Z&end=2026-10-26T00%3A00%3A00Z",
+            "start": "2026-10-19T00:00:00Z"
+          },
+          {
+            "dataset_hash": "d1491c78f0c3761a83688eb251b1bdfd6c5d959b83dad5c228562552746a33c0",
+            "end": "2026-11-09T00:00:00Z",
+            "id": "eth-usd-nov",
+            "market": "ETH-USD",
+            "requested": 157,
+            "rows": 168,
+            "run_id": "eb6b6f76-2f39-44ef-88eb-4d8e78d415c9",
+            "run_manifest_hash": "8148e14dc16210d36f81880a90c10bb9902fa048f4e2e88a7ddb9bb1f625229e",
+            "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600&start=2026-11-02T00%3A00%3A00Z&end=2026-11-09T00%3A00%3A00Z",
+            "start": "2026-11-02T00:00:00Z"
+          }
+        ],
+        "engine": "0cf70d80f92b0345340efcf669dbeb832d636be5a53e4dffd0e3552bc7f39974",
+        "fee_bps": 10,
+        "initial_equity_micros": "1000000000",
+        "protocol_hash": "b09608148a036f59f3e25c3415480585aef139129de5791f5a860a79fbc4cc89",
+        "requested_steps": 628,
+        "schema": "agentproof-benchmark-manifest-v1",
+        "slippage_bps": 5,
+        "start_index": 11,
+        "version": {
+          "hash": "61792045d922e998dc7779ffae905289ac9df98f3361508c168c10b9a0742185",
+          "id": "e60ee617-9d86-4805-9c30-83da984f2ecd",
+          "kind": "python",
+          "name": "Momentum Python",
+          "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+          "version": "1.0"
+        }
+      },
+      "manifest_hash": "e55675b9dcd1bbf366c86ac428f4bd2bdbdf6c1aa25f13c8cf114f3a0572ac07"
+    },
+    {
+      "sequence": 6,
+      "kind": "transaction",
+      "at": "2026-11-13T11:19:46.023Z",
+      "tx": {
+        "hash": "5MCwWNwLcnvesMPNWaPWqeC5RxcP26yiXsXgGwSH2w8p",
+        "method": "fund_job",
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "seller.agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/5MCwWNwLcnvesMPNWaPWqeC5RxcP26yiXsXgGwSH2w8p"
+      }
+    },
+    {
+      "sequence": 7,
+      "kind": "committed",
+      "anchor": {
+        "confirmed_at": "2026-11-13T11:19:46.306Z",
+        "contract": "agentproof-060206eead.testnet",
+        "finality": "FINAL",
+        "job_id": "suite-6034eeee-e5ff-4385-9cff-6a366e48c160",
+        "manifest_hash": "e55675b9dcd1bbf366c86ac428f4bd2bdbdf6c1aa25f13c8cf114f3a0572ac07",
+        "network": "testnet"
+      },
+      "at": "2026-11-13T11:19:46.306Z"
+    },
+    {
+      "sequence": 8,
+      "kind": "executing",
+      "at": "2026-11-13T11:19:46.308Z"
+    },
+    {
+      "sequence": 9,
+      "kind": "case_finished",
+      "at": "2026-11-13T11:19:51.890Z",
+      "case_id": "btc-usd-oct",
+      "run_id": "8ea5e697-79bd-4feb-8be8-a6ca17a1f406"
+    },
+    {
+      "sequence": 10,
+      "kind": "case_finished",
+      "at": "2026-11-13T11:19:58.028Z",
+      "case_id": "btc-usd-nov",
+      "run_id": "031dabf4-2589-4e93-a99f-a6966b7e95c0"
+    },
+    {
+      "sequence": 11,
+      "kind": "case_finished",
+      "at": "2026-11-13T11:20:03.547Z",
+      "case_id": "eth-usd-oct",
+      "run_id": "82b4fc45-6820-4749-aefe-0961b0828db6"
+    },
+    {
+      "sequence": 12,
+      "kind": "case_finished",
+      "at": "2026-11-13T11:20:09.111Z",
+      "case_id": "eth-usd-nov",
+      "run_id": "eb6b6f76-2f39-44ef-88eb-4d8e78d415c9"
+    },
+    {
+      "sequence": 13,
+      "kind": "result",
+      "at": "2026-11-13T11:20:09.128Z",
+      "result": {
+        "all_completed": true,
+        "attempt_id": "6034eeee-e5ff-4385-9cff-6a366e48c160",
+        "cases": [
+          {
+            "buy_hold": {
+              "ending_equity_micros": "971661287",
+              "exposure_bps": 10000,
+              "fee_micros": "999001",
+              "max_drawdown_bps": 600,
+              "pnl_micros": "-28338713",
+              "return_bps": -283,
+              "slippage_micros": "499251",
+              "trades": 1,
+              "turnover_bps": 9990
+            },
+            "complete": true,
+            "completed": 157,
+            "cost_2x": {
+              "available": true,
+              "fee_bps": 20,
+              "fee_micros": "5979191",
+              "max_drawdown_bps": 320,
+              "multiplier": 2,
+              "return_bps": -163,
+              "slippage_bps": 10,
+              "slippage_micros": "2988604"
+            },
+            "dataset_hash": "9471cf31f0d062b21ea8abeee808cd145fa68251b8344c4ef1344272b6a99b59",
+            "end": "2026-10-26T00:00:00Z",
+            "fills": 3,
+            "id": "btc-usd-oct",
+            "inspection_pass": true,
+            "market": "BTC-USD",
+            "metrics": {
+              "ending_equity_micros": "988036779",
+              "exposure_bps": 3630,
+              "fee_micros": "2996571",
+              "max_drawdown_bps": 291,
+              "pnl_micros": "-11963221",
+              "return_bps": -119,
+              "slippage_micros": "1498036",
+              "trades": 3,
+              "turnover_bps": 29965
+            },
+            "order_attempts": 4,
+            "report_hash": "9596e7c83d74276508bf941fb6246e17ba1fcb917a63961bab9e12bc92b69132",
+            "requested": 157,
+            "rows": 168,
+            "run_id": "8ea5e697-79bd-4feb-8be8-a6ca17a1f406",
+            "run_manifest_hash": "7c72055a88719980e5aeff981b46e3813f717726c9e6df708f9e563eda2fbe36",
+            "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=3600&start=2026-10-19T00%3A00%3A00Z&end=2026-10-26T00%3A00%3A00Z",
+            "start": "2026-10-19T00:00:00Z",
+            "status": "completed"
+          },
+          {
+            "buy_hold": {
+              "ending_equity_micros": "959611332",
+              "exposure_bps": 10000,
+              "fee_micros": "999001",
+              "max_drawdown_bps": 817,
+              "pnl_micros": "-40388668",
+              "return_bps": -403,
+              "slippage_micros": "499251",
+              "trades": 1,
+              "turnover_bps": 9990
+            },
+            "complete": true,
+            "completed": 157,
+            "cost_2x": {
+              "available": true,
+              "fee_bps": 20,
+              "fee_micros": "7861184",
+              "max_drawdown_bps": 323,
+              "multiplier": 2,
+              "return_bps": -179,
+              "slippage_bps": 10,
+              "slippage_micros": "3930586"
+            },
+            "dataset_hash": "58a9f9256c0c5bcb8af1df295bfc9601bf6d345def39c3ec8101aa9cafafd195",
+            "end": "2026-11-09T00:00:00Z",
+            "fills": 4,
+            "id": "btc-usd-nov",
+            "inspection_pass": true,
+            "market": "BTC-USD",
+            "metrics": {
+              "ending_equity_micros": "987918065",
+              "exposure_bps": 2356,
+              "fee_micros": "3942369",
+              "max_drawdown_bps": 293,
+              "pnl_micros": "-12081935",
+              "return_bps": -120,
+              "slippage_micros": "1971182",
+              "trades": 4,
+              "turnover_bps": 39423
+            },
+            "order_attempts": 5,
+            "report_hash": "1717143c7df73f239e4b2e5fb955bbb15306927eab86d69fe29b4ed3439c9cf4",
+            "requested": 157,
+            "rows": 168,
+            "run_id": "031dabf4-2589-4e93-a99f-a6966b7e95c0",
+            "run_manifest_hash": "bfa783b5504295dc7acbc41ab31c25a5de934c607962b2158b939e4742522c8a",
+            "source_url": "https://api.exchange.coinbase.com/products/BTC-USD/candles?granularity=3600&start=2026-11-02T00%3A00%3A00Z&end=2026-11-09T00%3A00%3A00Z",
+            "start": "2026-11-02T00:00:00Z",
+            "status": "completed"
+          },
+          {
+            "buy_hold": {
+              "ending_equity_micros": "961039087",
+              "exposure_bps": 10000,
+              "fee_micros": "999001",
+              "max_drawdown_bps": 835,
+              "pnl_micros": "-38960913",
+              "return_bps": -389,
+              "slippage_micros": "499251",
+              "trades": 1,
+              "turnover_bps": 9990
+            },
+            "complete": true,
+            "completed": 157,
+            "cost_2x": {
+              "available": true,
+              "fee_bps": 20,
+              "fee_micros": "11677835",
+              "max_drawdown_bps": 722,
+              "multiplier": 2,
+              "return_bps": -587,
+              "slippage_bps": 10,
+              "slippage_micros": "5838874"
+            },
+            "dataset_hash": "ecd3c415cb6d7baa9414e003ff071226d21e93685e2b075cf519a4d29fe8fdaf",
+            "end": "2026-10-26T00:00:00Z",
+            "fills": 6,
+            "id": "eth-usd-oct",
+            "inspection_pass": true,
+            "market": "ETH-USD",
+            "metrics": {
+              "ending_equity_micros": "949753251",
+              "exposure_bps": 3949,
+              "fee_micros": "5864992",
+              "max_drawdown_bps": 652,
+              "pnl_micros": "-50246749",
+              "return_bps": -502,
+              "slippage_micros": "2932483",
+              "trades": 6,
+              "turnover_bps": 58649
+            },
+            "order_attempts": 7,
+            "report_hash": "c47300cce4a638aa379440259d9c302c9bdae890317c028dc488d27521b8f459",
+            "requested": 157,
+            "rows": 168,
+            "run_id": "82b4fc45-6820-4749-aefe-0961b0828db6",
+            "run_manifest_hash": "245363b216a245ba83b8837a2092c2689ce1410f1e0643bccdf351b2f91c1c8f",
+            "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600&start=2026-10-19T00%3A00%3A00Z&end=2026-10-26T00%3A00%3A00Z",
+            "start": "2026-10-19T00:00:00Z",
+            "status": "completed"
+          },
+          {
+            "buy_hold": {
+              "ending_equity_micros": "929289912",
+              "exposure_bps": 10000,
+              "fee_micros": "999001",
+              "max_drawdown_bps": 1267,
+              "pnl_micros": "-70710088",
+              "return_bps": -707,
+              "slippage_micros": "499251",
+              "trades": 1,
+              "turnover_bps": 9990
+            },
+            "complete": true,
+            "completed": 157,
+            "cost_2x": {
+              "available": true,
+              "fee_bps": 20,
+              "fee_micros": "7912013",
+              "max_drawdown_bps": 334,
+              "multiplier": 2,
+              "return_bps": 14,
+              "slippage_bps": 10,
+              "slippage_micros": "3956019"
+            },
+            "dataset_hash": "d1491c78f0c3761a83688eb251b1bdfd6c5d959b83dad5c228562552746a33c0",
+            "end": "2026-11-09T00:00:00Z",
+            "fills": 4,
+            "id": "eth-usd-nov",
+            "inspection_pass": true,
+            "market": "ETH-USD",
+            "metrics": {
+              "ending_equity_micros": "1007444477",
+              "exposure_bps": 2675,
+              "fee_micros": "3967898",
+              "max_drawdown_bps": 305,
+              "pnl_micros": "7444477",
+              "return_bps": 74,
+              "slippage_micros": "1983952",
+              "trades": 4,
+              "turnover_bps": 39678
+            },
+            "order_attempts": 5,
+            "report_hash": "8d2136b247c7b1eed41a44413deccd1d3d7e09aae0ba39a1489d969b7c59a018",
+            "requested": 157,
+            "rows": 168,
+            "run_id": "eb6b6f76-2f39-44ef-88eb-4d8e78d415c9",
+            "run_manifest_hash": "8148e14dc16210d36f81880a90c10bb9902fa048f4e2e88a7ddb9bb1f625229e",
+            "source_url": "https://api.exchange.coinbase.com/products/ETH-USD/candles?granularity=3600&start=2026-11-02T00%3A00%3A00Z&end=2026-11-09T00%3A00%3A00Z",
+            "start": "2026-11-02T00:00:00Z",
+            "status": "completed"
+          }
+        ],
+        "completed_cases": 4,
+        "completed_steps": 628,
+        "finished_at": "2026-11-13T11:20:09.127Z",
+        "manifest_hash": "e55675b9dcd1bbf366c86ac428f4bd2bdbdf6c1aa25f13c8cf114f3a0572ac07",
+        "meaning": "Four fixed public historical cases, including failures. No unseen holdout, independent attestation, profit guarantee or aggregate portfolio return.",
+        "protocol_hash": "b09608148a036f59f3e25c3415480585aef139129de5791f5a860a79fbc4cc89",
+        "schema": "agentproof-benchmark-result-v2",
+        "version_hash": "61792045d922e998dc7779ffae905289ac9df98f3361508c168c10b9a0742185"
+      },
+      "result_hash": "96dd470510930e786cab5dabc34112f5352188c9482d1d7f4b888cb636d2c0ec"
+    },
+    {
+      "sequence": 14,
+      "kind": "transaction",
+      "at": "2026-11-13T11:20:15.097Z",
+      "tx": {
+        "hash": "HbMtsuL3mcLs2LBjvUUGNWAtAWu6Q6utLaK1d6jxxMEj",
+        "method": "commit_result",
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/HbMtsuL3mcLs2LBjvUUGNWAtAWu6Q6utLaK1d6jxxMEj"
+      }
+    },
+    {
+      "sequence": 15,
+      "kind": "transaction",
+      "at": "2026-11-13T11:20:18.750Z",
+      "tx": {
+        "hash": "2VaMYm5W8BJVUeVffcg4E8gebsKBvsNDsxjw2qbfKSJz",
+        "method": "settle_job",
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/2VaMYm5W8BJVUeVffcg4E8gebsKBvsNDsxjw2qbfKSJz"
+      }
+    },
+    {
+      "sequence": 16,
+      "kind": "confirmed",
+      "at": "2026-11-13T11:20:19.309Z",
+      "proof": {
+        "checked_at": "2026-11-13T11:20:19.309Z",
+        "checks": {
+          "completed": true,
+          "contract": true,
+          "manifest": true,
+          "report": true,
+          "requested": true,
+          "settled": true,
+          "version": true
+        },
+        "contract": "agentproof-060206eead.testnet",
+        "finality": "FINAL",
+        "job_id": "suite-6034eeee-e5ff-4385-9cff-6a366e48c160",
+        "matches": true,
+        "meaning": "Checks the precommitted identifiers and final aggregate result. The operator executes the bot; this is not a TEE, execution proof or performance guarantee.",
+        "network": "testnet"
+      }
+    },
+    {
+      "sequence": 17,
+      "kind": "finished",
+      "at": "2026-11-13T11:20:19.313Z"
+    }
+  ],
+  "error": null,
+  "verified": true,
+  "chain_check": {
+    "network": "testnet",
+    "contract": "agentproof-060206eead.testnet",
+    "job_id": "suite-6034eeee-e5ff-4385-9cff-6a366e48c160",
+    "checked_at": "2026-11-13T11:20:22.998Z",
+    "finality": "FINAL",
+    "checks": {
+      "contract": true,
+      "manifest": true,
+      "version": true,
+      "report": true,
+      "requested": true,
+      "completed": true,
+      "settled": true
+    },
+    "matches": true,
+    "meaning": "Checks the precommitted identifiers and final aggregate result. The operator executes the bot; this is not a TEE, execution proof or performance guarantee."
+  }
+}

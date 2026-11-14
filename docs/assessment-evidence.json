@@ -1,0 +1,158 @@
+{
+  "schema": "agentproof-public-assessment-check-v1",
+  "listing_id": "9741d012-f65e-4044-87cc-1d3656035027",
+  "version_hash": "61792045d922e998dc7779ffae905289ac9df98f3361508c168c10b9a0742185",
+  "report_hash": "1492eb45d2867bd40623badc91ad447d3ca1017df73a3528fdda32554ec50f44",
+  "assessment": {
+    "schema": "agentproof-assessment-v1",
+    "report_hash": "1492eb45d2867bd40623badc91ad447d3ca1017df73a3528fdda32554ec50f44",
+    "version_hash": "61792045d922e998dc7779ffae905289ac9df98f3361508c168c10b9a0742185",
+    "analyzer_hash": "315a06a4fa2c955909fea40273d1606f27c2c2d4e7262c8cfb961d2b5c1cf5ba",
+    "evidence": {
+      "data_kind": "user_upload",
+      "source": "Coinbase · BTC/USD · 1h · 2026-11-01–03",
+      "dataset_hash": "7365c72b42953d11bfd06ef9bb5a21d8bf19c23ca876785272a0b42f8779d199",
+      "candles": 72,
+      "start": "2026-11-01T11:00:00.000Z",
+      "end": "2026-11-03T23:00:00.000Z",
+      "duration_seconds": 216000,
+      "fills": 1,
+      "completed": 61,
+      "requested": 61,
+      "irregular_intervals": 0
+    },
+    "net_return_bps": -46,
+    "excess_vs_hold_bps": 32,
+    "trading_cost_drag_bps": 15,
+    "flags": [
+      {
+        "id": "short_sample",
+        "label": "짧은 관찰 구간",
+        "detail": "72개 캔들만 관찰했어요. 더 긴 구간의 결과가 필요해요."
+      },
+      {
+        "id": "few_fills",
+        "label": "체결 표본 부족",
+        "detail": "체결 1회로 여러 시장 상황의 성과를 판단하기 어려워요."
+      }
+    ],
+    "periods": [
+      {
+        "label": "초반",
+        "start": "2026-11-01T11:00:00.000Z",
+        "end": "2026-11-02T07:00:00.000Z",
+        "return_bps": 0,
+        "max_drawdown_bps": 0
+      },
+      {
+        "label": "중반",
+        "start": "2026-11-02T07:00:00.000Z",
+        "end": "2026-11-03T03:00:00.000Z",
+        "return_bps": 0,
+        "max_drawdown_bps": 0
+      },
+      {
+        "label": "후반",
+        "start": "2026-11-03T03:00:00.000Z",
+        "end": "2026-11-03T23:00:00.000Z",
+        "return_bps": -46,
+        "max_drawdown_bps": 59
+      }
+    ],
+    "cost_scenarios": [
+      {
+        "multiplier": 1,
+        "available": true,
+        "fee_bps": 10,
+        "slippage_bps": 5,
+        "return_bps": -46,
+        "max_drawdown_bps": 59,
+        "fee_micros": "999001",
+        "slippage_micros": "499251"
+      },
+      {
+        "multiplier": 2,
+        "available": true,
+        "fee_bps": 20,
+        "slippage_bps": 10,
+        "return_bps": -60,
+        "max_drawdown_bps": 60,
+        "fee_micros": "1996007",
+        "slippage_micros": "997007"
+      },
+      {
+        "multiplier": 3,
+        "available": true,
+        "fee_bps": 30,
+        "slippage_bps": 15,
+        "return_bps": -75,
+        "max_drawdown_bps": 75,
+        "fee_micros": "2991026",
+        "slippage_micros": "1493274"
+      }
+    ],
+    "method": "Saved-decision cost replay; the bot is not rerun under changed costs. Period returns retain the original position path. These are not holdout tests or forward performance.",
+    "sample_policy": "168 candles and 10 fills are disclosure heuristics, not statistical confidence thresholds or safety ratings.",
+    "hash": "32efae3c64d2454fb7189eee5078e0618bc1236e2e95882edfc8d6f412645873"
+  },
+  "chain_check": {
+    "network": "testnet",
+    "contract": "agentproof-060206eead.testnet",
+    "listing_id": "9741d012-f65e-4044-87cc-1d3656035027",
+    "checked_at": "2026-11-12T04:25:11.642Z",
+    "finality": "FINAL",
+    "matches": true,
+    "checks": {
+      "version": true,
+      "report": true,
+      "terms": true,
+      "price": true,
+      "manifest": true,
+      "contract": true
+    },
+    "meaning": "Final chain state matches these recorded identifiers. Execution truth and performance remain operator-attested."
+  },
+  "transactions": [
+    {
+      "hash": "GxbEVVrwwEKugCrSfTZTxc3AHX6SoJqD5GA6pBuwF7ZE",
+      "method": "register_version",
+      "receiver": "agentproof-060206eead.testnet",
+      "signer": "seller.agentproof-060206eead.testnet",
+      "status": "FINAL_SUCCESS",
+      "url": "https://testnet.nearblocks.io/txns/GxbEVVrwwEKugCrSfTZTxc3AHX6SoJqD5GA6pBuwF7ZE"
+    },
+    {
+      "hash": "J5P17VG9RxzcdVorq9JmqZtkj6dSFNnT71YSRR3K4ZKx",
+      "method": "fund_job",
+      "receiver": "agentproof-060206eead.testnet",
+      "signer": "seller.agentproof-060206eead.testnet",
+      "status": "FINAL_SUCCESS",
+      "url": "https://testnet.nearblocks.io/txns/J5P17VG9RxzcdVorq9JmqZtkj6dSFNnT71YSRR3K4ZKx"
+    },
+    {
+      "hash": "GqniQFggwmYURPJ21fU8EjtLUqu7Pqj76RM4HDkpBJA4",
+      "method": "commit_result",
+      "receiver": "agentproof-060206eead.testnet",
+      "signer": "agentproof-060206eead.testnet",
+      "status": "FINAL_SUCCESS",
+      "url": "https://testnet.nearblocks.io/txns/GqniQFggwmYURPJ21fU8EjtLUqu7Pqj76RM4HDkpBJA4"
+    },
+    {
+      "hash": "G6aTxUDaDaXkMbLdMWiKQ7bv2LLBrvc842UExWRABvkp",
+      "method": "settle_job",
+      "receiver": "agentproof-060206eead.testnet",
+      "signer": "agentproof-060206eead.testnet",
+      "status": "FINAL_SUCCESS",
+      "url": "https://testnet.nearblocks.io/txns/G6aTxUDaDaXkMbLdMWiKQ7bv2LLBrvc842UExWRABvkp"
+    },
+    {
+      "hash": "6Hkbc4zKqzWcbYjQAvDVmaR9d2C6BG4xZi87KZoAyaMT",
+      "method": "create_listing",
+      "receiver": "agentproof-060206eead.testnet",
+      "signer": "seller.agentproof-060206eead.testnet",
+      "status": "FINAL_SUCCESS",
+      "url": "https://testnet.nearblocks.io/txns/6Hkbc4zKqzWcbYjQAvDVmaR9d2C6BG4xZi87KZoAyaMT"
+    }
+  ],
+  "note": "Exported from the UI evidence download. Local session/creator identity and source code omitted. This is a read-only final-state recheck, not a new purchase."
+}

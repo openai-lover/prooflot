@@ -1,0 +1,39 @@
+{
+  "checked_on": "2026-11-13",
+  "base_url": "http://127.0.0.1:4317/",
+  "checks": {
+    "first_visit_intro_displayed": true,
+    "intro_automatically_progressed": true,
+    "three_scenes_and_manual_step_buttons": true,
+    "revisit_does_not_auto_open_intro": true,
+    "footer_replay_works": true,
+    "wallet_chooser_lists_meteor_and_nightly": true,
+    "meteor_connection_screen_loads": true,
+    "cancel_returns_to_app_without_payment": true,
+    "public_product_shows_creator_wallet_and_transaction_links": true,
+    "ui_final_chain_recheck_matches": true,
+    "purchase_dialog_shows_price_storage_and_total": true,
+    "mobile_390px_has_no_document_overflow": true,
+    "desktop_layout_checked": true,
+    "no_browser_console_errors_observed": true
+  },
+  "mobile": {"viewport_width":390,"document_width_with_scrollbar":375,"header_height_rounded":110},
+  "screenshots": ["screenshots/intro.jpg","screenshots/intro-mobile.jpg","screenshots/market-wallet.jpg","screenshots/market-wallet-mobile.jpg","screenshots/wallet-checkout-mobile.jpg"],
+  "external_wallet_approval": "Completed for the personal Meteor Web buyer. The user prepared and unlocked nearblog6709.testnet, then the real wallet signed NEP-413 login and purchase_license. FINAL entitlement, browser ZIP download and fresh Python retest completed. See meteor-wallet-evidence.json for 16 recorded checks and the actual purchase receipt.",
+  "meteor_web_followup": {
+    "network_observed": "testnet",
+    "account": "nearblog6709.testnet",
+    "historical_handoff": "Initial Get Started action was rejected by automatic review; the user directly completed wallet setup and unlock. No bypass was used.",
+    "handoff_screenshot": "screenshots/meteor-login-handoff.jpg",
+    "private_credentials_requested_or_entered_by_agent": false,
+    "external_wallet_connected": true,
+    "external_wallet_message_signed": true,
+    "external_wallet_payment_signed": true,
+    "purchase_transaction": "5okSTWEwmR7BR8Yzao1uV5R1sT4LHrbBvtoKoK6Nt92L",
+    "source_downloaded_from_browser": true,
+    "fresh_retest_completed": true,
+    "screenshots": ["screenshots/meteor-wallet-connected.jpg","screenshots/meteor-purchase-details.jpg","screenshots/meteor-purchase-complete.jpg"]
+  },
+  "real_chain_workflow": "Creator/buyer adversarial workflow remains separately verified with isolated SDK accounts in wallet-testnet-evidence.json. The additional real Meteor buyer test is recorded in meteor-wallet-evidence.json. Creator wallet UI and Nightly extension approval remain unverified.",
+  "reduced_motion": "Implemented in CSS/intro logic. OS motion preference was not changed during QA."
+}

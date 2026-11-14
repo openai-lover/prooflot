@@ -1,0 +1,59 @@
+{
+  "schema": "botpassport-intro-ui-evidence-v2",
+  "checked_at": "2026-11-13T14:48:05.119Z",
+  "application": "http://127.0.0.1:4317/",
+  "replay": "http://127.0.0.1:4317/?intro=1",
+  "duration_ms": 13000,
+  "storage_key": "botpassport-first-visit-v1",
+  "checks": [
+    "A fresh localhost origin opened the introduction without a replay parameter.",
+    "Automatic playback reached chapter 3, progress 1, playing false, and kept the dialog open.",
+    "Pause kept the exact rendered progress style unchanged across later checks.",
+    "The end-of-timeline replay control restarted chapter 1.",
+    "Skip followed by normal reload did not reopen the intro.",
+    "The cached visit did not assign src to the decorative image.",
+    "Footer replay reopened chapter 1 and focused Skip.",
+    "ArrowRight selected chapter 2 and focused its chapter button.",
+    "Escape closed the dialog and returned focus to the footer replay button.",
+    "The creator CTA closed the dialog and opened the studio view.",
+    "The market CTA closed the dialog and opened the market view.",
+    "No console errors were observed in the test tab.",
+    "390 x 844 mobile: dialog scroll/client dimensions match the viewport; all buttons fit.",
+    "375 x 667 mobile: dialog scroll/client dimensions match the viewport; all buttons fit.",
+    "8 HTTP integration tests passed after permitting loopback access.",
+    "Live HTML, intro JavaScript, CSS, generated PNG and WOFF2 returned HTTP 200 with expected MIME types.",
+    "The explicit replay parameter is consumed after opening, so a later ordinary reload still skips the introduction.",
+    "Final 1280 x 720 desktop: no horizontal or vertical dialog overflow; viewport override test tabs closed."
+  ],
+  "visual_reviews": [
+    {
+      "width": 1266,
+      "height": 883
+    },
+    {
+      "width": 390,
+      "height": 844
+    },
+    {
+      "width": 375,
+      "height": 667
+    },
+    {
+      "width": 1280,
+      "height": 720
+    }
+  ],
+  "screenshot_files": [
+    "screenshots/intro-v2-desktop.jpg",
+    "screenshots/intro-v2-report.jpg",
+    "screenshots/intro-v2-mobile.jpg",
+    "screenshots/intro-v2-small-mobile.jpg"
+  ],
+  "graph_source": "wallet-product-evidence.json",
+  "graph_points": 62,
+  "limitations": [
+    "Reduced motion was reviewed in CSS and JavaScript; the OS preference was not changed in this browser test.",
+    "Caching is per browser origin/storage, not a unique person across devices.",
+    "Watching the introduction does not run a backtest, register a bot or send a wallet transaction."
+  ]
+}

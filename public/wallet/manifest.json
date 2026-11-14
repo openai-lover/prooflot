@@ -1,0 +1,78 @@
+{
+  "version": "botpassport-wallet-snapshot-1",
+  "wallets": [
+    {
+      "id": "meteor-wallet",
+      "name": "Meteor Wallet",
+      "icon": "https://raw.githubusercontent.com/Meteor-Wallet/meteor_wallet_sdk/main/assets/meteor-logo-svg.svg",
+      "description": "The most simple and secure wallet to manage your crypto, access DeFi, and explore Web3",
+      "website": "https://meteorwallet.app/",
+      "version": "1.1.1-bp.2a19fe2a",
+      "executor": "/wallet/meteor-wallet.js",
+      "type": "sandbox",
+      "features": {
+        "signMessage": true,
+        "signInWithoutAddKey": true,
+        "signInAndSignMessage": true,
+        "signAndSendTransaction": true,
+        "signAndSendTransactions": true,
+        "signInWithFunctionCallKey": true,
+        "signDelegateActions": true,
+        "mainnet": true,
+        "testnet": true
+      },
+      "platform": {
+        "web": "https://wallet.meteorwallet.app",
+        "chrome": "https://chromewebstore.google.com/detail/meteor-wallet/pcndjhkinnkaohffealmlmhaepkpmgkb",
+        "android": "https://play.google.com/store/apps/details?id=app.meteorwallet.v2",
+        "ios": "https://apps.apple.com/us/app/meteor-wallet/id6739558223"
+      },
+      "permissions": {
+        "storage": true,
+        "allowsOpen": [
+          "https://chromewebstore.google.com",
+          "https://wallet.meteorwallet.app",
+          "https://meteorwallet.app",
+          "meteorwallet://",
+          "meteorwalletdev://"
+        ],
+        "external": [
+          "meteorCom",
+          "meteorComV2"
+        ]
+      }
+    },
+    {
+      "id": "nightly-wallet",
+      "name": "Nightly Wallet",
+      "icon": "https://storage.herewallet.app/upload/6947eb5c14c65a715fb49a08e5937dcecc994bf224b3869b9878bd7a7db068f9.webp",
+      "description": "Surf through the multichain Metaverse with Nightly",
+      "website": "https://nightly.app",
+      "version": "1.0.0",
+      "executor": "/wallet/nightly-wallet.js",
+      "type": "sandbox",
+      "platform": {
+        "chrome": "https://chromewebstore.google.com/detail/nightly/fiikommddbeccaoicoejoniammnalkfa"
+      },
+      "permissions": {
+        "storage": true,
+        "external": [
+          "nightly.near"
+        ],
+        "allowsOpen": [
+          "https://nightly.app",
+          "https://chromewebstore.google.com/detail/nightly/fiikommddbeccaoicoejoniammnalkfa"
+        ]
+      },
+      "features": {
+        "signMessage": true,
+        "signInWithoutAddKey": true,
+        "signInAndSignMessage": true,
+        "signInWithFunctionCallKey": true,
+        "signAndSendTransaction": true,
+        "signAndSendTransactions": true,
+        "testnet": true
+      }
+    }
+  ]
+}

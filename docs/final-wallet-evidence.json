@@ -1,0 +1,216 @@
+{
+  "schema": "botpassport-personal-wallet-flow-v1",
+  "started_at": "2026-11-14T07:15:19.690Z",
+  "network": "testnet",
+  "contract": "agentproof-060206eead.testnet",
+  "accounts": {
+    "creator": "creator-159f282f.agentproof-060206eead.testnet",
+    "buyer": "buyer-159f282f.agentproof-060206eead.testnet"
+  },
+  "signing": "Separate test account keys used by near-api-js in a client harness. No app server signing of creator/buyer transactions. External wallet UI approval is not verified.",
+  "checks": [
+    {
+      "name": "NEP-413 account ownership and replay rejection",
+      "pass": true
+    },
+    {
+      "name": "Creator Python upload and real-data inspection completed",
+      "pass": true,
+      "decisions": 61,
+      "source": "Coinbase · BTC/USD · 1h · 2026-11-01–03"
+    },
+    {
+      "name": "Unapproved publication stays private",
+      "pass": true
+    },
+    {
+      "name": "Creator signed version registration and sale; operator only attested report",
+      "pass": true
+    },
+    {
+      "name": "Buyer inspected exact report and FINAL chain binding",
+      "pass": true
+    },
+    {
+      "name": "Wrong version, forged success and unauthenticated purchase rejected",
+      "pass": true
+    },
+    {
+      "name": "Contract rejected modified terms without granting license",
+      "pass": true
+    },
+    {
+      "name": "Buyer signed payment; exact price credited to creator",
+      "pass": true
+    },
+    {
+      "name": "Duplicate payment rejected atomically; no duplicate seller credit",
+      "pass": true
+    },
+    {
+      "name": "Downloaded exact Python source; other accounts denied buyer entitlement",
+      "pass": true
+    },
+    {
+      "name": "Same wallet recovers purchase in a new browser session without payment",
+      "pass": true
+    },
+    {
+      "name": "Buyer freshly executed the purchased Python version in isolated Docker",
+      "pass": true
+    },
+    {
+      "name": "Creator withdrew sale proceeds and unused deposits to own test wallet",
+      "pass": true
+    },
+    {
+      "name": "Logout removes download authorization",
+      "pass": true
+    }
+  ],
+  "transactions": [
+    {
+      "hash": "jgX9EQVmf1k9vLAVnqnvUurBneafD7gmot4sT9653u2",
+      "signer": "creator-159f282f.agentproof-060206eead.testnet",
+      "methods": [
+        "register_version",
+        "fund_job"
+      ],
+      "status": "FINAL_SUCCESS",
+      "url": "https://testnet.nearblocks.io/txns/jgX9EQVmf1k9vLAVnqnvUurBneafD7gmot4sT9653u2"
+    },
+    {
+      "hash": "HtD62PEQotPLsCVzLtVWdVFWjLMd7ffpu7N8JT1ZZPjf",
+      "signer": "creator-159f282f.agentproof-060206eead.testnet",
+      "methods": [
+        "create_listing"
+      ],
+      "status": "FINAL_SUCCESS",
+      "url": "https://testnet.nearblocks.io/txns/HtD62PEQotPLsCVzLtVWdVFWjLMd7ffpu7N8JT1ZZPjf"
+    },
+    {
+      "hash": "2Bsd4vXCVF4LPp8Gab68orwPCa6iGzqJrCLffPi4SzJM",
+      "signer": "buyer-159f282f.agentproof-060206eead.testnet",
+      "methods": [
+        "purchase_license"
+      ],
+      "status": "EXPECTED_FINAL_FAILURE",
+      "url": "https://testnet.nearblocks.io/txns/2Bsd4vXCVF4LPp8Gab68orwPCa6iGzqJrCLffPi4SzJM"
+    },
+    {
+      "hash": "8wPtp7mooZ8rWZX5kZHyFTUgLQqo8sz5ZyugJijqKhog",
+      "signer": "buyer-159f282f.agentproof-060206eead.testnet",
+      "methods": [
+        "purchase_license"
+      ],
+      "status": "FINAL_SUCCESS",
+      "url": "https://testnet.nearblocks.io/txns/8wPtp7mooZ8rWZX5kZHyFTUgLQqo8sz5ZyugJijqKhog"
+    },
+    {
+      "hash": "GcVwNFMe8EtjZsy2NtsszBSSyjhc6STUvFwbSd1rr84a",
+      "signer": "buyer-159f282f.agentproof-060206eead.testnet",
+      "methods": [
+        "purchase_license"
+      ],
+      "status": "EXPECTED_FINAL_FAILURE",
+      "url": "https://testnet.nearblocks.io/txns/GcVwNFMe8EtjZsy2NtsszBSSyjhc6STUvFwbSd1rr84a"
+    },
+    {
+      "hash": "9DUK8pEyyTcSmkLTUHWgiNfvBUWGYjsm3qW3Ha8KPUr7",
+      "signer": "creator-159f282f.agentproof-060206eead.testnet",
+      "methods": [
+        "withdraw_credit"
+      ],
+      "status": "FINAL_SUCCESS",
+      "url": "https://testnet.nearblocks.io/txns/9DUK8pEyyTcSmkLTUHWgiNfvBUWGYjsm3qW3Ha8KPUr7"
+    }
+  ],
+  "bot": {
+    "id": "0674a89a-d7e3-429c-8e5f-f4482aa41878",
+    "hash": "9b6eb2054fa2e1847dda8ebda82e0f48a784ed201af22de5d59b9291fd35eeec",
+    "owner": "wallet:testnet:creator-159f282f.agentproof-060206eead.testnet"
+  },
+  "run_id": "586fbd79-1181-4257-8a0b-3e94645792b2",
+  "report_hash": "a4beae1ba3f8c47c99e8ce8b5e7e504e211113598f2b8e2814b55cfd3c179f13",
+  "listing_id": "d3e2eac2-16b1-4e36-af3f-c0e4c939815b",
+  "publication": {
+    "confirmed_at": "2026-11-14T07:15:44.985Z",
+    "contract": "agentproof-060206eead.testnet",
+    "custody": "personal_wallet",
+    "finality": "FINAL",
+    "job_id": "586fbd79-1181-4257-8a0b-3e94645792b2",
+    "listing_id": "d3e2eac2-16b1-4e36-af3f-c0e4c939815b",
+    "network": "testnet",
+    "seller": "creator-159f282f.agentproof-060206eead.testnet",
+    "transactions": [
+      {
+        "hash": "jgX9EQVmf1k9vLAVnqnvUurBneafD7gmot4sT9653u2",
+        "methods": [
+          "register_version",
+          "fund_job"
+        ],
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "creator-159f282f.agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/jgX9EQVmf1k9vLAVnqnvUurBneafD7gmot4sT9653u2"
+      },
+      {
+        "hash": "DGDU5USMn7pz9pDAsRJw65jJmJtDhcjx23xve2vkSbzN",
+        "method": "commit_result",
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/DGDU5USMn7pz9pDAsRJw65jJmJtDhcjx23xve2vkSbzN"
+      },
+      {
+        "hash": "5g7eDKzufnzwSMPjiMda7cZyaPHytjX8fwiar9LZ5aUv",
+        "method": "settle_job",
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/5g7eDKzufnzwSMPjiMda7cZyaPHytjX8fwiar9LZ5aUv"
+      },
+      {
+        "hash": "HtD62PEQotPLsCVzLtVWdVFWjLMd7ffpu7N8JT1ZZPjf",
+        "methods": [
+          "create_listing"
+        ],
+        "receiver": "agentproof-060206eead.testnet",
+        "signer": "creator-159f282f.agentproof-060206eead.testnet",
+        "status": "FINAL_SUCCESS",
+        "url": "https://testnet.nearblocks.io/txns/HtD62PEQotPLsCVzLtVWdVFWjLMd7ffpu7N8JT1ZZPjf"
+      }
+    ]
+  },
+  "purchase": {
+    "network": "testnet",
+    "contract": "agentproof-060206eead.testnet",
+    "buyer": "buyer-159f282f.agentproof-060206eead.testnet",
+    "listing_id": "d3e2eac2-16b1-4e36-af3f-c0e4c939815b",
+    "version_hash": "9b6eb2054fa2e1847dda8ebda82e0f48a784ed201af22de5d59b9291fd35eeec",
+    "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+    "finality": "FINAL",
+    "checked_at": "2026-11-14T07:15:59.881Z",
+    "tx_hash": "8wPtp7mooZ8rWZX5kZHyFTUgLQqo8sz5ZyugJijqKhog",
+    "explorer": "https://testnet.nearblocks.io/txns/8wPtp7mooZ8rWZX5kZHyFTUgLQqo8sz5ZyugJijqKhog"
+  },
+  "retest": {
+    "run_id": "302518ed-d431-4d24-9c15-c65ec70faa8e",
+    "report_hash": "699eb05b27840b7beae6b915902194a7b7e5abbc056834dc679df9794fae687c",
+    "version_hash": "9b6eb2054fa2e1847dda8ebda82e0f48a784ed201af22de5d59b9291fd35eeec",
+    "completed_steps": 61,
+    "metrics": {
+      "ending_equity_micros": "990199013",
+      "exposure_bps": 5409,
+      "fee_micros": "4964141",
+      "max_drawdown_bps": 154,
+      "pnl_micros": "-9800987",
+      "return_bps": -98,
+      "slippage_micros": "2481821",
+      "trades": 5,
+      "turnover_bps": 49641
+    }
+  },
+  "finished_at": "2026-11-14T07:16:16.352Z",
+  "passed": 14
+}

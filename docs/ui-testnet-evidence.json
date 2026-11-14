@@ -1,0 +1,21 @@
+{
+  "listing_id": "9741d012-f65e-4044-87cc-1d3656035027",
+  "version_hash": "61792045d922e998dc7779ffae905289ac9df98f3361508c168c10b9a0742185",
+  "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+  "artifact_name": "Momentum Python",
+  "artifact_kind": "python",
+  "artifact_version": "1.0",
+  "source_present": true,
+  "network": "testnet",
+  "proof": {
+    "buyer": "buyer.agentproof-060206eead.testnet",
+    "contract": "agentproof-060206eead.testnet",
+    "explorer": "https://testnet.nearblocks.io/txns/5LSSyrEvazADm9GqBJhz8Whc6bEGoPEcoXgTnzaAKY2g",
+    "finality": "FINAL",
+    "listing_id": "9741d012-f65e-4044-87cc-1d3656035027",
+    "network": "testnet",
+    "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+    "tx_hash": "5LSSyrEvazADm9GqBJhz8Whc6bEGoPEcoXgTnzaAKY2g",
+    "version_hash": "61792045d922e998dc7779ffae905289ac9df98f3361508c168c10b9a0742185"
+  }
+}

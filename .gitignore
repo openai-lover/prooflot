@@ -1,0 +1,11 @@
+.env
+.env.*
+!.env.example
+data/
+output/
+node_modules/
+.tools/
+contracts/target/
+*.key
+*.pem
+submission-payload.json

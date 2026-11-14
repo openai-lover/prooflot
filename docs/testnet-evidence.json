@@ -1,0 +1,126 @@
+{
+  "network": "testnet",
+  "started_at": "2026-11-12T03:42:39.730Z",
+  "deployment": {
+    "network": "testnet",
+    "contract": "agentproof-060206eead.testnet",
+    "seller": "seller.agentproof-060206eead.testnet",
+    "buyer": "buyer.agentproof-060206eead.testnet",
+    "rpc": "https://test.rpc.fastnear.com",
+    "explorer": "https://testnet.nearblocks.io/address/agentproof-060206eead.testnet",
+    "wasm_sha256": "f5736765f83fd21b7ce793d26570ba4fba37855fbd399bec7fcc635349d59116",
+    "key_custody": "local Windows DPAPI; developer demo accounts, not a user wallet",
+    "connected_at": "2026-11-10T14:40:15.312Z"
+  },
+  "checks": [
+    {
+      "name": "custom bot executes without any LLM API key",
+      "passed": true
+    },
+    {
+      "name": "saved decisions reproduce the exact report",
+      "passed": true
+    },
+    {
+      "name": "on-chain report, manifest and version match",
+      "passed": true
+    },
+    {
+      "name": "wrong-version purchase rejected on-chain",
+      "passed": true
+    },
+    {
+      "name": "buyer cannot attest a report",
+      "passed": true
+    },
+    {
+      "name": "purchase receipt verified against final chain state",
+      "passed": true
+    },
+    {
+      "name": "duplicate payment rejected on-chain",
+      "passed": true
+    },
+    {
+      "name": "seller credited the license payment",
+      "passed": true
+    },
+    {
+      "name": "seller withdrawal callback cleared credit",
+      "passed": true
+    },
+    {
+      "name": "buyer retests the exact purchased version",
+      "passed": true
+    },
+    {
+      "name": "buyer cannot resell the creator-owned version",
+      "passed": true
+    }
+  ],
+  "transactions": [
+    {
+      "method": "register_version",
+      "signer": "seller.agentproof-060206eead.testnet",
+      "receiver": "agentproof-060206eead.testnet",
+      "hash": "HSeafJr8gE1iJXc3gWZ37jTgnk89fgtzpG7oVo5MdJWz",
+      "url": "https://testnet.nearblocks.io/txns/HSeafJr8gE1iJXc3gWZ37jTgnk89fgtzpG7oVo5MdJWz",
+      "status": "FINAL_SUCCESS"
+    },
+    {
+      "method": "fund_job",
+      "signer": "seller.agentproof-060206eead.testnet",
+      "receiver": "agentproof-060206eead.testnet",
+      "hash": "Ckmn4a4fMcZ3PpNGDcXxevjxGDj3J1WTyS2BpZCE3ReK",
+      "url": "https://testnet.nearblocks.io/txns/Ckmn4a4fMcZ3PpNGDcXxevjxGDj3J1WTyS2BpZCE3ReK",
+      "status": "FINAL_SUCCESS"
+    },
+    {
+      "method": "commit_result",
+      "signer": "agentproof-060206eead.testnet",
+      "receiver": "agentproof-060206eead.testnet",
+      "hash": "VMLiiMLFxo31yPcWuUTZhTQ6MYr7ni4pjEHGw9bZtkm",
+      "url": "https://testnet.nearblocks.io/txns/VMLiiMLFxo31yPcWuUTZhTQ6MYr7ni4pjEHGw9bZtkm",
+      "status": "FINAL_SUCCESS"
+    },
+    {
+      "method": "settle_job",
+      "signer": "agentproof-060206eead.testnet",
+      "receiver": "agentproof-060206eead.testnet",
+      "hash": "64oNXtPRua7d1vWGjJWsPfv4UWE2bFrc4hvUUhP3tGRY",
+      "url": "https://testnet.nearblocks.io/txns/64oNXtPRua7d1vWGjJWsPfv4UWE2bFrc4hvUUhP3tGRY",
+      "status": "FINAL_SUCCESS"
+    },
+    {
+      "method": "create_listing",
+      "signer": "seller.agentproof-060206eead.testnet",
+      "receiver": "agentproof-060206eead.testnet",
+      "hash": "Dqka2FJbCdTu8N5nmymQ9XkAPmSXRqLuuhurzLNaM93k",
+      "url": "https://testnet.nearblocks.io/txns/Dqka2FJbCdTu8N5nmymQ9XkAPmSXRqLuuhurzLNaM93k",
+      "status": "FINAL_SUCCESS"
+    },
+    {
+      "method": "withdraw_credit",
+      "signer": "seller.agentproof-060206eead.testnet",
+      "receiver": "agentproof-060206eead.testnet",
+      "hash": "HaS3KVQVboQsiXX1XL1p74wyD9Ut8aYoWQRkFPzAEmbz",
+      "url": "https://testnet.nearblocks.io/txns/HaS3KVQVboQsiXX1XL1p74wyD9Ut8aYoWQRkFPzAEmbz",
+      "status": "FINAL_SUCCESS"
+    }
+  ],
+  "purchase": {
+    "network": "testnet",
+    "contract": "agentproof-060206eead.testnet",
+    "tx_hash": "EtPcfN4RqjuF9LJesVpKRkox7TJmXuDG3ewvHYRPmf7S",
+    "buyer": "buyer.agentproof-060206eead.testnet",
+    "listing_id": "8327f3fd-a58a-4c82-9867-0d115167089b",
+    "version_hash": "68605b40576f9de50cc51f4f11ab8575a1569ff465e8c93e1a3a9569a1c1c8f5",
+    "terms_hash": "31810313fc174cbb4810a7d5b3d62b95b9d8bc6804f31b67e8b332676be9f7da",
+    "finality": "FINAL",
+    "explorer": "https://testnet.nearblocks.io/txns/EtPcfN4RqjuF9LJesVpKRkox7TJmXuDG3ewvHYRPmf7S"
+  },
+  "report_hash": "f20cf42b41cf39f869b5e67f59ae609cb21b94dd03a091a15063a60dc1e28834",
+  "listing_id": "8327f3fd-a58a-4c82-9867-0d115167089b",
+  "finished_at": "2026-11-12T03:43:30.980Z",
+  "success": true
+}
