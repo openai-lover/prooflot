@@ -1,4 +1,6 @@
-# BotPassport: 공모전 재평가와 개선
+# BotPassport: 공모전 재평가와 개선 (과거 기록)
+
+현재 Prooflot 상태와 제출 직전 판단은 [release-review.ko.md](release-review.ko.md)를 참고한다. 아래 개인 지갑 미검증·미공개 설명은 당시 상태이며 이후 해결됐다.
 
 확인일: 2026-11-13. 이전 표시 이름 AgentProof. 이 문서는 수상 확률이나 심사위원의 평가를 추정하지 않는다.
 

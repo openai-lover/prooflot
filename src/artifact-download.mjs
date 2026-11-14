@@ -22,7 +22,7 @@ export function zipFiles(files) {
 export function artifactPackage(version,terms,license,report) {
   const json=v=>JSON.stringify(v,null,2)+'\n';
   const files={'bot.json':json(version),'license.json':json({terms,license}),'report.json':json(report),
-    'README.txt':`Prooflot\n\n${version.name} v${version.version}\nVersion: ${version.hash}\nReport: ${report.hash}\n\nbot.json is the exact registered artifact, including its source/config and hash.\nlicense.json contains the purchased research terms and NEAR testnet proof.\nreport.json is the immutable inspection report.\n${version.kind==='python'?'bot.py exports decide(observation); it is not a standalone live-trading program.\n':''}\nRetest this version from My licenses in Prooflot. Do not relist someone else's source.\nTestnet only. Backtests do not guarantee future returns.\n`};
+    'README.txt':`Prooflot\n\n${version.name} v${version.version}\nVersion: ${version.hash}\nReport: ${report.hash}\n\nbot.json is the exact registered artifact, including its source/config and hash.\nlicense.json contains the research terms and purchase record. Testnet purchases include NEAR proof; local simulations do not.\nreport.json is the immutable inspection report.\n${version.kind==='python'?'bot.py exports decide(observation); it is not a standalone live-trading program.\n':''}\nRetest this version from My library in Prooflot. Do not relist someone else's source.\nLocal simulation or testnet only. Backtests do not guarantee future returns.\n`};
   if(version.kind==='python')files['bot.py']=version.source;
   if(version.kind==='prompt')files['prompt.txt']=version.prompt;
   files['verify.mjs']=readFileSync(new URL('../scripts/verify-package.mjs',import.meta.url),'utf8');

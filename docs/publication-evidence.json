@@ -1,0 +1,19 @@
+{
+  "project": "Prooflot",
+  "checked_at_utc": "2026-11-14",
+  "repository": {
+    "url": "https://github.com/openai-lover/prooflot",
+    "visibility": "public",
+    "verified_source_commit": "d943ff9",
+    "verification": "Anonymous clone, dependency install, browser build and all 84 tests passed with Docker enabled; zero skipped."
+  },
+  "video": {
+    "url": "https://youtu.be/OEni-eWBdwk",
+    "channel": "SLIME CEO!",
+    "visibility": "public",
+    "duration_seconds": 88.221,
+    "title": "Prooflot — Test Bots. Buy With Evidence. | NEAR Hackathon 2026",
+    "scope": "Actual in-app browser recording with English captions. The creator/buyer purchase is explicitly a local simulation. Subsequent FINAL listing verification reads real, previously recorded testnet state. No new personal-wallet approval is shown."
+  },
+  "submission_receipt": null
+}

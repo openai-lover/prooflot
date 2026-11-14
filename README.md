@@ -8,9 +8,11 @@ Prooflot was developed under the working names AgentProof and BotPassport. Exist
 
 ![Prooflot: inspected Python bot, negative returns and an exact-version license](docs/screenshots/prooflot-product-en.png)
 
+**[Watch the 89-second product demo](https://youtu.be/OEni-eWBdwk)**
+
 ## Judge quick start
 
-**[Six-step creator-to-buyer walkthrough](docs/judge-guide.md)** · **[Final real testnet workflow](docs/final-wallet-evidence.json)** · **[Saved package verification](docs/final-download-evidence.json)**
+**[Creator-to-buyer walkthrough](docs/judge-guide.md)** · **[Final real testnet workflow](docs/final-wallet-evidence.json)** · **[Saved package verification](docs/final-download-evidence.json)**
 
 The UI is in English. A fresh clone supports a complete local creator, inspection, listing, purchase, file-save and retest flow without a wallet. Actual NEAR testnet evidence can be independently checked with the commands below. Local simulations and real testnet transactions are labeled separately.
 
@@ -52,7 +54,7 @@ node scripts/verify-benchmark.mjs --python
 
 Public benchmark funding and report attestation use development/operator accounts and test tokens. Personal creator listing and buyer payment transactions use external-wallet signing requests. The new actual Python run completed all 628 decisions and 17 fills: returns −1.19%, −1.20%, −5.02%, +0.74%. Completing the protocol is not evidence of profitable trading.
 
-[Objective contest review](docs/contest-review-2026-11-13.ko.md) · [public benchmark proof](docs/benchmark-evidence.json)
+[Objective contest review](docs/release-review.ko.md) · [public benchmark proof](docs/benchmark-evidence.json)
 
 ## Compare before buying
 
@@ -72,7 +74,7 @@ Open a product to see measured returns, fills, sample limitations, three subperi
 6. **My library**: download a ZIP with source, original artifact, license, inspection report, checksums and a standalone offline verifier; retest the exact purchased version in a fresh execution. Sign in with the same wallet in a new browser session to recover existing licenses without paying again.
 7. **Withdraw to wallet**: the creator withdraws sale proceeds and unused deposits with a wallet-approved call.
 
-First visit opens a full-screen, 13-second product introduction: register a bot, inspect its actual example report, then buy/download/retest. A continuous glass object, animated report curve and license card connect the scenes. The original localStorage preference is preserved for returning visitors. Skip, pause, chapter selection, replay, keyboard operation and reduced motion are supported. Open [the introduction](http://127.0.0.1:4317/?intro=1) to replay without clearing storage. The geometric B logo is distinct from the official NEAR mark. See [visual asset credits](docs/assets.md).
+First visit opens a full-screen, 13-second product introduction: register a bot, inspect its actual example report, then buy/download/retest. A continuous glass object, animated report curve and license card connect the scenes. The original localStorage preference is preserved for returning visitors. Skip, pause, chapter selection, replay, keyboard operation and reduced motion are supported. Open [the introduction](http://127.0.0.1:4317/?intro=1) to replay without clearing storage. The geometric P logo is distinct from the official NEAR mark. See [visual asset credits](docs/assets.md).
 
 The market, creator studio, inspection report, product, checkout and purchased-bot library share the introduction's local typeface, cobalt palette and glass asset. Intro CTAs transition directly into the market or studio. Registration begins with a file upload and a live name/version preview; detailed guidance is expandable. Reports retain measured checks and visible warning titles. Checkout separates the exact license price, 0.02 test NEAR storage allowance and additional gas. Already owned versions lead to the library instead of another purchase. See [product UI verification](docs/product-ui-evidence.json).
 
@@ -148,7 +150,7 @@ Provider hard billing bounds are unverified. Strict live mode stays disabled; es
 - Fixed-decision replay is deterministic. A fresh Python process/LLM call is a new test and may differ for a stateful or nondeterministic bot. Pretrained/hardcoded future information cannot be ruled out.
 - Source is withheld from public catalog/run/report responses and delivered after session entitlement. Once downloaded, software cannot be made uncopyable by a chain license.
 - Anonymous sessions support local exploration. Wallet-authenticated sessions own private creator records and paid licenses. Independent sandbox hardening, creator-wallet UI and Nightly approval QA, production recovery at scale and billing remain work. The Meteor buyer approval was tested separately.
-- Hackathon submission copy and current rules/competition comparison are in docs/submission-pack.ko.md. The application runs locally. The public repository contains reproducible instructions and independent chain verifiers. Demo publication links will be added after upload.
+- Hackathon submission copy and current rules/competition comparison are in docs/submission-pack.ko.md. The application runs locally. The public repository contains reproducible instructions and independent chain verifiers. The captioned video shows the real local flow and live verification of previously recorded testnet evidence.
 
 Code license: MIT. User bot license terms apply to separately registered creator artifacts; they do not remove MIT rights from bundled examples.
 

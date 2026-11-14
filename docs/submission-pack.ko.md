@@ -1,6 +1,8 @@
 # Prooflot 제출 자료
 
-2026-11-14 최종 구현 반영. Open Innovation 및 Agent Economy. 내부 스키마·계약명 AgentProof는 기존 불변 기록과 호환되도록 유지한다.
+2026-11-15 KST 공개 릴리스 반영. Open Innovation 및 Agent Economy. 내부 스키마·계약명 AgentProof는 기존 불변 기록과 호환되도록 유지한다.
+
+[공개 GitHub](https://github.com/openai-lover/prooflot) · [공개 89초 시연 영상](https://youtu.be/OEni-eWBdwk) · [최신 객관적 평가](release-review.ko.md)
 
 ## 한 문장
 
@@ -20,7 +22,11 @@
 
 **Meteor 개인 구매자 경로는 실제 지갑 UI로 검증했다.** nearblog6709.testnet으로 NEP-413 로그인과 0.03 test NEAR 결제를 서명하고, 최종 사용권·원본 ZIP·61회 새 Python 실행을 확인했다. [실제 구매](https://testnet.nearblocks.io/txns/5okSTWEwmR7BR8Yzao1uV5R1sT4LHrbBvtoKoK6Nt92L)와 [검증 근거](meteor-wallet-evidence.json)를 사용한다. 제작자 등록·판매·출금 및 공격 사례는 별도 SDK 테스트 계정으로 검증했다. Nightly 확장과 제작자 지갑 UI까지 직접 승인한 것으로 표현하지 않는다.
 
-## 3분 시연 구성
+## 공개한 89초 시연
+
+앱 내 브라우저에서 실제 Python 파일을 올리고 검사·게시한 뒤, 로컬 모의 구매·파일 다운로드·새 재시험까지 진행했다. 이후 실제 테스트넷 상품의 FINAL 상태와 네 과거 시험 결과, 공개 소스를 보여준다. 로컬 모의 결제와 실제 체인 조회를 영어 자막으로 구분했다. 기존 Meteor 구매를 방금 승인한 것처럼 편집하지 않았다. 실제 저장 파일은 prooflot-browser-evidence.json으로 확인한다.
+
+## 상세 3분 발표용 구성
 
 | 시간 | 보여줄 화면 | 전달할 내용 |
 |---|---|---|
@@ -45,9 +51,14 @@ We verified the complete creator/buyer workflow using two separate SDK signing a
 
 ## X 게시물 초안
 
-Built at NEAR HACKATHON: Prooflot. Inspect a bot, buy its exact version. Wallet-bound research licenses, four fixed BTC/ETH tests, visible losses and warnings, source download and fresh retesting. Real testnet creator/buyer flow verified. @NEARProtocol #NEARHackathon
+Buying a bot should start with evidence.
 
-게시하지 않은 초안이다. 실제 시연 영상과 공개 저장소 링크가 필요하다. [공식 제출 안내](https://nearhackathon.com/HACKATHON.md)의 최신 조건을 신청 직전에 다시 확인한다. 이전 공식 확인 기준 마감: 2026-11-15 08:59 KST.
+Built Prooflot at NEAR HACKATHON: inspect, buy the exact version, download and retest. Version-bound licenses on NEAR testnet.
+
+https://github.com/openai-lover/prooflot
+@NEARProtocol #NEARHackathon
+
+실제 시연 영상이 첨부된 초안이다. X 게시 승인과 최종 신청 내용·연락 동의는 별도로 확인한다. [공식 제출 안내](https://nearhackathon.com/HACKATHON.md)의 재확인 기준 마감: 2026-11-15 08:59 KST. 공개 영상만으로 접수 완료를 주장하지 않는다.
 
 ## 심사위원 확인 명령
 
@@ -63,5 +74,5 @@ npm start
 
 Python 검증은 Docker와 RUN_DOCKER_TESTS=1이 필요하다. 공개 체인 증거 확인에는 키가 필요 없다. 새 실제 거래를 만들 때는 README의 본인 개발 운영자 설정과 개인 테스트넷 지갑을 사용한다.
 
-[완료 결과](completion.ko.md) · [검증 범위](verification.md) · [공모전·경쟁작 평가](contest-review-2026-11-13.ko.md) · [계정 준비](start.ko.md)
+[완료 결과](completion.ko.md) · [검증 범위](verification.md) · [공모전·경쟁작 평가](release-review.ko.md) · [계정 준비](start.ko.md)
 

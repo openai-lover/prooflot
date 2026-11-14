@@ -73,7 +73,7 @@ The browser did not surface a completion event for the local ZIP download, and b
 
 ## Remaining boundaries
 
-Report execution and market data remain operator-attested. No independent sandbox/security audit, public hosting, independent user study, forward trading, production financial deployment, repository publication, X/video posting or final contest submission was performed. No paid/live LLM call or provider billing bound was verified. Private keys, live datasets and SQLite sessions are excluded from the submission ZIP.
+Report execution and market data remain operator-attested. No independent sandbox/security audit, public hosting, independent user study, forward trading or production financial deployment was performed. Repository/video publication is recorded in the release section below; final contest submission requires its own saved receipt. No paid/live LLM call or provider billing bound was verified. Private keys, live datasets and SQLite sessions are excluded from the submission ZIP.
 
 
 ## Release verification — November 14
@@ -87,3 +87,11 @@ The Chrome UI also saved the Atlas package to the real Windows Downloads folder 
 The complete creator-to-buyer flow was repeated in the ChatGPT in-app browser using a real uploaded Python file. All 73 decisions completed, a 0.01 simulated NEAR listing was purchased, the browser download event returned the actual Windows Downloads path, and the 73,387-byte ZIP was read back and verified offline (six manifest files; source/report/license binding). A new Python retest completed all 73 decisions. See prooflot-browser-evidence.json. The default download now uses the browser download manager; choosing a specific location and verifying the disk write remains an optional action because the embedded browser file picker can stall.
 
 The latest full suite passed 84/84 tests with Docker enabled and zero skipped tests. The release name is Prooflot; historical evidence is retained under its original identifiers.
+
+## Public release — November 14 UTC
+
+The source is public at https://github.com/openai-lover/prooflot. An anonymous fresh clone of commit d943ff9 completed dependency installation, browser build and all 84 tests with Docker enabled (zero failures or skips). The published source was tested separately from the prepared operator workspace. See public-clone-test-results.txt.
+
+The actual 89-second product recording is public at https://youtu.be/OEni-eWBdwk on SLIME CEO!. It shows real in-app browser actions: Python registration and execution, inspection, a clearly labeled local simulated purchase, browser download and a fresh retest, followed by live verification of a previously recorded real testnet listing and its four benchmark outcomes. English captions distinguish local simulation from NEAR FINAL verification. This recording does not show a new personal-wallet approval. The saved file's bytes and bindings are documented in prooflot-browser-evidence.json.
+
+Public source and video do not establish contest acceptance. A public X video post and the final application receipt are separate submission steps.
