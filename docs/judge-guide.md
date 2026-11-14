@@ -2,6 +2,12 @@
 
 Bot creators can sell what they tested. Buyers can inspect losses and limitations, purchase the exact version, save its source, and run it again. NEAR binds the creator, version, report, terms, payment and license. It does not independently execute or certify the backtest.
 
+## Open the deployed service
+
+Go to **https://prooflot.vercel.app**. The UI, API, database and isolated Python runtime are hosted on Vercel. Read public reports and verify chain records without a wallet. Connect a funded testnet wallet to publish or buy; the creator and buyer sign their own transactions.
+
+The deployed service passed the complete 14-check testnet workflow, actual ZIP save/readback and an explicit backend stop/resume check. [Evidence and hosting limits](deployment.md). The narrated [111-second demo](https://youtu.be/DTrax7o1IMA) includes large captions and a separate English subtitle track. Its first walkthrough uses local simulated payment; the later segment shows real testnet evidence and the public service.
+
 ## Start from a fresh checkout
 
 Requires Node.js 24.x. Python bots additionally require Docker Desktop with the image below; rule bots and examples work without Docker, API keys or wallets.

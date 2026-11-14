@@ -2,17 +2,21 @@
 
 Upload a trading bot, inspect a backtest, and buy the exact tested version on NEAR testnet.
 
+**[Open the live app](https://prooflot.vercel.app)** — hosted on Vercel, including isolated Python execution and persistent data. No local server is needed.
+
 The product supports creator-owned **Python code**, **rule configurations**, and optional **NEAR AI prompts**. Creators register immutable versions, run tests, review measured checks, and set a license price. Buyers inspect the report, purchase, download the pinned source/config and retest it. The English UI leads with measured results and purchase terms.
 
 Prooflot was developed under the working names AgentProof and BotPassport. Existing report schemas, contract identifiers and historical evidence keep their original names so their hashes and transaction references remain verifiable.
 
 ![Prooflot: inspected Python bot, negative returns and an exact-version license](docs/screenshots/prooflot-product-en.png)
 
-**[Watch the 89-second product demo](https://youtu.be/OEni-eWBdwk)** · **[Public hackathon demo post on X](https://x.com/AlphaGgang/status/2121637337587458332)**
+**[Watch the narrated demo with large English captions](https://youtu.be/DTrax7o1IMA)** · **[Updated hackathon demo post on X](https://x.com/AlphaGgang/status/2121654704522576348)**
 
 ## Judge quick start
 
-**[Creator-to-buyer walkthrough](docs/judge-guide.md)** · **[Final real testnet workflow](docs/final-wallet-evidence.json)** · **[Saved package verification](docs/final-download-evidence.json)**
+**[Creator-to-buyer walkthrough](docs/judge-guide.md)** · **[Deployed testnet workflow](docs/cloud-wallet-evidence.json)** · **[Saved package verification](docs/security-download-evidence.json)** · **[Security review](docs/security-review.md)**
+
+The deployed app passed a separate **14-check creator/buyer testnet workflow**, including actual Python execution, signed payment, a disk-saved ZIP and a fresh retest. An explicit backend stop/resume retained all bot, report, listing and license records; the purchased ZIP had the same SHA-256 after restart. [Cloud verification and hosting details](docs/deployment.md).
 
 The UI is in English. A fresh clone supports a complete local creator, inspection, listing, purchase, file-save and retest flow without a wallet. Actual NEAR testnet evidence can be independently checked with the commands below. Local simulations and real testnet transactions are labeled separately.
 
@@ -26,7 +30,7 @@ npm run build
 npm start
 ~~~
 
-On this prepared Windows workspace, run **start.ps1**. Korean quick start and account/key instructions: [docs/start.ko.md](docs/start.ko.md). Open http://127.0.0.1:4317. Localhost only; not a hosted public service. SQLite data and keys live under the Git-ignored data/ directory. Rules and synthetic examples need no API key. Python execution requires Docker Desktop and this pinned image:
+On this prepared Windows workspace, run **start.ps1**. Korean quick start and account/key instructions: [docs/start.ko.md](docs/start.ko.md). The local development server opens at http://127.0.0.1:4317 and binds to localhost by default; the public deployment is https://prooflot.vercel.app. Local SQLite data and keys live under the Git-ignored data/ directory. Rules and synthetic examples need no API key. Local Python execution requires Docker Desktop and this pinned image:
 
 ~~~sh
 docker pull python:3.12-slim-bookworm@sha256:935c3c5b12357a7e10caa9c1e6ca5692344d97cf229832ef584be2cec9fc03df
@@ -74,7 +78,7 @@ Open a product to see measured returns, fills, sample limitations, three subperi
 6. **My library**: download a ZIP with source, original artifact, license, inspection report, checksums and a standalone offline verifier; retest the exact purchased version in a fresh execution. Sign in with the same wallet in a new browser session to recover existing licenses without paying again.
 7. **Withdraw to wallet**: the creator withdraws sale proceeds and unused deposits with a wallet-approved call.
 
-First visit opens a full-screen, 13-second product introduction: register a bot, inspect its actual example report, then buy/download/retest. A continuous glass object, animated report curve and license card connect the scenes. The original localStorage preference is preserved for returning visitors. Skip, pause, chapter selection, replay, keyboard operation and reduced motion are supported. Open [the introduction](http://127.0.0.1:4317/?intro=1) to replay without clearing storage. The geometric P logo is distinct from the official NEAR mark. See [visual asset credits](docs/assets.md).
+First visit opens a full-screen, 13-second product introduction: register a bot, inspect its actual example report, then buy/download/retest. A continuous glass object, animated report curve and license card connect the scenes. The original localStorage preference is preserved for returning visitors. Skip, pause, chapter selection, replay, keyboard operation and reduced motion are supported. Open [the introduction](https://prooflot.vercel.app/?intro=1) to replay without clearing storage. The geometric P logo is distinct from the official NEAR mark. See [visual asset credits](docs/assets.md).
 
 The market, creator studio, inspection report, product, checkout and purchased-bot library share the introduction's local typeface, cobalt palette and glass asset. Intro CTAs transition directly into the market or studio. Registration begins with a file upload and a live name/version preview; detailed guidance is expandable. Reports retain measured checks and visible warning titles. Checkout separates the exact license price, 0.02 test NEAR storage allowance and additional gas. Already owned versions lead to the library instead of another purchase. See [product UI verification](docs/product-ui-evidence.json).
 
@@ -131,7 +135,7 @@ cargo build --locked --target wasm32-unknown-unknown --release
 npm test
 ~~~
 
-Set RUN_DOCKER_TESTS=1 to include the real container isolation test. Verified locally: **84 JavaScript/SQLite/HTTP/Docker tests**, **10 previously verified Rust tests**, **14 separate-account live workflow checks**, and **14 public wallet proof checks**. Counts distinguish local logic, NEAR VM unit tests and real chain checks; they are not a security certification. See docs/verification.md.
+Set RUN_DOCKER_TESTS=1 to include the real container isolation test. Verified locally: **89 JavaScript/SQLite/HTTP/Docker tests**, **10 previously verified Rust tests**, **14 separate-account live workflow checks**, and **14 public wallet proof checks**. The deployed Vercel service also passed a new 14-check testnet workflow. Counts distinguish local logic, NEAR VM unit tests and real chain checks; they are not a security certification. See docs/verification.md.
 
 The budget fixture remains available: Atlas, 84 candles, $0.24 virtual budget stops at 17/73 decisions, reserves before each call and retains unresolved liabilities. LLM transport/usage is tested with a mocked response. **No paid/live LLM inference has been performed in this session.**
 

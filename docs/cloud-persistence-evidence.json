@@ -1,0 +1,32 @@
+{
+  "checked_at": "2026-11-14T16:58:17.231Z",
+  "origin": "https://prooflot.vercel.app",
+  "before": {
+    "bots": 12,
+    "reports": 47,
+    "listings": 20,
+    "licenses": 10,
+    "reportHashes": "408018d7b3e58b5e4132d43b0bf9d66d801f060cdde9db6f5100fc6a1ab73cc6"
+  },
+  "after": {
+    "bots": 12,
+    "reports": 47,
+    "listings": 20,
+    "licenses": 10,
+    "reportHashes": "408018d7b3e58b5e4132d43b0bf9d66d801f060cdde9db6f5100fc6a1ab73cc6"
+  },
+  "resume_ms": 4526,
+  "health": {
+    "ok": true,
+    "hosting": "vercel",
+    "network": "testnet",
+    "live_executed_by_setup": false,
+    "version": "0.2.0"
+  },
+  "checks": [
+    "explicit server stop",
+    "public gateway resumes persistent sandbox",
+    "all bot/report/listing/license counts retained",
+    "every report hash retained"
+  ]
+}

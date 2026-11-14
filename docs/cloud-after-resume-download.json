@@ -1,0 +1,26 @@
+{
+  "schema": "botpassport-saved-package-v1",
+  "checked_at": "2026-11-14T17:00:26.317Z",
+  "buyer": "buyer-159f282f.agentproof-060206eead.testnet",
+  "listing_id": "6652f79c-e4b5-4d02-adf2-5331a14f4769",
+  "filename": "purchased-signal-check.zip",
+  "bytes": 65989,
+  "sha256": "733413cf323a2e77054dec0b9d9941010f41cdaa1aacc1b1a84ee69fb00d9c06",
+  "verification": {
+    "matches": true,
+    "version_hash": "ad9e6508885201b4e9c4758591f3d4381e09324174806e3b2854ca6c55198647",
+    "report_hash": "1d396fa295b37c8f9b93e37f3b54d1dcc761d39c531f7975659dd6f912008b1b",
+    "files": 6,
+    "network": "testnet",
+    "scope": "Content identity only. Verify the expected version against the marketplace or NEAR record. No independent execution, license-chain validation, safety or profit certification."
+  },
+  "checks": [
+    "wallet-authenticated download",
+    "actual disk write and readback",
+    "HTTP SHA-256 and version match",
+    "offline source/report/license verification",
+    "anonymous access denied",
+    "logout access denied"
+  ],
+  "origin": "https://prooflot.vercel.app"
+}

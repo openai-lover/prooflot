@@ -12,7 +12,10 @@ export const NEAR_EXPLORER='https://testnet.nearblocks.io';
 const credentialPath=path.join(root,'data','testnet-keys.dpapi');
 const publicPath=path.join(root,'data','testnet-public.json');
 export const cleanJSON=value=>JSON.parse(JSON.stringify(value,(_,v)=>typeof v==='bigint'?String(v):v));
-export function testnetInfo(){return existsSync(publicPath)?JSON.parse(readFileSync(publicPath,'utf8')):null;}
+export function testnetInfo(){
+  if(process.env.PROOFLOT_TESTNET_INFO){const info=JSON.parse(process.env.PROOFLOT_TESTNET_INFO);assert(info.network==='testnet'&&info.contract?.endsWith('.testnet'),'TESTNET_ONLY');return info;}
+  return existsSync(publicPath)?JSON.parse(readFileSync(publicPath,'utf8')):null;
+}
 export function saveTestnetInfo(info){mkdirSync(path.dirname(publicPath),{recursive:true});writeFileSync(publicPath,JSON.stringify(info,null,2));}
 export class TestnetReader {
   constructor(contract=testnetInfo()?.contract){this.provider=new JsonRpcProvider({url:NEAR_RPC});this.contract=contract;assert(this.contract?.endsWith('.testnet'),'TESTNET_NOT_CONNECTED',undefined,503);}
@@ -30,7 +33,7 @@ export class TestnetReader {
   }
 }
 export class TestnetClient extends TestnetReader {
-  constructor(keys){const saved=keys || unprotectFile(credentialPath);super(saved.contract.account_id);this.keys=saved;}
+  constructor(keys){const saved=keys || (process.env.PROOFLOT_TESTNET_KEYS?JSON.parse(process.env.PROOFLOT_TESTNET_KEYS):unprotectFile(credentialPath));super(saved.contract.account_id);this.keys=saved;}
   account(role){const entry=this.keys[role];assert(entry?.account_id.endsWith('.testnet'),'TESTNET_ONLY');return new Account(entry.account_id,this.provider,KeyPairSigner.fromSecretKey(entry.private_key));}
   async call(role,method,args,deposit='0'){
     const receipt=await this.account(role).callFunctionRaw({contractId:this.contract,methodName:method,args,deposit:BigInt(deposit),gas:100000000000000n,waitUntil:'FINAL'});

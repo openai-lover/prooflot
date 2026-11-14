@@ -16,9 +16,12 @@ import { WalletAuth } from './wallet-auth.mjs';
 import { WalletMarket } from './wallet-market.mjs';
 import { randomBytes, createHash } from 'node:crypto';
 import { artifactPackage } from './artifact-download.mjs';
+import { requestOrigin } from './http-origin.mjs';
+import { PublicLimits } from './public-limits.mjs';
 
 const root = fileURLToPath(new URL('..', import.meta.url));
-export function createApp({ store, delay = 10, benchmarkAnchor, benchmarkData, walletProvider, walletClients } = {}) {
+export function createApp({ store, delay = 10, benchmarkAnchor, benchmarkData, walletProvider, walletClients,
+  publicOrigin = process.env.PROOFLOT_PUBLIC_ORIGIN || '', gatewaySecret = process.env.PROOFLOT_GATEWAY_SECRET || '' } = {}) {
   if (!store) { const dir = path.resolve(process.env.AGENTPROOF_DATA_DIR || path.join(root, 'data')); mkdirSync(dir, { recursive: true }); store = new Store(path.join(dir, 'agentproof.sqlite')); }
   const service = new Service(store, { delay }); service.recoverInterrupted();
   const chain = new ChainMarket(store);
@@ -29,13 +32,14 @@ export function createApp({ store, delay = 10, benchmarkAnchor, benchmarkData, w
   const assessment = id => {const run=store.getRun(id),report=store.report(id);assert(report,'REPORT_NOT_READY',undefined,409);return assessReport(report,service.data(run.config).candles);};
   store.db.exec('CREATE TABLE IF NOT EXISTS local_sessions(token_hash TEXT PRIMARY KEY, owner TEXT UNIQUE NOT NULL)');
   const limits = new Map();
+  const publicLimits = new PublicLimits();
   function owner(req, res) {
     let token = /(?:^|;\s*)ap_session=([a-f0-9-]{36})(?:;|$)/.exec(req.headers.cookie || '')?.[1];
     const session = token ? store.db.prepare('SELECT owner FROM local_sessions WHERE token_hash=?').get(hash({ token })) : null;
     if (session) return session.owner;
     token = uid(); const identity = uid();
     store.db.prepare('INSERT INTO local_sessions VALUES(?,?)').run(hash({ token }), identity);
-    res.setHeader('Set-Cookie', 'ap_session=' + token + '; HttpOnly; SameSite=Strict; Path=/');
+    res.setHeader('Set-Cookie', 'ap_session=' + token + '; HttpOnly; SameSite=Strict; Path=/' + (publicOrigin ? '; Secure' : ''));
     return identity;
   }
   const send = (res, code, obj) => { res.writeHead(code, { 'Content-Type': 'application/json; charset=utf-8' }); res.end(JSON.stringify(obj)); };
@@ -50,13 +54,13 @@ export function createApp({ store, delay = 10, benchmarkAnchor, benchmarkData, w
     res.setHeader('Content-Security-Policy', `default-src 'self'; script-src 'self' 'nonce-${cspNonce}'; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://raw.githubusercontent.com https://storage.herewallet.app; connect-src 'self' https://test.rpc.fastnear.com https://rpc.testnet.near.org https://*.meteorwallet.app wss://*.meteorwallet.app; frame-src 'self'; frame-ancestors 'none'; base-uri 'none'; form-action 'self'; object-src 'none'`);
     res.setHeader('Referrer-Policy', 'no-referrer');
     try {
-      const host = req.headers.host || '';
-      assert(/^(127\.0\.0\.1|localhost)(:\d+)?$/.test(host), 'LOCAL_HOST_REQUIRED', undefined, 403);
-      const url = new URL(req.url, 'http://' + host), route = url.pathname;
+      const origin = requestOrigin(req, publicOrigin, gatewaySecret);
+      const url = new URL(req.url, origin), route = url.pathname;
       if (req.method === 'POST') {
         assert(req.headers['x-agentproof'] === '1', 'CSRF_HEADER_REQUIRED', undefined, 403);
-        if (req.headers.origin) assert(req.headers.origin === 'http://' + host, 'ORIGIN_REJECTED', undefined, 403);
+        if (req.headers.origin) assert(req.headers.origin === origin, 'ORIGIN_REJECTED', undefined, 403);
         assert((req.headers['content-type'] || '').startsWith('application/json'), 'JSON_REQUIRED');
+        if(publicOrigin)publicLimits.admit(String(req.headers['x-prooflot-client']||'gateway'),route);
       }
       if(req.method==='GET' && ['/assets/glass-version.png','/assets/intro-passport-v2.png'].includes(route)){res.writeHead(200,{'Content-Type':'image/png','Cache-Control':'public, max-age=86400'});res.end(readFileSync(path.join(root,'public',route.slice(1))));return;}
       if(req.method==='GET' && route==='/assets/fonts/PretendardVariable-1.3.9.woff2'){res.writeHead(200,{'Content-Type':'font/woff2','Cache-Control':'public, max-age=31536000, immutable'});res.end(readFileSync(path.join(root,'public',route.slice(1))));return;}
@@ -66,6 +70,7 @@ export function createApp({ store, delay = 10, benchmarkAnchor, benchmarkData, w
         res.writeHead(200, { 'Content-Type': name.endsWith('.html') ? 'text/html; charset=utf-8' : name.endsWith('.css') ? 'text/css; charset=utf-8' : name.endsWith('.json')?'application/json; charset=utf-8':'application/javascript; charset=utf-8' });
         const content=readFileSync(path.join(root,'public',name),'utf8');res.end(name.endsWith('.html')?content.replaceAll('@@BP_CSP@@',cspNonce):content); return;
       }
+      if (route === '/api/health' && req.method === 'GET') return send(res, 200, { ok: true, hosting: publicOrigin ? 'vercel' : 'local', network: chain.info() ? 'testnet' : 'simulation', live_executed_by_setup: false, version: '0.2.0' });
       const session=owner(req,res),identity=walletAuth.session(session),user=identity?.owner||session;
       if(route==='/api/wallet/session' && req.method==='GET')return send(res,200,{connected:Boolean(identity),wallet:identity,contract:chain.info()?.contract||null});
       if(route==='/api/wallet/challenge' && req.method==='POST'){const b=await input(req);return send(res,200,walletAuth.challenge(session,b.account_id,url.origin));}
@@ -78,7 +83,6 @@ export function createApp({ store, delay = 10, benchmarkAnchor, benchmarkData, w
       if(route==='/api/wallet/purchase/confirm' && req.method==='POST')return send(res,200,await walletMarket.confirmPurchase(await walletAuth.require(session,true),await input(req)));
       if(route==='/api/wallet/credit' && req.method==='GET')return send(res,200,await walletMarket.credit(await walletAuth.require(session)));
       if(route==='/api/wallet/withdraw' && req.method==='POST')return send(res,200,await walletMarket.withdraw(await walletAuth.require(session,true)));
-      if (route === '/api/health' && req.method === 'GET') return send(res, 200, { ok: true, network: 'local', live_executed_by_setup: false, version: '0.2.0' });
       if (route === '/api/catalog' && req.method === 'GET') return send(res, 200, { versions: service.catalog(user).map(v=>({...v,can_sell:v.kind?v.owner===user:true})), terms: TERMS,
         live: { enabled: service.live.approved, strict_cap_supported: false, verified: false }, network: chain.info()?'testnet_personal_wallet':'local_simulation', testnet_connected: Boolean(chain.info()), testnet:chain.info(), wallet:identity });
       if (route === '/api/bots' && req.method === 'POST') return send(res,201,service.bots.register(await input(req),user));
@@ -140,6 +144,7 @@ export function createApp({ store, delay = 10, benchmarkAnchor, benchmarkData, w
         if(listingRoute[2]==='verify-chain' && req.method==='POST')return send(res,200,await chain.verifyListing(listing));
         if(listingRoute[2]==='retest' && req.method==='POST'){const c=store.getRun(listing.run_id).config;
           assert(!comparisons.active.size&&!benchmarks.active.size,'COMPARISON_BUSY',undefined,409);
+          assert(service.active.size < 2, 'CONCURRENCY_LIMIT', undefined, 429);
           const fresh=service.start({mode:c.mode,version_id:c.version.id,dataset_id:c.dataset.id,seed:c.seed,length:c.length,budget_micros:c.budget_micros,fee_bps:c.fee_bps,slippage_bps:c.slippage_bps,strict_cap:c.strict_cap},user,user+':'+uid());
           service.run(fresh.id).catch(()=>{});return send(res,202,{id:fresh.id});}}
       if (route === '/api/licenses' && req.method === 'GET') return send(res, 200, store.db.prepare('SELECT body FROM licenses WHERE owner=? ORDER BY rowid DESC').all(user).map(r => JSON.parse(r.body)));

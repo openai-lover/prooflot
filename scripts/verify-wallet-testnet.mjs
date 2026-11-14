@@ -9,7 +9,9 @@ import { assert, hash, uid } from '../src/common.mjs';
 // Separate SDK signing accounts. These are NOT an automated Meteor/Nightly UI test.
 // Private keys stay in this test process and in a Windows DPAPI file; they never
 // enter the app's HTTP API, browser, evidence file, logs or submission archive.
-const base='http://127.0.0.1:4317',client=new TestnetClient();await client.checkNetwork();
+const base=process.argv.find(a=>a.startsWith('--base='))?.slice(7)||'http://127.0.0.1:4317',client=new TestnetClient();
+assert(['http://127.0.0.1:4317','https://prooflot.vercel.app'].includes(base),'UNTRUSTED_TEST_DESTINATION');
+await client.checkNetwork();
 const secrets=fileURLToPath(new URL('../data/wallet-test-keys.dpapi',import.meta.url));
 let keys;
 if(existsSync(secrets))keys=unprotectFile(secrets);

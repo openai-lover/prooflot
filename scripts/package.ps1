@@ -10,6 +10,9 @@ foreach ($folder in @('src','public','docs','scripts','tests','examples')) {
 foreach ($file in @('README.md','LICENSE','package.json','package-lock.json','start.ps1','.env.example','.gitignore','contracts/Cargo.toml','contracts/Cargo.lock','contracts/README.md','contracts/.cargo/config.toml','contracts/src/lib.rs','contracts/build/agentproof_registry.wasm')) {
     $bundleFiles += Get-Item -LiteralPath (Join-Path $projectRoot $file) -Force
 }
+foreach ($file in @('deploy/vercel/package.json','deploy/vercel/package-lock.json','deploy/vercel/vercel.json','deploy/vercel/api/index.mjs','deploy/vercel/lib/backend.mjs')) {
+    $bundleFiles += Get-Item -LiteralPath (Join-Path $projectRoot $file) -Force
+}
 Add-Type -AssemblyName System.IO.Compression
 Add-Type -AssemblyName System.IO.Compression.FileSystem
 $stream = [IO.File]::Open($bundlePath,[IO.FileMode]::Create)

@@ -9,3 +9,5 @@ contracts/target/
 *.key
 *.pem
 submission-payload.json
+.vercel/
+deploy/vercel/.vercel/

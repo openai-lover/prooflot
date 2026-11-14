@@ -1,0 +1,37 @@
+{
+  "checked_at": "2026-11-14T17:17:11.432Z",
+  "origin": "https://prooflot.vercel.app",
+  "checks": [
+    {
+      "name": "Public health does not create sessions; CSP, anti-framing, no-referrer and nosniff headers present",
+      "pass": true
+    },
+    {
+      "name": "Environment, Git metadata, database, key file and server source paths are not served",
+      "pass": true
+    },
+    {
+      "name": "New visitor cookie is Secure, HttpOnly and SameSite=Strict; no wallet identity inherited",
+      "pass": true
+    },
+    {
+      "name": "Missing CSRF header, forged origin, oversized body and unsupported method rejected",
+      "pass": true
+    },
+    {
+      "name": "Anonymous wallet purchase and ZIP download rejected; no other buyer licenses visible",
+      "pass": true
+    },
+    {
+      "name": "Public catalog and inspection report omit creator Python source and prompt",
+      "pass": true
+    },
+    {
+      "name": "Public POST rate limit enforced and requester-supplied backend identity cannot bypass it",
+      "pass": true,
+      "accepted": 39,
+      "denied": 429
+    }
+  ],
+  "scope": "Targeted checks on the owner-authorized prototype. Not an independent penetration test or a guarantee against unknown vulnerabilities."
+}

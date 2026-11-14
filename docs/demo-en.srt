@@ -1,0 +1,135 @@
+1
+00:00:00,250 --> 00:00:02,406
+A trading bot is easy to advertise.
+
+2
+00:00:02,406 --> 00:00:04,254
+But what did you actually buy?
+
+3
+00:00:04,254 --> 00:00:05,178
+Meet Prooflot.
+
+4
+00:00:06,253 --> 00:00:08,477
+Creators upload their own Python bot.
+
+5
+00:00:08,477 --> 00:00:10,882
+The source stays private until purchase.
+
+6
+00:00:11,532 --> 00:00:13,183
+Choose the data and costs.
+
+7
+00:00:13,183 --> 00:00:16,930
+This walkthrough uses synthetic data and simulated payment.
+
+8
+00:00:17,580 --> 00:00:21,633
+The bot runs in an isolated container, with no network access.
+
+9
+00:00:21,633 --> 00:00:23,660
+Fees and slippage are included.
+
+10
+00:00:24,603 --> 00:00:28,827
+Review returns, drawdown, and a buy and hold baseline before deciding.
+
+11
+00:00:29,714 --> 00:00:31,549
+Three trades are a small sample.
+
+12
+00:00:31,549 --> 00:00:33,212
+The limitations stay visible.
+
+13
+00:00:33,862 --> 00:00:37,041
+Set the price and publish the exact version you inspected.
+
+14
+00:00:37,691 --> 00:00:39,375
+Buyers see the report first.
+
+15
+00:00:39,375 --> 00:00:42,683
+The version hash binds the listing to one specific bot.
+
+16
+00:00:43,333 --> 00:00:46,469
+Check the version, price, and license terms at checkout.
+
+17
+00:00:47,404 --> 00:00:49,921
+The purchased version is now in your library.
+
+18
+00:00:50,571 --> 00:00:55,798
+Download the actual source, report, license, and offline verifier in one zip file.
+
+19
+00:00:56,448 --> 00:00:59,349
+Then run the purchased code again in a fresh container.
+
+20
+00:01:03,587 --> 00:01:05,985
+All seventy three decisions completed.
+
+21
+00:01:05,985 --> 00:01:08,067
+The deterministic result matches.
+
+22
+00:01:08,717 --> 00:01:11,021
+Here is a real NEAR testnet listing.
+
+23
+00:01:11,021 --> 00:01:11,917
+It lost money.
+
+24
+00:01:11,917 --> 00:01:13,709
+That result remains visible.
+
+25
+00:01:14,359 --> 00:01:19,010
+Verify the version, report, terms, and price against final contract state.
+
+26
+00:01:19,660 --> 00:01:23,734
+Compare performance across four fixed Bitcoin and Ethereum cases.
+
+27
+00:01:24,384 --> 00:01:29,184
+Every started attempt is retained, including losses and higher cost sensitivity.
+
+28
+00:01:29,834 --> 00:01:32,838
+NEAR records the commitment and result hashes.
+
+29
+00:01:32,838 --> 00:01:35,189
+Execution remains operator attested.
+
+30
+00:01:35,839 --> 00:01:39,443
+Try the deployed service at Prooflot dot Vercel dot app.
+
+31
+00:01:39,443 --> 00:01:41,087
+No local server is needed.
+
+32
+00:01:42,849 --> 00:01:46,476
+The code, testnet receipts, and verification tools are public.
+
+33
+00:01:47,126 --> 00:01:47,766
+Prooflot.
+
+34
+00:01:47,766 --> 00:01:50,262
+Inspect, buy, download, and test again.
