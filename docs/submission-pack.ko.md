@@ -2,7 +2,7 @@
 
 2026-11-15 KST 공개 릴리스 반영. Open Innovation 및 Agent Economy. 내부 스키마·계약명 AgentProof는 기존 불변 기록과 호환되도록 유지한다.
 
-[공개 GitHub](https://github.com/openai-lover/prooflot) · [공개 89초 시연 영상](https://youtu.be/OEni-eWBdwk) · [최신 객관적 평가](release-review.ko.md)
+[공개 GitHub](https://github.com/openai-lover/prooflot) · [공개 89초 시연 영상](https://youtu.be/OEni-eWBdwk) · [공개 X 영상 게시물](https://x.com/AlphaGgang/status/2121637337587458332) · [최신 객관적 평가](release-review.ko.md)
 
 ## 한 문장
 
@@ -49,7 +49,7 @@ NEAR enforces version/terms-bound purchases, creator ownership, credits and with
 
 We verified the complete creator/buyer workflow using two separate SDK signing accounts on real testnet, including rejected terms, duplicate payment, fresh Python retesting and creator withdrawal. We additionally completed the personal buyer flow in the real Meteor Web wallet: NEP-413 login, a signed purchase, FINAL license confirmation, source ZIP download and a new 61-decision isolated Python run. The downloaded source matches the inspected version and the deterministic results reproduce. Public proof commands verify chain bindings without keys or a running app. Creator wallet UI approvals and the Nightly extension remain unverified. Execution and market data remain operator-attested; this is not independent performance certification.
 
-## X 게시물 초안
+## 게시된 X 영상
 
 Buying a bot should start with evidence.
 
@@ -58,7 +58,7 @@ Built Prooflot at NEAR HACKATHON: inspect, buy the exact version, download and r
 https://github.com/openai-lover/prooflot
 @NEARProtocol #NEARHackathon
 
-실제 시연 영상이 첨부된 초안이다. X 게시 승인과 최종 신청 내용·연락 동의는 별도로 확인한다. [공식 제출 안내](https://nearhackathon.com/HACKATHON.md)의 재확인 기준 마감: 2026-11-15 08:59 KST. 공개 영상만으로 접수 완료를 주장하지 않는다.
+사용자의 명시적 승인을 받은 뒤 실제 시연 영상과 함께 게시했다. [공개 게시물](https://x.com/AlphaGgang/status/2121637337587458332). 최종 신청 내용·연락 동의는 별도로 확인한다. [공식 제출 안내](https://nearhackathon.com/HACKATHON.md)의 재확인 기준 마감: 2026-11-15 08:59 KST. 공개 영상만으로 접수 완료를 주장하지 않는다.
 
 ## 심사위원 확인 명령
 

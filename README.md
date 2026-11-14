@@ -8,7 +8,7 @@ Prooflot was developed under the working names AgentProof and BotPassport. Exist
 
 ![Prooflot: inspected Python bot, negative returns and an exact-version license](docs/screenshots/prooflot-product-en.png)
 
-**[Watch the 89-second product demo](https://youtu.be/OEni-eWBdwk)**
+**[Watch the 89-second product demo](https://youtu.be/OEni-eWBdwk)** · **[Public hackathon demo post on X](https://x.com/AlphaGgang/status/2121637337587458332)**
 
 ## Judge quick start
 

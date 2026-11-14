@@ -15,5 +15,13 @@
     "title": "Prooflot — Test Bots. Buy With Evidence. | NEAR Hackathon 2026",
     "scope": "Actual in-app browser recording with English captions. The creator/buyer purchase is explicitly a local simulation. Subsequent FINAL listing verification reads real, previously recorded testnet state. No new personal-wallet approval is shown."
   },
+  "demo_post": {
+    "url": "https://x.com/AlphaGgang/status/2121637337587458332",
+    "account": "AlphaGgang",
+    "posted_at_local": "2026-11-15T01:12:00+09:00",
+    "visibility": "public",
+    "embedded_video_duration_seconds": 88,
+    "verified": "Visible post contains the approved text, embedded demo video, repository link, @NEARProtocol and #NEARHackathon."
+  },
   "submission_receipt": null
 }
