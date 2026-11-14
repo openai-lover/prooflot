@@ -4,6 +4,8 @@
 
 [공개 GitHub](https://github.com/openai-lover/prooflot) · [공개 89초 시연 영상](https://youtu.be/OEni-eWBdwk) · [공개 X 영상 게시물](https://x.com/AlphaGgang/status/2121637337587458332) · [최신 객관적 평가](release-review.ko.md)
 
+**접수 완료:** 전체 JSON과 연락 동의를 명시적으로 승인받은 후 공식 API에 제출했다. 2026-11-15 01:17:50 KST에 HTTP 201을 받았다. [공개 가능한 접수 기록](publication-evidence.json). 아래 설명은 발표 자료이며 실제 승인한 신청 JSON은 개인 정보 보호를 위해 Git에서 제외했다.
+
 ## 한 문장
 
 **봇을 사기 전에 같은 기준으로 검사하고, 확인한 버전 그대로 받는 마켓.**
@@ -58,7 +60,7 @@ Built Prooflot at NEAR HACKATHON: inspect, buy the exact version, download and r
 https://github.com/openai-lover/prooflot
 @NEARProtocol #NEARHackathon
 
-사용자의 명시적 승인을 받은 뒤 실제 시연 영상과 함께 게시했다. [공개 게시물](https://x.com/AlphaGgang/status/2121637337587458332). 최종 신청 내용·연락 동의는 별도로 확인한다. [공식 제출 안내](https://nearhackathon.com/HACKATHON.md)의 재확인 기준 마감: 2026-11-15 08:59 KST. 공개 영상만으로 접수 완료를 주장하지 않는다.
+사용자의 명시적 승인을 받은 뒤 실제 시연 영상과 함께 게시했다. [공개 게시물](https://x.com/AlphaGgang/status/2121637337587458332). 최종 신청 내용·연락 동의도 별도로 확인한 뒤 제출했다. [공식 제출 안내](https://nearhackathon.com/HACKATHON.md)의 재확인 기준 마감: 2026-11-15 08:59 KST. 접수 완료는 공개 영상이 아닌 실제 HTTP 201 응답을 기준으로 기록했다.
 
 ## 심사위원 확인 명령
 

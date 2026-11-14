@@ -95,3 +95,7 @@ The source is public at https://github.com/openai-lover/prooflot. An anonymous f
 The actual 89-second product recording is public at https://youtu.be/OEni-eWBdwk on SLIME CEO!. It shows real in-app browser actions: Python registration and execution, inspection, a clearly labeled local simulated purchase, browser download and a fresh retest, followed by live verification of a previously recorded real testnet listing and its four benchmark outcomes. English captions distinguish local simulation from NEAR FINAL verification. This recording does not show a new personal-wallet approval. The saved file's bytes and bindings are documented in prooflot-browser-evidence.json.
 
 The approved demo was also published at https://x.com/AlphaGgang/status/2121637337587458332 with its embedded video, public repository link and required hackathon tags. Public source and video do not establish contest acceptance; the final application requires its own saved receipt.
+
+## Submission receipt
+
+After explicit approval of the exact JSON payload and contact notice, one application was sent to the official API. It returned HTTP 201 at 2026-11-14T16:17:50.888Z (November 15, 01:17:50 KST), with an empty response body. The approved tracks were Open Innovation and Agent Economy. The full receipt and personal payload remain local and Git-ignored; publication-evidence.json contains only non-personal status metadata. Receipt does not establish judging eligibility or an award. No second application was submitted.
